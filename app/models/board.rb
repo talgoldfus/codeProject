@@ -5,7 +5,7 @@ class Board < ApplicationRecord
   #This returns an array for every instance of a board, which is redundant. 
   #This might be useful elsewhere, but not in the serializer
 
-  def returnCategories
+  def self.returnCategories
     boards = Board.all.map do |board|
       board.topic
     end

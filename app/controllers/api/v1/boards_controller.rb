@@ -3,7 +3,7 @@ module Api
     class BoardsController < ApplicationController
 
       def index
-        render json: Board.all
+        render json: Board.returnCategories
       end
 
     end
