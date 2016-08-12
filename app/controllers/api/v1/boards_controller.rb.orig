@@ -2,14 +2,14 @@ module Api
   module V1
     class BoardsController < ApplicationController
 
-      def index
-        render json: Board.returnCategories
-      end
-
-
+<<<<<<< HEAD
       def show
         new_board =PopulateBoard.initiate(params[:id])
         render json: new_board
+=======
+      def index
+        render json: Board.returnCategories
+>>>>>>> e73aa64775013e6ab9443db0c8590e5117235f4f
       end
 
     end

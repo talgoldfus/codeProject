@@ -1,6 +1,11 @@
 class BoardSerializer < ActiveModel::Serializer
   attributes :id, :topic
+<<<<<<< HEAD
+  has_many :categories
+  has_many :players
+=======
   has_many :players
   has_many :categories
+>>>>>>> e73aa64775013e6ab9443db0c8590e5117235f4f
 
 end

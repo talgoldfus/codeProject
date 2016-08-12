@@ -2,6 +2,10 @@ class Board < ApplicationRecord
   has_many :players
   has_many :categories
 
+<<<<<<< HEAD
+
+
+=======
   #This returns an array for every instance of a board, which is redundant. 
   #This might be useful elsewhere, but not in the serializer
 
@@ -15,5 +19,6 @@ class Board < ApplicationRecord
     # find the id that was clicked from the params
     
   end
+>>>>>>> e73aa64775013e6ab9443db0c8590e5117235f4f
 
 end
