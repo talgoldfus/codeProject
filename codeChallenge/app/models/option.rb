@@ -1,4 +1,4 @@
 class Option < ApplicationRecord
-  belongs_to :questions
+  belongs_to :question, optional: true
 
 end
