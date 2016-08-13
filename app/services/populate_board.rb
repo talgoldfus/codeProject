@@ -7,7 +7,7 @@ class PopulateBoard
       new_board = Board.find(board_id)
       self.populate_categories(new_board)
       self.populate_questions(new_board)
-      new_board
+      self.hash_me(new_board)
   end
 
 
@@ -38,6 +38,14 @@ class PopulateBoard
     # ruby way = questions = Question.all.select{ |q| q.category_id == category.id}
   end
 
+
+  def self.hash_me(board)
+    new_hash = {data: {topic: board.topic,id: board.id ,categories: []}}
+    board.categories.each_with_object(new_hash[:data][:categories]) do |c,array|
+       array.push({ c.name.to_sym => c.questions} )
+    end
+    new_hash
+  end
 
 
 

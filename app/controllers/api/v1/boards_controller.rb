@@ -9,8 +9,11 @@ module Api
 
       def show
         new_board =PopulateBoard.initiate(params[:id])
-        render json: new_board
+
+        render json:  new_board 
       end
+
+
 
     end
   end
