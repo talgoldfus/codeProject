@@ -6,7 +6,6 @@ module Api
         if @user = User.find_by(first_name: params[:name])
           if @user.authenticate(params[:password])
               session[:user_id] = @user.id
-              current_user = @user
               render json: current_user
           end
         end
