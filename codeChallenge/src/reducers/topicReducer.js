@@ -1,14 +1,16 @@
-export default function topicReducer(state=[] ,action){
+const topicReducer = (state=[] ,action) => {
   
   switch (action.type) {
-    case 'GET_TOPICS':
-      return [
-        ...state,
-        {topic: action.topics}
-      ]
+    case 'GET_TOPICS':  
+    debugger  
+      return {
+        topic: action.payload.data
+      }      
     default:
       return state
 
   }
 
 }
+
+export default topicReducer

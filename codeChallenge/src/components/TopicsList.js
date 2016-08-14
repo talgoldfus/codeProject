@@ -7,20 +7,30 @@ class TopicsList extends Component {
   //   super(props)
   // }
 
-  componentWillMount() {
-    debugger
-    // this.props.getTopics
-  }
+  // componentWillMount() {
+  //   debugger
+  //   this.props.getTopics()
+  // }
 
   render() {
-    let topics = this.props.topics.map((topic) => {
+        this.props.getTopics().then(()=> {
+
+    var topics = this.props.topic// || []
+    debugger
+    let topicslist = topics.map((topic) => {
       return <Topic id={topic.id} topic={topic.name} />
     })
     return (
-      <ul>
-        {topics}
-      </ul>
+      <div>
+        <button onClick={() => { this.props.getTopics() }} >
+          Get topics
+        </button>
+        <ul>
+          {topicslist}
+        </ul>
+      </div>
     )
+    })
   }
 
 }
