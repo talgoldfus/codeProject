@@ -14,6 +14,11 @@ Player.destroy_all
 Option.destroy_all
 
 board = Board.create(topic: 'math')
+board2= Board.create(topic: 'science')
+board3 = Board.create(topic: 'history')
+board4 = Board.create(topic: 'political science')
+board5 = Board.create(topic: 'philosophy')
+board6 = Board.create(topic: 'redux')
 
 category = Category.create(board_id: board.id, name: 'num 1')
 category2= Category.create(board_id: board.id, name: 'num 2')
