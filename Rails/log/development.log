@@ -2669,3 +2669,20 @@ Processing by Api::V1::BoardsController#show as HTML
 Completed 200 OK in 1318ms (Views: 277.5ms | ActiveRecord: 31.2ms)
 
 
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-14 14:24:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (1.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.71ms)
+Completed 200 OK in 137ms (Views: 12.9ms | ActiveRecord: 24.1ms)
+
+
