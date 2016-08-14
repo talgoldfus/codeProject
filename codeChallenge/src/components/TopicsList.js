@@ -19,9 +19,7 @@ componentWillMount(){
 
     return (
       <div>
-        <ul>
           {topicslist}
-        </ul>
       </div>
     )
 

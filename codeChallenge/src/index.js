@@ -5,14 +5,16 @@ import theReducer from './reducers/index'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import ReduxPromise from 'redux-promise'
-
+import { Router, Route, Link, browserHistory } from 'react-router'
+import Routes from './routes'
 
 let createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 let store = createStoreWithMiddleware(theReducer)
 // debugger
 ReactDOM.render(
+
   <Provider store={store} >
-    <App />
+    <Router history={browserHistory} routes={Routes}/>
   </Provider>,
  document.getElementById('root')
 );

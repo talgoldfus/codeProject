@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Topic = (topic) => {
-  
+class Topic extends Component {
+
+  constructor(props){
+    super(props)
+  }
+
+
+
   return (
-      <li id={topic.id}> {topic.name} </li>
+      <div id={topic.id} >
+      <Link to={'/game'}>{topic.name}</Link>
+      </div>
   )
 }
 
