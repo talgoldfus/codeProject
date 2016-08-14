@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import board from './boardReducer.js'
 import topics from './topicReducer.js'
 
