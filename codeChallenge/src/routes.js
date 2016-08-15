@@ -1,11 +1,13 @@
 import  React from 'react'
-import {Route} from 'react-router'
+import { Route } from 'react-router'
 import App from './components/App'
+import BoardContainer from './containers/BoardContainer'
 
 
 export default (
-<Route path="/" component={App}>
-  <Route path="/game" component={Board} />
-</Route>
+  <div>
+    <Route path="/game" component={BoardContainer} />
+    <Route path="/" component={App} />
+</div>
 
 )

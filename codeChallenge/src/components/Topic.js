@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class Topic extends Component {
 
@@ -7,12 +8,12 @@ class Topic extends Component {
   }
 
 
-
+render(){
   return (
-      <div id={topic.id} >
-      <Link to={'/game'}>{topic.name}</Link>
+      <div id={this.props.id} >
+      <Link to={'/game'}>{this.props.name}</Link>
       </div>
   )
-}
+}}
 
 export default Topic
