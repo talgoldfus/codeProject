@@ -9,8 +9,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state, ownProps) {
     return {
-      currentQuestion: state.currentQuestion,
-    } 
+      info: state.currentQuestion
+    }
 }
 
 const currentQuestionContainer = connect(mapStateToProps, mapDispatchToProps)(CurrentQuestionComponent)

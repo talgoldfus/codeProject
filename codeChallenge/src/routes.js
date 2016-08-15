@@ -7,11 +7,11 @@ import CurrentQuestionContainer from './containers/currentQuestionContainer'
 
 export default (
   <div>
-    <Route path="/" component={App} />    
+    <Route path="/" component={App} />
     <Route path="game/:id" component={BoardContainer} >
-      <Route path=":questionId(:info)" component={CurrentQuestionContainer} />
+      <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>
-    
+
 </div>
 
 )

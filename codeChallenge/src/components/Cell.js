@@ -7,7 +7,7 @@ class Cell extends Component {
 
     return (
       <td id={this.props.id}>
-        <Link to={`${this.props.location}/${this.props.id}?info=${this.props.content}`} >
+        <Link to={`${this.props.location}/${this.props.id}`} >
           {this.props.difficulty}
         </Link>
       </td>
