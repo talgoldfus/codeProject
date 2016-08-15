@@ -3,16 +3,16 @@ import Option from './Option'
 
 class CurrentQuestion extends Component {
 
-  // componentWillMount() {
-  //   this.props.getOptions(this.props.params.questionId)
-  // }
-  //
-  // componentWillUpdate(){
-  //   debugger
-  //   this.props.getOptions(this.props.params.questionId)
-  // }
-  render(){
+  componentWillMount() {
     this.props.getOptions(this.props.params.questionId)
+  }
+
+  componentWillUpdate(){
+    debugger
+    this.props.getOptions(this.props.params.questionId)
+  }
+
+  render(){
     const optionsArray = this.props.info.options || []
     const optionsComponents = optionsArray.map(option=>{
       return <Option content={option.content} key={option.id} correct={option.correct}
