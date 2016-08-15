@@ -9,8 +9,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state, ownProps) {
 
-    return {
-      info: state.currentQuestion
+    return {info: state.currentQuestion
     }
 }
 

@@ -13,7 +13,7 @@ componentWillMount(){
   var topics = this.props.topics.topic || []
 
   let topicslist =   Object.keys(topics).map((key)=>{
-      return <Topic id={key} name={topics[key]} />
+      return <Topic key={key} id={key} name={topics[key]} />
     });
 
 

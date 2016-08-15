@@ -19,7 +19,7 @@ getQuestionsByIndex(idx, categories){
   )
 
   return questionRow.map(quesObj => {
-      return (<Cell content={quesObj.content} boardId={this.props.params.id} location={this.props.location.pathname}
+      return (<Cell key={quesObj.id} content={quesObj.content} boardId={this.props.params.id} 
     difficulty={quesObj.difficulty} id={quesObj.id}/>)
   })
 }
@@ -35,7 +35,7 @@ populateRows(categories){
   render() {
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
-    return <Header header={Object.keys(ob)[0]} />
+    return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
   })
 
 
