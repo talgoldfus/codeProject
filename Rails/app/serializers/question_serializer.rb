@@ -1,5 +1,4 @@
 class QuestionSerializer < ActiveModel::Serializer
-  attributes :id, :difficulty , :content
-  belongs_to :category
+  attributes :id, :difficulty , :content, :options
 
 end

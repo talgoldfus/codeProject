@@ -26,28 +26,24 @@ category3 = Category.create(board_id: board.id, name: 'num 3')
 category4 = Category.create(board_id: board.id, name: 'num 4')
 category5 = Category.create(board_id: board.id, name: 'num 5')
 
-question = Question.create(category_id: category.id, difficulty: '100', content: 'what is 5+5?')
-question2= Question.create(category_id: category.id, difficulty: '200', content: 'what is 5+2?')
+question = Question.create(category_id: category.id, difficulty: '200', content: 'what is 5+5?')
 question3 = Question.create(category_id: category.id, difficulty: '400', content: 'what is 5+1?')
 question4 = Question.create(category_id: category.id, difficulty: '600', content: 'what is 5+3?')
 question5 = Question.create(category_id: category.id, difficulty: '800', content: 'what is 5+4?')
 question6 = Question.create(category_id: category.id, difficulty: '1000', content: 'what is 5+6?')
 
-question7 = Question.create(category_id: category2.id, difficulty: '100', content: 'what is 5+5?')
 question8 = Question.create(category_id: category2.id, difficulty: '200', content: 'what is 5+2?')
 question9 = Question.create(category_id: category2.id, difficulty: '400', content: 'what is 5+1?')
 question10 = Question.create(category_id: category2.id, difficulty: '600', content: 'what is 5+3?')
 question11 = Question.create(category_id: category2.id, difficulty: '800', content: 'what is 5+4?')
 question12 = Question.create(category_id: category2.id, difficulty: '1000', content: 'what is 5+6?')
 
-question13 = Question.create(category_id: category3.id, difficulty: '100', content: 'what is 5+5?')
 question14 = Question.create(category_id: category3.id, difficulty: '200', content: 'what is 5+2?')
 question15 = Question.create(category_id: category3.id, difficulty: '400', content: 'what is 5+1?')
 question16 = Question.create(category_id: category3.id, difficulty: '600', content: 'what is 5+3?')
 question17 = Question.create(category_id: category3.id, difficulty: '800', content: 'what is 5+4?')
 question18 = Question.create(category_id: category3.id, difficulty: '1000', content: 'what is 5+6?')
 
-question19 = Question.create(category_id: category4.id, difficulty: '100', content: 'what is 5+5?')
 question20 = Question.create(category_id: category4.id, difficulty: '200', content: 'what is 5+2?')
 question21 = Question.create(category_id: category4.id, difficulty: '400', content: 'what is 5+1?')
 question22 = Question.create(category_id: category4.id, difficulty: '600', content: 'what is 5+3?')
@@ -55,7 +51,6 @@ question23 = Question.create(category_id: category4.id, difficulty: '800', conte
 question24 = Question.create(category_id: category4.id, difficulty: '1000', content: 'what is 5+6?')
 
 
-question25 = Question.create(category_id: category5.id, difficulty: '100', content: 'what is 5+5?')
 question26 = Question.create(category_id: category5.id, difficulty: '200', content: 'what is 5+2?')
 question27 = Question.create(category_id: category5.id, difficulty: '400', content: 'what is 5+1?')
 question28 = Question.create(category_id: category5.id, difficulty: '600', content: 'what is 5+3?')
