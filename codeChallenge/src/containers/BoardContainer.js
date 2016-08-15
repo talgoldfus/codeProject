@@ -9,7 +9,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
     return {
-      board: state.board
+      gameBoard: state.board
     }
 }
 

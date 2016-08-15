@@ -1,12 +1,12 @@
 const boardReducer = (state = [], action) => {
-      debugger;
   switch (action.type) {
     case 'GET_BOARD':
-    return {
-      board: action.board.data
-        // name: board.topic,
-        // id: board.id,
-        // categories: board.categories
+    debugger;
+    let gameData = action.payload.data.data
+     return {
+        name: gameData.topic,
+        id: gameData.id,
+        categories: gameData.categories
     }
     default:
     return state
