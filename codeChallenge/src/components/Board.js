@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 class Board extends Component {
-componentWillMount(){
-  this.props.getBoard(9)
-}
+  componentWillMount(){
+    // debugger
+    this.props.getBoard(this.props.params.id)
+  }
 
   render() {
     return (
