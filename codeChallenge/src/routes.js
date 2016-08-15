@@ -6,7 +6,7 @@ import BoardContainer from './containers/BoardContainer'
 
 export default (
   <div>
-    <Route path="/game" component={BoardContainer} />
+    <Route path="/game/:id" component={BoardContainer} />
     <Route path="/" component={App} />
 </div>
 

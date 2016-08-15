@@ -3,9 +3,9 @@ import Header from './Header'
 import Cell from './Cell'
 
 class Board extends Component {
-
+  
 componentWillMount(){
-  this.props.getBoard(7)
+  this.props.getBoard(this.props.params.id)
 }
 
 getQuestionsByIndex(idx, categories){
