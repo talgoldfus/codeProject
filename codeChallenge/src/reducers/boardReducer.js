@@ -1,7 +1,6 @@
 const boardReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_BOARD':
-    debugger;
     let gameData = action.payload.data.data
      return {
         name: gameData.topic,

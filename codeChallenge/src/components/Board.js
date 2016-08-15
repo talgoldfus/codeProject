@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 
 class Board extends Component {
 componentWillMount(){
-  this.props.getBoard(7)
-  debugger;
+  this.props.getBoard(9)
 }
 
   render() {
-        debugger;
     return (
       <div>
       </div>
