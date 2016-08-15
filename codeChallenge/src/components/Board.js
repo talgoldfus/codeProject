@@ -15,7 +15,6 @@ getQuestionsByIndex(idx, categories){
       questionRow.push(category[first_key][idx])
     }
   )
-  debugger;
   return questionRow.map(quesObj => {
       return (<Cell content={quesObj.content}
     difficulty={quesObj.difficulty} id={quesObj.id}/>)
