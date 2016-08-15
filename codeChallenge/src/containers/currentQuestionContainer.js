@@ -7,10 +7,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({getOptions: currentQuestionAction}, dispatch)
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     return {
-      currentQuestion: state.currentQuestion
-    }
+      currentQuestion: state.currentQuestion,
+    } 
 }
 
 const currentQuestionContainer = connect(mapStateToProps, mapDispatchToProps)(CurrentQuestionComponent)

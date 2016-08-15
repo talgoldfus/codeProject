@@ -7,9 +7,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({getBoard: getBoardAction}, dispatch)
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     return {
-      gameBoard: state.board
+      gameBoard: state.board,
+      ownProps: ownProps
     }
 }
 

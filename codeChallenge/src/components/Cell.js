@@ -5,7 +5,6 @@ class Cell extends Component {
 
   render(){
 
-
     return (
       <td id={this.props.id}>
         <Link to={`${this.props.location}/${this.props.id}?info=${this.props.content}`} >
@@ -17,3 +16,5 @@ class Cell extends Component {
 }
 
 export default Cell
+
+// ?info=${this.props.content}
