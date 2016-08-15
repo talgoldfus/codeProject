@@ -17,8 +17,9 @@ getQuestionsByIndex(idx, categories){
       questionRow.push(category[first_key][idx])
     }
   )
+
   return questionRow.map(quesObj => {
-      return (<Cell content={quesObj.content} location={this.props.location.pathname}
+      return (<Cell content={quesObj.content} boardId={this.props.params.id} location={this.props.location.pathname}
     difficulty={quesObj.difficulty} id={quesObj.id}/>)
   })
 }

@@ -3,11 +3,15 @@ import { Link } from 'react-router'
 
 class Cell extends Component {
 
+componentWillUpdate(){
+  // debugger
+}
+
   render(){
 
     return (
       <td id={this.props.id}>
-        <Link to={`${this.props.location}/${this.props.id}`} >
+        <Link to={`/game/${this.props.boardId}/${this.props.id}`} >
           {this.props.difficulty}
         </Link>
       </td>

@@ -9,7 +9,7 @@ import Routes from './routes'
 
 let createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 let store = createStoreWithMiddleware(theReducer)
-// debugger
+
 ReactDOM.render(
 
   <Provider store={store} >
