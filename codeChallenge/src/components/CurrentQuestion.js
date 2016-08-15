@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class CurrentQuestion extends Component {
   componentWillMount() {
     debugger
-    this.props.getOptions(id)
+    this.props.getOptions()
   }
   render(){
     return (

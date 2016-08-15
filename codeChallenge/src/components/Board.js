@@ -3,9 +3,11 @@ import Header from './Header'
 import Cell from './Cell'
 
 class Board extends Component {
-  
+
 componentWillMount(){
   this.props.getBoard(this.props.params.id)
+
+
 }
 
 getQuestionsByIndex(idx, categories){
@@ -16,7 +18,7 @@ getQuestionsByIndex(idx, categories){
     }
   )
   return questionRow.map(quesObj => {
-      return (<Cell content={quesObj.content}
+      return (<Cell content={quesObj.content} location={this.props.location.pathname}
     difficulty={quesObj.difficulty} id={quesObj.id}/>)
   })
 }
@@ -32,20 +34,27 @@ populateRows(categories){
   render() {
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
-    return <Header header = {Object.keys(ob)[0]} />
+    return <Header header={Object.keys(ob)[0]} />
   })
 
+
     return (
-      <table>
-        <thead>
-          <tr>
-            {headers}
-          </tr>
-        </thead>
-        <tbody>
-          {this.populateRows(categories)}
-        </tbody>
-      </table>
+        <div>
+        <table>
+          <thead>
+            <tr>
+              {headers}
+            </tr>
+          </thead>
+          <tbody>
+            {this.populateRows(categories)}
+          </tbody>
+        </table>
+        <div>
+        {this.props.children}
+        </div>
+      </div>
+
     )
   }
 }
