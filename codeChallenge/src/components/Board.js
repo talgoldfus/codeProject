@@ -34,6 +34,7 @@ populateRows(categories){
   const headers = categories.map(ob => {
     return <Header header = {Object.keys(ob)[0]} />
   })
+
     return (
       <table>
         <thead>
