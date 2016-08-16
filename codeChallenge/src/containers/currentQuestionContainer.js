@@ -8,7 +8,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state, ownProps) {
-
     return {info: state.currentQuestion}
 }
 

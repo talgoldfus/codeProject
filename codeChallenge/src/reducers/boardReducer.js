@@ -23,11 +23,18 @@ const boardReducer = (state = [], action) => {
 
         })
       })
-     return  state
+      return state
 
-     default:
+    case 'CORRECT_ANSWER':
+      let new_store = Object.assign({}, state, 
+        {players: [...state.players]})
+        
+        new_store.players[0].score += action.points
+        return new_store
+          // ([...state.players][0].score += action.points)})        
+
+    default:
      return state
-
   }
 }
 

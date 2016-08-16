@@ -6,14 +6,15 @@ import '../Board.css'
 
 class Board extends Component {
 
-componentWillMount(){
-  this.props.getBoard(this.props.params.id)
+  componentWillMount(){
+    this.props.getBoard(this.props.params.id)
+  }
 
-
-}
+  // componentWillReceiveProps(nextProps) {
+  //   debugger    
+  // }
 
 getQuestionsByIndex(idx, categories){
-
   var questionRow = []
     categories.forEach(category => {
       var first_key = Object.keys(category)[0]
@@ -39,6 +40,12 @@ populateRows(categories){
 }
 
   render() {
+    debugger
+  const all_scores = this.props.gameBoard.players || []
+  const scores = all_scores.map(ob => {
+      return ob.score
+  })
+  // debugger
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
     return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
@@ -59,6 +66,9 @@ populateRows(categories){
         </table>
         <div>
         {this.props.children}
+        </div>
+        <div>
+        Score: {scores}
         </div>
       </div>
 

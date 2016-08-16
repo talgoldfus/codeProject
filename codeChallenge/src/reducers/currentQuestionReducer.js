@@ -5,7 +5,8 @@ const currentQuestionReducer = (state=[], action) => {
   let questionData = action.payload.data
     return {
       options: questionData.options,
-      content: questionData.content
+      content: questionData.content,
+      difficulty: questionData.difficulty
     }
   default:
   return state

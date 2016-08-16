@@ -1,7 +1,8 @@
-export default function correctAnswer(answer) {
-  return {
+export default function correctAnswer(answer, difficulty) {
+  return {    
     type:'CORRECT_ANSWER',
-    payload: correctAnswer
+    answer: answer,
+    points: difficulty
   }
 }
 

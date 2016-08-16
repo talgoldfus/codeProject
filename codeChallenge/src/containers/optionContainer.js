@@ -7,10 +7,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({evaluateAnswer: correctAnswer}, dispatch)
 }
 
-// function mapStateToProps(state, ownProps) {
-    // return {
-      // correct: state.options.correct
-    // }
+// function mapStateToProps(state) {
+//     return {state}
 // }
 
 const optionContainer = connect(null, mapDispatchToProps)(Option)

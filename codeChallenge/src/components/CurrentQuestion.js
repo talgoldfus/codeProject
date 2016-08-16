@@ -9,16 +9,18 @@ class CurrentQuestion extends Component {
 
   componentWillUpdate(nextProps) {
     if (nextProps.params.questionId !== this.props.params.questionId){
-    this.props.getOptions(nextProps.params.questionId)
-    return true}
+      this.props.getOptions(nextProps.params.questionId)
+      return true
+    }
     return false
   }
 
   render(){
     const optionsArray = this.props.info.options || []
+    const difficulty = this.props.info.difficulty || []
     const optionsComponents = optionsArray.map(option=>{
       return <OptionContainer content={option.content} key={option.id} correct={option.correct}
-      questionId={option.question_id} />
+      questionId={option.question_id} difficulty={difficulty} />
     })
     return (
       <div className="screen">
