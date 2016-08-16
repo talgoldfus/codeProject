@@ -1,5 +1,5 @@
 class Board < ApplicationRecord
-  has_many :players
+  has_many :games
   has_many :categories
   has_many :question , through: :categories
 

@@ -10,7 +10,7 @@ Board.destroy_all
 Category.destroy_all
 Question.destroy_all
 User.destroy_all
-Player.destroy_all
+Game.destroy_all
 Option.destroy_all
 
 board = Board.create(topic: 'ruby')
@@ -31,7 +31,7 @@ question = Question.create(category_id: category.id, difficulty: '200', content:
 question3 = Question.create(category_id: category.id, difficulty: '400', content: 'What does the following code return?
                                                                                   def add(x, y)
                                                                                     return(x + y)
-                                                                                  end 
+                                                                                  end
                                                                                   add(3, 5)')
 question4 = Question.create(category_id: category.id, difficulty: '600', content: 'What are the values of a, b, c and d?
                                                                                   a, (b, *c), d = 1, [2, 3, 4], 5')
@@ -76,7 +76,7 @@ question30 = Question.create(category_id: category5.id, difficulty: '1000', cont
 
 user = User.create(first_name: 'flat', last_name: 'iron', hometown: 'philly', password_digest: 'flatiron', tagline: 'working')
 
-player = Player.create(board_id: board, user_id: user.id, points: 100)
+game = Game.create(board_id: board.id, user_id: user.id, final_score: 1000)
 
 option1 = Option.create(question_id: question.id, correct: false, content: 6)
 option2 = Option.create(question_id: question.id, correct: true, content: 8)

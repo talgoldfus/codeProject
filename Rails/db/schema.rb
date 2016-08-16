@@ -28,20 +28,20 @@ ActiveRecord::Schema.define(version: 20160816140611) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "games", force: :cascade do |t|
+    t.integer  "board_id"
+    t.integer  "user_id"
+    t.integer  "final_score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "options", force: :cascade do |t|
     t.integer  "question_id"
     t.boolean  "correct"
     t.string   "content"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "players", force: :cascade do |t|
-    t.integer  "board_id"
-    t.integer  "user_id"
-    t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
