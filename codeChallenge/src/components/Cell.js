@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 
 class Cell extends Component {
 
-
   render(){
     return (
       <td id={this.props.id}>
