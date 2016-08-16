@@ -4,7 +4,7 @@ import removeLinkAction from '../actions/removeLinkAction'
 import Cell from '../components/Cell'
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({removeLink: removeLinkAction}, dispatch)
+  return bindActionCreators({removeLink: removeLinkAction }, dispatch)
 }
 
 
