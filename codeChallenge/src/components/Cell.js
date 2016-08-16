@@ -4,7 +4,6 @@ import { Link } from 'react-router'
 class Cell extends Component {
 
 componentWillUpdate(){
-  // debugger
 }
 
   render(){

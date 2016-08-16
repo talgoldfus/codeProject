@@ -13,30 +13,47 @@ User.destroy_all
 Player.destroy_all
 Option.destroy_all
 
-board = Board.create(topic: 'math')
-board2= Board.create(topic: 'science')
-board3 = Board.create(topic: 'history')
-board4 = Board.create(topic: 'political science')
-board5 = Board.create(topic: 'philosophy')
-board6 = Board.create(topic: 'redux')
+board = Board.create(topic: 'ruby')
+board2= Board.create(topic: 'sql')
+board3 = Board.create(topic: 'javascript')
+board4 = Board.create(topic: 'html')
+board5 = Board.create(topic: 'css')
+board6 = Board.create(topic: 'react')
 
-category = Category.create(board_id: board.id, name: 'num 1')
-category2= Category.create(board_id: board.id, name: 'num 2')
-category3 = Category.create(board_id: board.id, name: 'num 3')
-category4 = Category.create(board_id: board.id, name: 'num 4')
-category5 = Category.create(board_id: board.id, name: 'num 5')
+category = Category.create(board_id: board.id, name: 'Variables, Strings, & Numbers')
+category2= Category.create(board_id: board.id, name: 'Arrays, Conditionals, & Loops')
+category3 = Category.create(board_id: board.id, name: 'Scope & Methods')
+category4 = Category.create(board_id: board.id, name: 'Symbols, Array Methods, & Hashes')
+category5 = Category.create(board_id: board.id, name: 'Object Oriented Programming')
 
-question = Question.create(category_id: category.id, difficulty: '200', content: 'what is 5+5?')
-question3 = Question.create(category_id: category.id, difficulty: '400', content: 'what is 5+1?')
-question4 = Question.create(category_id: category.id, difficulty: '600', content: 'what is 5+3?')
-question5 = Question.create(category_id: category.id, difficulty: '800', content: 'what is 5+4?')
-question6 = Question.create(category_id: category.id, difficulty: '1000', content: 'what is 5+6?')
+question = Question.create(category_id: category.id, difficulty: '200', content: 'What does the following expression evaluate to?
+                                                                                  2 ** 3"')
+question3 = Question.create(category_id: category.id, difficulty: '400', content: 'What does the following code return?
+                                                                                  def add(x, y)
+                                                                                    return(x + y)
+                                                                                  end 
+                                                                                  add(3, 5)')
+question4 = Question.create(category_id: category.id, difficulty: '600', content: 'What are the values of a, b, c and d?
+                                                                                  a, (b, *c), d = 1, [2, 3, 4], 5')
+question5 = Question.create(category_id: category.id, difficulty: '800', content: 'Variables that start with a capital letter are what kind of variables in Ruby?')
+question6 = Question.create(category_id: category.id, difficulty: '1000', content: 'What does the following code print?
+                                                                                    class IceCream
+                                                                                      @temp = "cold"
+                                                                                    end
+                                                                                    print IceCream.instance_variables')
 
-question8 = Question.create(category_id: category2.id, difficulty: '200', content: 'what is 5+2?')
-question9 = Question.create(category_id: category2.id, difficulty: '400', content: 'what is 5+1?')
-question10 = Question.create(category_id: category2.id, difficulty: '600', content: 'what is 5+3?')
-question11 = Question.create(category_id: category2.id, difficulty: '800', content: 'what is 5+4?')
-question12 = Question.create(category_id: category2.id, difficulty: '1000', content: 'what is 5+6?')
+question8 = Question.create(category_id: category2.id, difficulty: '200', content: 'What does the following code print?
+                                                                                    puts "unicorn".reverse()')
+question9 = Question.create(category_id: category2.id, difficulty: '400', content: 'arr = ["onyx", "wu tang", "biggie", "tupac"]
+                                                                                    Get the "biggie" string from arr.')
+question10 = Question.create(category_id: category2.id, difficulty: '600', content: 'colors = ["red", "violet", "blue"]')
+question11 = Question.create(category_id: category2.id, difficulty: '800', content: 'days = ["mon", "tues", "wed", "thur", "fri"]
+                                                                                    Create an array of the elements with indexes 0 and 2. The return value should be ["mon", "wed"].')
+question12 = Question.create(category_id: category2.id, difficulty: '1000', content: 'What  does the following print
+                                                                                    enum = ("begin"..."finish").to_enum
+                                                                                    print enum.next
+                                                                                    print enum.next
+                                                                                    print enum.next')
 
 question14 = Question.create(category_id: category3.id, difficulty: '200', content: 'what is 5+2?')
 question15 = Question.create(category_id: category3.id, difficulty: '400', content: 'what is 5+1?')
@@ -46,7 +63,7 @@ question18 = Question.create(category_id: category3.id, difficulty: '1000', cont
 
 question20 = Question.create(category_id: category4.id, difficulty: '200', content: 'what is 5+2?')
 question21 = Question.create(category_id: category4.id, difficulty: '400', content: 'what is 5+1?')
-question22 = Question.create(category_id: category4.id, difficulty: '600', content: 'what is 5+3?')
+question22 = Question.create(category_id: category4.id, difficulty: '600', content: 'Question 17: What does the following print? print 10.step(100, 20).to_a')
 question23 = Question.create(category_id: category4.id, difficulty: '800', content: 'what is 5+4?')
 question24 = Question.create(category_id: category4.id, difficulty: '1000', content: 'what is 5+6?')
 
@@ -61,7 +78,7 @@ user = User.create(first_name: 'flat', last_name: 'iron', hometown: 'philly', pa
 
 player = Player.create(board_id: board, user_id: user.id, points: 100)
 
-option1 = Option.create(question_id: question.id, correct: false, content: 5)
-option2 = Option.create(question_id: question.id, correct: false, content: 7)
-option3 = Option.create(question_id: question.id, correct: false, content: 6)
-option4 = Option.create(question_id: question.id, correct: true, content: 10)
+option1 = Option.create(question_id: question.id, correct: false, content: 6)
+option2 = Option.create(question_id: question.id, correct: true, content: 8)
+option3 = Option.create(question_id: question.id, correct: false, content: 12)
+option4 = Option.create(question_id: question.id, correct: false, content: "error")
