@@ -21,11 +21,13 @@ class CurrentQuestion extends Component {
       questionId={option.question_id} />
     })
     return (
-      <div>
-        <h2>{this.props.info.content}</h2>
-        <ul>
-          {optionsComponents}
-        </ul>
+      <div className="screen">
+        <div className="modal question">
+          <h2>{this.props.info.content}</h2>
+          <ul>
+            {optionsComponents}
+          </ul>
+        </div>
       </div>
     )
   }

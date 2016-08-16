@@ -1,0 +1,92 @@
+@import './fonts/fonts.css';
+
+html, body {
+  box-sizing: border-box;
+}
+
+a, a:visited, a:active, a:focus {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  font-family: "Impact", sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+table a {
+  color: #e8a35d;
+  display: block;
+  height: 90%;
+  width: 90%;
+  padding: 5%;
+}
+
+table thead th {
+  font-size: 18px;
+  color: #a9d2fb;
+  background: #071ac4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #071ac4 0%, #041399 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #071ac4 0%,#041399 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #071ac4 0%,#041399 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#071ac4', endColorstr='#041399',GradientType=0 ); /* IE6-9 */ 
+  padding: 0 5px;
+}
+
+table th, table td {
+  border: 5px solid #03090f;
+  color: rgba(232, 163, 93, .5);
+  background: #04129b; 
+  background: -moz-linear-gradient(top,  #04129b 0%, #020d72 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #04129b 0%,#020d72 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #04129b 0%,#020d72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04129b', endColorstr='#020d72',GradientType=0 ); /* IE6-9 */
+}
+
+.screen {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0 ,.85)
+}
+.modal {
+  background: #071276;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 20px;
+  border: 5px solid #03090f;
+}
+
+.question {
+  padding: 5%;
+  font-family: "korinnabold", serif;
+  text-shadow: 1px 1px 0 #00011a;
+  color: #f9f9f9;
+}
+
+.question a {
+  color: #f9f9f9;
+}
+
+.question a:hover {
+  background-color: #;
+}
+
+.question ul {
+  list-style: none;
+}
+
+.question ul li {
+  padding: 3% 0;
+}
