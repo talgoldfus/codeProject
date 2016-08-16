@@ -19,6 +19,7 @@ componentWillMount(){
 
     return (
       <div>
+        <h1><a>GIFPARDY</a></h1>
           {topicslist}
       </div>
     )

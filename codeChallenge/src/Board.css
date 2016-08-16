@@ -1,11 +1,70 @@
 @import './fonts/fonts.css';
 
-html, body {
+* {
   box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #0a0f58; /* Old browsers */
+  background: -moz-linear-gradient(top,  #0a0f58 1%, #1132a2 25%, #1132a2 25%, #0d1c82 50%, #160a4b 62%, #160a4b 75%, #4a1080 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #0a0f58 1%,#1132a2 25%,#1132a2 25%,#0d1c82 50%,#160a4b 62%,#160a4b 75%,#4a1080 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #0a0f58 1%,#1132a2 25%,#1132a2 25%,#0d1c82 50%,#160a4b 62%,#160a4b 75%,#4a1080 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0f58', endColorstr='#4a1080',GradientType=0 ); /* IE6-9 */
+  font-size: 16px;
 }
 
 a, a:visited, a:active, a:focus {
   text-decoration: none;
+}
+
+h1 {
+  position: relative;
+  font-size: 200px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  font-family: "gyparodyregular", "Impact", sans-serif;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #f9f9f9;
+  position: absolute;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+}
+
+h1:after {
+  content : 'GIFPARDY';
+  color: #d6d6d6;
+  text-shadow: 0 3px 0 #666;
+}
+
+.grid {
+  width: 23%;
+  float: left;
+  margin: 1%;
+}
+.center {
+  text-align: center;
+}
+
+.stylized-link {
+  font-family: "gyparodyregular", "Impact", sans-serif;
+  font-size: 40px;
+  color: #f9f9f9;
+  padding: 20px;
+  display: inline-block;
+  background-color: #071276;
+  border-radius: 10px;  
+  text-shadow: 1px 1px 0 #00011a;
+  box-shadow: 1px 1px 3px #00011a;
+  margin-bottom: 20px;
+}
+
+.stylized-link:hover {
+  background-color: rgba(255, 255, 255, .3);
 }
 
 table {
@@ -22,9 +81,9 @@ table {
 table a {
   color: #e8a35d;
   display: block;
-  height: 90%;
-  width: 90%;
-  padding: 5%;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }
 
 table thead th {
@@ -38,6 +97,10 @@ table thead th {
   padding: 0 5px;
 }
 
+table td span {
+  cursor: not-allowed;
+}
+
 table th, table td {
   border: 5px solid #03090f;
   color: rgba(232, 163, 93, .5);
@@ -46,6 +109,7 @@ table th, table td {
   background: -webkit-linear-gradient(top,  #04129b 0%,#020d72 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #04129b 0%,#020d72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04129b', endColorstr='#020d72',GradientType=0 ); /* IE6-9 */
+  padding: 1%;
 }
 
 .screen {
@@ -54,7 +118,7 @@ table th, table td {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0 ,.85)
+  background-color: rgba(0, 0, 0 ,.8)
 }
 .modal {
   background: #071276;
@@ -65,7 +129,7 @@ table th, table td {
   width: 65%;
   height: 65%;
   border-radius: 20px;
-  border: 5px solid #03090f;
+  box-shadow: 3px 3px 5px #03090f;
 }
 
 .question {
@@ -77,16 +141,24 @@ table th, table td {
 
 .question a {
   color: #f9f9f9;
+  cursor: pointer;
+  display: block;
+  padding: 3%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .question a:hover {
-  background-color: #;
+  background-color: rgba(255, 255, 255, .3);
+  box-shadow: 1px 1px 3px #00011a;
 }
 
 .question ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .question ul li {
-  padding: 3% 0;
 }
