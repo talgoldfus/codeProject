@@ -3,15 +3,11 @@ import { Link } from 'react-router'
 
 class Cell extends Component {
 
-componentWillUpdate(){
-  // debugger
-}
 
   render(){
-
     return (
       <td id={this.props.id}>
-        <Link to={`/game/${this.props.boardId}/${this.props.id}`} >
+        <Link to={`/game/${this.props.boardId}/${this.props.id}`} onClick={()=>{this.props.removeLink(this.props.id)}} >
           {this.props.difficulty}
         </Link>
       </td>

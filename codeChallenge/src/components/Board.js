@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
-import Cell from './Cell'
+import CellContainer from '../containers/CellContainer'
+import InactiveCell from './InactiveCell'
 
 class Board extends Component {
 
@@ -11,6 +12,7 @@ componentWillMount(){
 }
 
 getQuestionsByIndex(idx, categories){
+
   var questionRow = []
     categories.forEach(category => {
       var first_key = Object.keys(category)[0]
@@ -19,8 +21,11 @@ getQuestionsByIndex(idx, categories){
   )
 
   return questionRow.map(quesObj => {
-      return (<Cell key={quesObj.id} content={quesObj.content} boardId={this.props.params.id} 
-    difficulty={quesObj.difficulty} id={quesObj.id}/>)
+    if (quesObj.active){
+        return (<CellContainer key={quesObj.id} content={quesObj.content} isActive={quesObj.active} boardId={this.props.params.id}
+        difficulty={quesObj.difficulty} id={quesObj.id}/>)}
+    return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
+
   })
 }
 
