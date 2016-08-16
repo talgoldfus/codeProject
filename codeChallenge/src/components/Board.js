@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import CellContainer from '../containers/CellContainer'
 import InactiveCell from './InactiveCell'
+import '../Board.css'
 
 class Board extends Component {
 
