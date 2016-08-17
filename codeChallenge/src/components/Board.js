@@ -45,8 +45,7 @@ populateRows(categories){
 
   render() {
   const all_scores = this.props.gameBoard.players || []
-  const scores = all_scores.map(ob => {
-    debugger; 
+  const scores = all_scores.map(ob => { 
       return ob.score
   })
   // debugger
