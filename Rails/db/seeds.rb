@@ -391,26 +391,26 @@ option68 = Option.create(question_id: question22.id, correct: false, content: '[
 
 #What happens when the following is run?
 # lambda { |i,j| }.call(1,2,3)
-option69 = Option.create(question_id: question23.id, correct: false, content: "TypeError: no implicit conversion of String into Integer")
-option70 = Option.create(question_id: question23.id, correct: false, content: "NameError: undefined local variable or method `lambda' for main:Object")
-option71 = Option.create(question_id: question23.id, correct: true, content: "ArgumentError: wrong number of arguments (3 for 2)")
-option72 = Option.create(question_id: question23.id, correct: false, content: "ArgumentError: wrong number of arguments (2 for 1)")
+option69 = Option.create(question_id: question24.id, correct: false, content: "TypeError: no implicit conversion of String into Integer")
+option70 = Option.create(question_id: question24.id, correct: false, content: "NameError: undefined local variable or method `lambda' for main:Object")
+option71 = Option.create(question_id: question24.id, correct: true, content: "ArgumentError: wrong number of arguments (3 for 2)")
+option72 = Option.create(question_id: question24.id, correct: false, content: "ArgumentError: wrong number of arguments (2 for 1)")
 
 #what does the following print
 # thang = "biscuits"
 # [1,2,3].each { |n; thang| thang = n }
 # puts thang
-option73 = Option.create(question_id: question24.id, correct: false, content: "biscuits biscuits biscuits")
-option74 = Option.create(question_id: question24.id, correct: false, content: "error")
-option75 = Option.create(question_id: question24.id, correct: false, content: "thang")
-option76 = Option.create(question_id: question24.id, correct: true, content: "biscuits")
+option73 = Option.create(question_id: question23.id, correct: false, content: "biscuits biscuits biscuits")
+option74 = Option.create(question_id: question23.id, correct: false, content: "error")
+option75 = Option.create(question_id: question23.id, correct: false, content: "thang")
+option76 = Option.create(question_id: question23.id, correct: true, content: "biscuits")
 
 #What happens when the following is run?
 # Proc.new { |i,j| }.call(1,2,3)
-option77 = Option.create(question_id: question26.id, correct: true, content: "nil")
-option78 = Option.create(question_id: question26.id, correct: false, content: "error)")
-option79 = Option.create(question_id: question26.id, correct: false, content: "{}")
-option80 = Option.create(question_id: question26.id, correct: false, content: "[]")
+# option77 = Option.create(question_id: question26.id, correct: true, content: "nil")
+# option78 = Option.create(question_id: question26.id, correct: false, content: "error)")
+# option79 = Option.create(question_id: question26.id, correct: false, content: "{}")
+# option80 = Option.create(question_id: question26.id, correct: false, content: "[]")
 
 # Create a Celsius class that is initialized with temperature.
 option81 = Option.create(question_id: question26.id, correct: false, content: "class Celsius
@@ -435,28 +435,27 @@ option84 = Option.create(question_id: question26.id, correct: false, content: "c
                                                                                 end")
 
 # Define a Calculator class with an add() class method.
-option85 = Option.create(question_id: question26.id, correct: false, content: "class Calculator
+option85 = Option.create(question_id: question27.id, correct: false, content: "class Calculator
                                                                                   def self.add(x, y)
                                                                                     return(x + y)
                                                                                   end
                                                                                 end
-
                                                                                 puts Calculator(3, 4)")
-option86 = Option.create(question_id: question26.id, correct: false, content: "class Calculator
+option86 = Option.create(question_id: question27.id, correct: false, content: "class Calculator
                                                                                 def add(x, y)
                                                                                   x + y
                                                                                 end
                                                                               end
 
                                                                               puts Calculator.add(3, 4)")
-option87 = Option.create(question_id: question26.id, correct: false, content: "class Calculator
+option87 = Option.create(question_id: question27.id, correct: false, content: "class Calculator
                                                                                 def add(x, y)
                                                                                   return(x + y)
                                                                                 end
                                                                               end
 
                                                                               puts Calculator.add(3, 4)")
-option88 = Option.create(question_id: question26.id, correct: true, content: "class Calculator
+option88 = Option.create(question_id: question27.id, correct: true, content: "class Calculator
                                                                                 def self.add(x, y)
                                                                                   return(x + y)
                                                                                 end
@@ -478,7 +477,7 @@ option88 = Option.create(question_id: question26.id, correct: true, content: "cl
     # Person.new("Jeter", 39)
   # end
 # end
-option89 = Option.create(question_id: question26.id, correct: true, content: 'class Person
+option89 = Option.create(question_id: question28.id, correct: true, content: 'class Person
                                                                                 def initialize(args)
                                                                                   @name = args.fetch(:name)
                                                                                   @age = args.fetch(:age)
@@ -490,7 +489,7 @@ option89 = Option.create(question_id: question26.id, correct: true, content: 'cl
                                                                                   Person.new({ name: "Jeter", age: 39 })
                                                                                 end
                                                                               end')
-option90 = Option.create(question_id: question26.id, correct: false, content: 'class Person
+option90 = Option.create(question_id: question28.id, correct: false, content: 'class Person
                                                                                 def initialize(args)
                                                                                   @name = args(:name)
                                                                                   @age = args(:age)
@@ -502,7 +501,7 @@ option90 = Option.create(question_id: question26.id, correct: false, content: 'c
                                                                                   Person.new({ name: "Jeter", age: 39 })
                                                                                 end
                                                                               end')
-option91 = Option.create(question_id: question26.id, correct: false, content: 'class Person
+option91 = Option.create(question_id: question28.id, correct: false, content: 'class Person
                                                                                 def initialize(args)
                                                                                   @name = args.fetch(name)
                                                                                   @age = args.fetch(age)
@@ -514,7 +513,7 @@ option91 = Option.create(question_id: question26.id, correct: false, content: 'c
                                                                                   Person.new({ name: "Jeter", age: 39 })
                                                                                 end
                                                                               end')
-option92 = Option.create(question_id: question26.id, correct: false, content: 'class Person
+option92 = Option.create(question_id: question28.id, correct: false, content: 'class Person
                                                                                   def initialize(args)
                                                                                     @name = args.fetch(:name)
                                                                                     @age = args.fetch(:age)
@@ -536,10 +535,10 @@ option92 = Option.create(question_id: question26.id, correct: false, content: 'c
   # b.local_variable_get(:y)
 # end
 # p hi(b)
-option93 = Option.create(question_id: question26.id, correct: false, content: "hi cat")
-option94 = Option.create(question_id: question26.id, correct: false, content: "error)")
-option95 = Option.create(question_id: question26.id, correct: true, content: "cat")
-option96 = Option.create(question_id: question26.id, correct: false, content: "nil")
+option93 = Option.create(question_id: question29.id, correct: false, content: "hi cat")
+option94 = Option.create(question_id: question29.id, correct: false, content: "error)")
+option95 = Option.create(question_id: question29.id, correct: true, content: "cat")
+option96 = Option.create(question_id: question29.id, correct: false, content: "nil")
 
 # What does the following code print?
 
@@ -552,7 +551,7 @@ option96 = Option.create(question_id: question26.id, correct: false, content: "n
 
 # piggy = Pig.new
 # p piggy.sound
-option97 = Option.create(question_id: question26.id, correct: false, content: "nil")
-option98 = Option.create(question_id: question26.id, correct: true, content: "error)")
-option99 = Option.create(question_id: question26.id, correct: false, content: "oink!")
-option100 = Option.create(question_id: question26.id, correct: false, content: "#Pig:0x007ff24ab73d58")
+option97 = Option.create(question_id: question30.id, correct: false, content: "nil")
+option98 = Option.create(question_id: question30.id, correct: true, content: "error)")
+option99 = Option.create(question_id: question30.id, correct: false, content: "oink!")
+option100 = Option.create(question_id: question30.id, correct: false, content: "#Pig:0x007ff24ab73d58")
