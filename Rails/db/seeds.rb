@@ -78,7 +78,29 @@ user = User.create(first_name: 'flat', last_name: 'iron', hometown: 'philly', pa
 
 game = Game.create(board_id: board.id, user_id: user.id, final_score: 1000)
 
+
 option1 = Option.create(question_id: question.id, correct: false, content: 6)
-option2 = Option.create(question_id: question.id, correct: true, content: 8)
-option3 = Option.create(question_id: question.id, correct: false, content: 12)
-option4 = Option.create(question_id: question.id, correct: false, content: "error")
+option4 = Option.create(question_id: question3.id, correct: false, content: "error")
+option5 = Option.create(question_id: question4.id, correct: false, content: 6)
+option6 = Option.create(question_id: question5.id, correct: true, content: 8)
+
+
+option9 = Option.create(question_id: question8.id, correct: false, content: 6)
+option10 = Option.create(question_id: question9.id, correct: true, content: 8)
+option11 = Option.create(question_id: question10.id, correct: false, content: 12)
+option12 = Option.create(question_id: question11.id, correct: false, content: "error")
+
+
+option15 = Option.create(question_id: question14.id, correct: false, content: 12)
+option16 = Option.create(question_id: question15.id, correct: false, content: "error")
+option17 = Option.create(question_id: question16.id, correct: false, content: 6)
+option18 = Option.create(question_id: question17.id, correct: true, content: 8)
+
+
+option21 = Option.create(question_id: question20.id, correct: false, content: 6)
+option22 = Option.create(question_id: question21.id, correct: true, content: 8)
+option23 = Option.create(question_id: question22.id, correct: false, content: 12)
+option24 = Option.create(question_id: question23.id, correct: false, content: "error")
+
+
+option25 = Option.create(question_id: question26.id, correct: false, content: 6)
