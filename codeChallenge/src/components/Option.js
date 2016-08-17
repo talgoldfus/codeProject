@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
+import { Link } from 'react-router'
 
 const Option = class extends Component {
   // constructor(props) {
@@ -7,13 +7,12 @@ const Option = class extends Component {
   //   debugger
   //   // this.state = {score: 0}
   // }
-  
-  checkAnswer(e) {
-    e.preventDefault()
+
+  checkAnswer() {
     if (this.props.correct === true ) {
       // let current_score = this.state.score
-      // this.setState({score: current_score += this.props.difficulty})      
-      alert("CORRECT")      
+      // this.setState({score: current_score += this.props.difficulty})
+      alert("CORRECT")
         this.props.evaluateAnswer(this.props.correct, this.props.difficulty)
         // $('.modal.question').hide()
         // $('.screen').hide()
@@ -29,9 +28,9 @@ const Option = class extends Component {
     return (
       <div ref={this.props.correct}>
         <li>
-          <a href="#" onClick={this.checkAnswer.bind(this)}>
+          <Link to={`/game/${this.props.id}`} onClick={this.checkAnswer.bind(this)}>
             {this.props.content}
-          </a>
+          </Link>
         </li>
       </div>
     )
