@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :categories, except: [:new, :edit]
       resources :questions, except: [:new, :edit]
       resources :options, except: [:new, :edit]
+      resources :game_options, except: [:new, :edit]
       get "/sessions" => "sessions#create"
     end
   end

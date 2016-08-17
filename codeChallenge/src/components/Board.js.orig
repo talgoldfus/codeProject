@@ -5,9 +5,29 @@ import InactiveCell from './InactiveCell'
 import '../Board.css'
 
 class Board extends Component {
-
   componentWillMount(){
     this.props.getBoard(this.props.params.id)
+<<<<<<< f024100114375143a80c56e9351ae436a8b4ab1f
+  }
+
+
+getQuestionsByIndex(idx, categories){
+  var questionRow = []
+    categories.forEach(category => {
+      var first_key = Object.keys(category)[0]
+      questionRow.push(category[first_key][idx])
+    }
+  )
+
+  return questionRow.map(quesObj => {
+    if (quesObj.active){
+        return (<CellContainer key={quesObj.id} content={quesObj.content} isActive={quesObj.active} boardId={this.props.params.id}
+        difficulty={quesObj.difficulty} id={quesObj.id}/>)}
+    return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
+  })
+
+}
+=======
     }
     componentWillReceiveProps(nextProps) {
        if(nextProps.finished === 2 && this.props.gameBoard.players[0].userId) {
@@ -31,6 +51,7 @@ class Board extends Component {
     })
   }
 
+>>>>>>> Adds game option join table for analytics
 
   populateRows(categories){
     let rowCells=[]
