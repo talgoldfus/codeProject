@@ -11,8 +11,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-function mapStateToProps(state) {
-  debugger; 
+function mapStateToProps(state) { 
     return {userId: state.board.players[0].userId}
 }
 
