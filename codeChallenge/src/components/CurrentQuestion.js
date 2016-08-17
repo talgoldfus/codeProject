@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
 import OpenOptionContainer from '../containers/openOptionContainer'
 
-
-
-// import $ from 'jquery'
-
 class CurrentQuestion extends Component {
 
   componentWillMount() {
@@ -21,8 +17,6 @@ class CurrentQuestion extends Component {
   }
 
   render(){
-    // $('.modal.question').show()
-    // $('.screen').show()
     const currentOptions = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
     let optionsComponents ;
