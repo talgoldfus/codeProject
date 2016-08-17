@@ -11,11 +11,11 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-// function mapStateToProps(state) {
-//     return {state}
-// }
+function mapStateToProps(state) {
+    return {userId: state.board.players[0].userId}
+}
 
-const optionContainer = connect(null, mapDispatchToProps)(Option)
+const optionContainer = connect(mapStateToProps, mapDispatchToProps)(Option)
 
 export default optionContainer
 
