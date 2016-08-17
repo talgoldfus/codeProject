@@ -21,10 +21,13 @@ class CurrentQuestion extends Component {
     // $('.screen').show()
     const optionsArray = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
+
     const optionsComponents = optionsArray.map(option=>{
       return <OptionContainer content={option.content} key={option.id} correct={option.correct}
       questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
     },this)
+
+
     return (
       <div className="screen">
         <div className="modal question">

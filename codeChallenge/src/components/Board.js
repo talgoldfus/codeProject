@@ -11,8 +11,11 @@ class Board extends Component {
   }
 
   // componentWillReceiveProps(nextProps) {
-  //   debugger    
+  //   debugger
   // }
+
+
+
 
 getQuestionsByIndex(idx, categories){
   var questionRow = []
@@ -27,16 +30,25 @@ getQuestionsByIndex(idx, categories){
         return (<CellContainer key={quesObj.id} content={quesObj.content} isActive={quesObj.active} boardId={this.props.params.id}
         difficulty={quesObj.difficulty} id={quesObj.id}/>)}
     return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
-
   })
+
+
+
 }
+
 
 populateRows(categories){
   let rowCells=[]
+  let inactiveRows = 0
   for(let i=0; i<categories.length; i++){
-    rowCells.push(<tr>{this.getQuestionsByIndex(i, categories)}</tr>)
+    let row = this.getQuestionsByIndex(i, categories)
+    rowCells.push(<tr>{row}</tr>)
+    if (row.filter((question)=>{return question.type.name !== "InactiveCell"}).length < 1)
+    { inactiveRows += 1}
   }
+  if (inactiveRows > 5){ alert("No more questions")}
   return rowCells
+
 }
 
   render() {

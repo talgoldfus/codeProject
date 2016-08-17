@@ -28,7 +28,7 @@ const Option = class extends Component {
     return (
       <div ref={this.props.correct}>
         <li>
-          <Link to={`/game/${this.props.id}`} onClick={this.checkAnswer.bind(this)}>
+          <Link to={`/game/${this.props.boardId}`} onClick={this.checkAnswer.bind(this)}>
             {this.props.content}
           </Link>
         </li>
