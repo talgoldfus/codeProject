@@ -4,5 +4,4 @@ class Question < ApplicationRecord
   has_many :open_options
 
 
-
 end
