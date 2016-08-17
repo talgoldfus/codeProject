@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
+// import $ from 'jquery'
 
 class CurrentQuestion extends Component {
 
@@ -16,6 +17,8 @@ class CurrentQuestion extends Component {
   }
 
   render(){
+    // $('.modal.question').show()
+    // $('.screen').show()
     const optionsArray = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
     const optionsComponents = optionsArray.map(option=>{
