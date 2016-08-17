@@ -7,6 +7,7 @@ class Topic extends Component {
   // }
 
 render(){
+  
   return (
       <div id={this.props.id} className="grid">
         <Link to={`/game/${this.props.id}`} className="stylized-link">{this.props.name}</Link>

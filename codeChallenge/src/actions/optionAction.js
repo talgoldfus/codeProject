@@ -1,8 +1,17 @@
 export default function correctAnswer(answer, difficulty) {
-  return {    
-    type:'CORRECT_ANSWER',
-    answer: answer,
-    points: difficulty
+  let points = difficulty
+
+  if ( answer === true ) {
+    alert("CORRECT")
+  } else {
+    alert("FALSE")
+      points = (difficulty*-1)
+  }
+
+
+  return {
+    type:'ANSWER',
+    points: points
   }
 }
 
@@ -12,4 +21,3 @@ export default function correctAnswer(answer, difficulty) {
     // correct: answer
   // }
 // }
-

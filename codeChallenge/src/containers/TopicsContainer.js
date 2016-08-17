@@ -16,4 +16,3 @@ function mapStateToProps(state) {
 const SmartTopicsContainer = connect(mapStateToProps, mapDispatchToProps)(TopicsList)
 
 export default SmartTopicsContainer
-
