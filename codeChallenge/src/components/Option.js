@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const Option = class extends Component {
 
   handleClick(){
-    this.props.updateAnalytics(this.props.id) 
+    this.props.updateAnalytics(this.props.id, this.props.userId) 
     this.props.evaluateAnswer(this.props.correct,this.props.difficulty)
   }
 
@@ -12,7 +12,7 @@ const Option = class extends Component {
     return (
       <div ref={this.props.correct}>
         <li>
-          <Link to={`/game/${this.props.boardId}`} onClick={this.checkAnswer.bind(this)}>
+          <Link to={`/game/${this.props.boardId}`} onClick={this.handleClick.bind(this)}>
             {this.props.content}
           </Link>
         </li>
