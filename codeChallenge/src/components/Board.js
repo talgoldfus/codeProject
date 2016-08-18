@@ -10,7 +10,7 @@ class Board extends Component {
     this.props.getBoard(this.props.params.id)
     }
     componentWillReceiveProps(nextProps) {
-       if(nextProps.finished === 2 && this.props.gameBoard.players[0].userId) {
+       if(nextProps.finished === 5 && this.props.gameBoard.players[0].userId) {
           this.props.finalAnalytics(this.props.gameBoard.players[0].userId, this.props.optionIds)
         } 
      }

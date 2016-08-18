@@ -9,7 +9,7 @@ module Api
         user.save
         
         params[:optionIds][:options].each do |param|
-          GameOption.create(game_id: game.id, option_id: param)
+          GameOption.create(game_id: game.id, option_id: param[:optionId], correct: param[:correct])
         end
       end
       

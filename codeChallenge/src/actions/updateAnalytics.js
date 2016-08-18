@@ -1,7 +1,7 @@
-export default function updateAnalytics(option, userId) {
+export default function updateAnalytics(optionId, correct, userId, error) {
   return {    
     type:'OPTION_ANALYTICS',
-    option: option, 
+    option: {optionId, correct, userId, error}, 
     userId: userId
   }
 }
