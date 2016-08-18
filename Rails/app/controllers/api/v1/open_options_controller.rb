@@ -3,8 +3,10 @@ module Api
     class OpenOptionsController < ApplicationController
 
           def asses
-            byebug
+           userAnswer = AssesOpenOption.asses(params[:userAnswer], params[:correcAnswer])
+           render json: userAnswer
           end
+
     end
   end
 end
