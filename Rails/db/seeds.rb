@@ -12,6 +12,7 @@ Question.destroy_all
 User.destroy_all
 Game.destroy_all
 Option.destroy_all
+OpenOption.destroy_all
 
 board = Board.create(topic: 'ruby')
 board2= Board.create(topic: 'sql')
@@ -154,11 +155,11 @@ user = User.create(first_name: 'flat', last_name: 'iron', hometown: 'philly', pa
 
 game = Game.create(board_id: board.id, user_id: user.id, final_score: 1000)
 
-#What does the following expression evaluate to? 2 ** 3
-option1 = Option.create(question_id: question.id, correct: false, content: 6)
-option2 = Option.create(question_id: question.id, correct: true, content: 8)
-option3 = Option.create(question_id: question.id, correct: false, content: 12)
-option4 = Option.create(question_id: question.id, correct: false, content: "error")
+# #What does the following expression evaluate to? 2 ** 3
+# option1 = Option.create(question_id: question.id, correct: false, content: 6)
+# option2 = Option.create(question_id: question.id, correct: true, content: 8)
+# option3 = Option.create(question_id: question.id, correct: false, content: 12)
+# option4 = Option.create(question_id: question.id, correct: false, content: "error")
 
 #What does the following code return?
 #   def add(x, y)
@@ -555,3 +556,5 @@ option97 = Option.create(question_id: question30.id, correct: false, content: "n
 option98 = Option.create(question_id: question30.id, correct: true, content: "error)")
 option99 = Option.create(question_id: question30.id, correct: false, content: "oink!")
 option100 = Option.create(question_id: question30.id, correct: false, content: "#Pig:0x007ff24ab73d58")
+
+open_option = OpenOption.create(question_id: question.id , correct_answer: "6" ,language:"JS")

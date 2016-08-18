@@ -3,21 +3,22 @@ import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
 import  checkOpenAnswer from '../actions/checkOpenAnswer'
 
+import {browserHistory} from 'react-router';
+
 
 class OpenOption extends Component {
 
 
-  checkQuestoin(formInput){
-
-    this.props.checkOpenAnswer(formInput,this.props)
-
+checkQuestion(formInput){
+    checkOpenAnswer(formInput,this.props)
+    browserHistory.push(`/game/${this.props.boardId}`)
   }
 
   render(){
               const { fields: { content }, handleSubmit } = this.props;
   return  (
         <div>
-          <form onSubmit={handleSubmit(this.checkQuestoin.bind(this))}>
+          <form onSubmit={handleSubmit(this.checkQuestion.bind(this))}>
           <div >
             <label>Content</label>
             <textarea className="form-control" {...content} />
@@ -27,10 +28,8 @@ class OpenOption extends Component {
         </div>
       )
 
-        //
-        // <Link to={`/game/${this.props.boardId}`} onClick={this.checkAnswer.bind(this)}>
-        //   {this.props.content}
-        // </Link>
+
+
   }
 }
 

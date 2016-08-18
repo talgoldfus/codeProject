@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :open_options
   namespace :api do
     namespace :v1 do
       resources :users, except: [:new, :edit]

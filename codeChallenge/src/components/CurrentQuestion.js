@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
+import OpenOptionContainer from '../containers/openOptionContainer'
+
+
+
 // import $ from 'jquery'
 
 class CurrentQuestion extends Component {
@@ -19,14 +23,19 @@ class CurrentQuestion extends Component {
   render(){
     // $('.modal.question').show()
     // $('.screen').show()
-    const optionsArray = this.props.info.options || []
+    const currentOptions = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
+    let optionsComponents ;
 
-    const optionsComponents = optionsArray.map(option=>{
-      return <OptionContainer content={option.content} key={option.id} correct={option.correct}
-      questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
-    },this)
-
+    if(Array.isArray(currentOptions)){
+      optionsComponents = currentOptions.map(option=>{
+        return <OptionContainer content={option.content} key={option.id} correct={option.correct}
+        questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
+      },this)
+    }
+    else{
+      optionsComponents = <OpenOptionContainer answer={currentOptions.correct_answer} language={currentOptions.language} key={currentOptions.id} questionId={currentOptions.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
+    }
 
     return (
       <div className="screen">

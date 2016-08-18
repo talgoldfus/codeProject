@@ -1,0 +1,2 @@
+class OpenOptionsController < ApplicationController
+end

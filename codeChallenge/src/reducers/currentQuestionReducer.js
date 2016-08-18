@@ -1,10 +1,9 @@
 const currentQuestionReducer = (state=[], action) => {
   switch (action.type) {
   case 'GET_CURRENT_QUESTION':
-  debugger
   let questionData = action.payload.data
     return {
-      options: questionData.options,
+      options: questionData.open_options[0] || questionData.options,
       content: questionData.content,
       difficulty: questionData.difficulty
     }

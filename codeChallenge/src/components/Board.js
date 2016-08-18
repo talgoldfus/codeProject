@@ -10,12 +10,6 @@ class Board extends Component {
     this.props.getBoard(this.props.params.id)
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   debugger
-  // }
-
-
-
 
 getQuestionsByIndex(idx, categories){
   var questionRow = []
@@ -31,8 +25,6 @@ getQuestionsByIndex(idx, categories){
         difficulty={quesObj.difficulty} id={quesObj.id}/>)}
     return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
   })
-
-
 
 }
 
