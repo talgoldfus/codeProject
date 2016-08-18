@@ -11,7 +11,7 @@ class Board extends Component {
     }
     componentWillReceiveProps(nextProps) {
        if(nextProps.finished === 5 && this.props.gameBoard.players[0].userId) {
-          this.props.finalAnalytics(this.props.gameBoard.players[0].userId, this.props.optionIds)
+          this.props.finalAnalytics(this.props.gameBoard.players[0].userId, this.props.params.id, this.props.optionIds)
         } 
      }
 

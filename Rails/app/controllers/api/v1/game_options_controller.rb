@@ -4,7 +4,7 @@ module Api
 
       def create
         user = User.find(params[:userId])
-        game = Game.create(board_id: params[:board_id], user_id: user.id, final_score: params[:final_score])
+        game = Game.create(board_id: params[:boardId].to_i, user_id: user.id, final_score: params[:final_score])
         user.games.push(game)
         user.save
         

@@ -24,7 +24,7 @@ class CurrentQuestion extends Component {
     if(Array.isArray(currentOptions)){
       optionsComponents = currentOptions.map(option=>{
         return <OptionContainer content={option.content} key={option.id} correct={option.correct}
-        questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
+        questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id} id={option.id} />
       },this)
     }
     else{
