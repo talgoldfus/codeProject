@@ -3,13 +3,12 @@ module Api
     class GameOptionsController < ApplicationController
 
       def create
-        byebug
-        user = User.find(params[:userId])
-        game = Game.create(board_id: params[:boardId].to_i, user_id: user.id, final_score: params[:final_score])
+        user = User.find(params[:boardInfo][:userId])
+        game = Game.create(board_id: params[:boardInfo][:boardId].to_i, user_id: user.id, final_score: params[:boardInfo][:score])
         user.games.push(game)
         user.save
         
-        params[:optionIds][:options].each do |param|
+        params[:optionsInfo].each do |param|
           GameOption.create(game_id: game.id, option_id: param[:optionId], correct: param[:correct])
         end
       end
