@@ -17,7 +17,7 @@ module Api
         return nil unless user && user.id
         {
           auth_token: AuthToken.encode({ user_id: user.id }),
-          user: { id: user.id } # return whatever user info you need
+          user: { id: user.id }
         }
       end
     

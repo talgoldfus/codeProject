@@ -3,14 +3,16 @@ import { Route } from 'react-router'
 import App from './components/App'
 import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
-import Signup from './components/signup'
 import SmartTopicsContainer from './containers/TopicsContainer'
+import Signin from './components/Signin'
+import Signup from './components/Signup'
 
 export default (
   <div>
     <Route path="/" component={App} />
-    <Route path="signup" component={Signup} /> 
-    <Route path="board" component={SmartTopicsContainer} />
+    <Route path="signin" component={Signin} /> 
+    <Route path="signup" component={Signup} />
+    <Route path="game" component={SmartTopicsContainer} />
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>

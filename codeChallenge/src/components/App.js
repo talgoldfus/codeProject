@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import SignupHeader from '../components/SignupHeader'
+import SigninHeader from '../components/SigninHeader'
 
 class App extends Component {
   render() {
     return (
       <div className="center">
-          <SignupHeader />
+          <SigninHeader />
       </div>
     )
   }
@@ -13,5 +13,3 @@ class App extends Component {
 }
 
 export default App
-
-          // <SmartTopicsContainer />
