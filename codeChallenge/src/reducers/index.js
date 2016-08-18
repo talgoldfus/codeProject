@@ -3,7 +3,16 @@ import board from './boardReducer.js'
 import topics from './topicReducer.js'
 import currentQuestion from './currentQuestionReducer.js'
 import optionReducer from './optionReducer.js'
-import sessionsReducer from './sessionsReducer'
+import authReducer from './authReducer'
+import { reducer as formReducer } from 'redux-form'
 
+const rootReducer = combineReducers({
+  authentication: authReducer,
+  form: formReducer,
+  board: board,
+  topics: topics,
+  currentQuestion: currentQuestion,
+  optionReducer: optionReducer
+})
 
-export default combineReducers({board,topics,currentQuestion, optionReducer, sessionsReducer})
+export default rootReducer
