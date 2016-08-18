@@ -28,9 +28,13 @@ class GameOption < ApplicationRecord
       end 
   end
 
-  def self.user_average_score(user_id)
-    Game.where(user_id: user_id).average('final_score').to_i
-  end
+  # def self.user_average_score(user_id)
+  #   Game.where(user_id: user_id).average('final_score').to_i
+  # end
+
+  # def self.board_average_score 
+  #   Game.where(board_id: board_id).average('final_score').to_i 
+  # end 
 
 
 end

@@ -17,4 +17,8 @@ class Board < ApplicationRecord
 
   end
 
+  def average_score 
+    Game.find_average_score('board', self.id)
+  end
+
 end
