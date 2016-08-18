@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
 import OpenOptionContainer from '../containers/openOptionContainer'
 
-
-
-// import $ from 'jquery'
-
 class CurrentQuestion extends Component {
 
   componentWillMount() {

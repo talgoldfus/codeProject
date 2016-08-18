@@ -8,47 +8,50 @@ class Board extends Component {
 
   componentWillMount(){
     this.props.getBoard(this.props.params.id)
-  }
-
-
-getQuestionsByIndex(idx, categories){
-  var questionRow = []
-    categories.forEach(category => {
-      var first_key = Object.keys(category)[0]
-      questionRow.push(category[first_key][idx])
     }
-  )
+    componentWillReceiveProps(nextProps) {
+       if(nextProps.finished === 2 && this.props.gameBoard.players[0].userId) {
+          this.props.finalAnalytics(this.props.gameBoard.players[0].userId, this.props.optionIds)
+        } 
+     }
 
-  return questionRow.map(quesObj => {
-    if (quesObj.active){
-        return (<CellContainer key={quesObj.id} content={quesObj.content} isActive={quesObj.active} boardId={this.props.params.id}
-        difficulty={quesObj.difficulty} id={quesObj.id}/>)}
-    return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
-  })
+  getQuestionsByIndex(idx, categories){
+    var questionRow = []
+      categories.forEach(category => {
+        var first_key = Object.keys(category)[0]
+        questionRow.push(category[first_key][idx])
+      }
+    )
 
-}
-
-
-populateRows(categories){
-  let rowCells=[]
-  let inactiveRows = 0
-  for(let i=0; i<categories.length; i++){
-    let row = this.getQuestionsByIndex(i, categories)
-    rowCells.push(<tr>{row}</tr>)
-    if (row.filter((question)=>{return question.type.name !== "InactiveCell"}).length < 1)
-    { inactiveRows += 1}
+    return questionRow.map(quesObj => {
+      if (quesObj.active){
+          return (<CellContainer key={quesObj.id} content={quesObj.content} isActive={quesObj.active} boardId={this.props.params.id}
+          difficulty={quesObj.difficulty} id={quesObj.id}/>)}
+      return (<InactiveCell key={quesObj.id} difficulty={quesObj.difficulty} />)
+    })
   }
-  if (inactiveRows > 5){ alert("No more questions")}
-  return rowCells
 
-}
+
+  populateRows(categories){
+    let rowCells=[]
+    let inactiveRows = 0
+    for(let i=0; i<categories.length; i++){
+      let row = this.getQuestionsByIndex(i, categories)
+      rowCells.push(<tr>{row}</tr>)
+      if (row.filter((question)=>{return question.type.name !== "InactiveCell"}).length < 1)
+      { inactiveRows += 1}
+    }
+    return rowCells
+
+  }
 
   render() {
+
   const all_scores = this.props.gameBoard.players || []
   const scores = all_scores.map(ob => {
       return ob.score
   })
-  // debugger
+  
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
     return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
@@ -57,21 +60,21 @@ populateRows(categories){
 
     return (
         <div>
-        <table>
-          <thead>
-            <tr>
-              {headers}
-            </tr>
-          </thead>
-          <tbody>
-            {this.populateRows(categories)}
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                {headers}
+              </tr>
+            </thead>
+            <tbody>
+              {this.populateRows(categories)}
+            </tbody>
+          </table>
+          <div>
+            {this.props.children}
+          </div>
         <div>
-        {this.props.children}
-        </div>
-        <div>
-        Score: {scores}
+          Score: {scores}
         </div>
       </div>
 

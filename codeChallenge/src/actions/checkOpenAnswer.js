@@ -23,8 +23,10 @@ export default function checkOpenAnswer(formInput,props){
     errorTest.then((e) => {
       if (!e){
         if (typeof(eval(userAnswer)) === "function"){
-             calculatedAnswer = ( correcAnswer  === (eval(userAnswer)()).toString() )
-          }else{
+            let userAssedAnswer = eval(userAnswer)() || "undefined"
+             alert("Return value is " + userAssedAnswer )
+             calculatedAnswer = ( correcAnswer  === (userAssedAnswer).toString() )
+          } else{
              calculatedAnswer = ( correcAnswer  === (eval(userAnswer).toString()) )
           }
           props.evaluateAnswer(calculatedAnswer , props.difficulty)
@@ -47,7 +49,7 @@ export default function checkOpenAnswer(formInput,props){
   //       }).then((answer)=>{
   //         props.evaluateAnswer(answer,props.difficulty)
   //       })
-  
+
     default:
     null
   }
