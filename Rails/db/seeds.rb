@@ -151,7 +151,7 @@ question30 = Question.create(category_id: category5.id, difficulty: '1000', cont
                                                                                       piggy = Pig.new
                                                                                       p piggy.sound')
 
-user = User.create(first_name: 'flat', last_name: 'iron', hometown: 'philly', password_digest: 'flatiron', tagline: 'working')
+user = User.create(hometown: 'philly', password_digest: 'flatiron', tagline: 'working', email: 'flatiron')
 
 game = Game.create(board_id: board.id, user_id: user.id, final_score: 1000)
 
