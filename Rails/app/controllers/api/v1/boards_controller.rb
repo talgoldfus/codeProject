@@ -15,6 +15,9 @@ module Api
         render json: new_board
       end
 
+      def analytics 
+      end 
+
     end
   end
 end
