@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SmartTopicsContainer from '../containers/TopicsContainer'
 import '../index.css'
-import AuthContainer from '../containers/AuthContainer'
+// import AuthContainer from '../containers/AuthContainer'
 import SigninHeader from '../components/SigninHeader'
 
 
