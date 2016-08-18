@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import SmartTopicsContainer from '../containers/TopicsContainer'
 import '../index.css'
 import AuthContainer from '../containers/AuthContainer'
-import SignupHeader from '../components/SignupHeader'
+import SigninHeader from '../components/SigninHeader'
+
 
 
 class App extends Component {
   render() {
     return (
       <div className="center">
-          <SignupHeader />
+          <SigninHeader />
       </div>
     )
   }
 
 }
+
 
 export default App

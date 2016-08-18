@@ -4,13 +4,16 @@ import { connect } from 'react-redux'
 import authenticate from '../actions/authAction'
 import { bindActionCreators } from 'redux'
 
-class SignupHeader extends Component {
+class SigninHeader extends Component {
 
   authButton(){        
     if(!this.props.authenticated){
       return(<p>
-        <Link to="/signup">
-            Sign Up
+        <Link to="signin">
+            Sign in
+        </Link><br/>
+        <br/><Link to="signup">
+          Sign up
         </Link>
       </p>  )
     } 
@@ -35,4 +38,4 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({authenticate: authenticate}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(SigninHeader)

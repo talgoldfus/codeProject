@@ -1,85 +1,63 @@
-import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
-import signupUser from '../actions/authAction';
+// simple form that calls an action to dispatch to user/create
+// send back the user data to react
+// call the signinUser and pass through the user info
+
+// need an action, reducer, container
+
+import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import signupUser from '../actions/signupAction'
+import signinUser from '../actions/authAction';
 
+// import * as AuthActionCreators from '../actions/authAction'
 
-class Signup extends Component {
-  handleFormSubmit(formProps) {
-    this.props.signupUser(formProps);
-  }
-
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div className="alert alert-danger">
-          <strong>Oops!</strong> {this.props.errorMessage}
-        </div>
-      );
+class SignupUser extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: '',
+      password: ''
     }
   }
 
+  handleEmailChange(event) {
+    this.setState({user: event.target.value})    
+  }
+
+  handlePasswordChange(event) {
+    this.setState({password: event.target.value})
+  }
+
+  login(e) {
+    e.preventDefault()
+    this.props.signupUser(this.state.user, this.state.password)
+    this.props.signinUser(this.state)
+
+  }
+
   render() {
-    const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
-
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <input className="form-control" {...email} />
-          {email.touched && email.error && <div className="error">{email.error}</div>}
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <input className="form-control" {...password} type="password" />
-          {password.touched && password.error && <div className="error">{password.error}</div>}
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Confirm Password:</label>
-          <input className="form-control" {...passwordConfirm} type="password" />
-          {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
-        </fieldset>
-        {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign up!</button>
+    <div>
+      <form role="form">
+        <div className="form-group">
+          <input type="text" value={this.state.user} onChange={this.handleEmailChange.bind(this)} placeholder="Email" />
+          <input type="password" value={this.state.password} onChange={this.handlePasswordChange.bind(this)} placeholder="Password" />
+        </div>
+        <button type="submit" onClick={this.login.bind(this)}>Create Login</button>
       </form>
-    );
+    </div>
+
+    )
   }
 }
 
-function validate(formProps) {
-  const errors = {};
-
-  if (!formProps.email) {
-    errors.email = 'Please enter an email';
-  }
-
-  if (!formProps.password) {
-    errors.password = 'Please enter a password';
-  }
-
-  if (!formProps.passwordConfirm) {
-    errors.passwordConfirm = 'Please enter a password confirmation';
-  }
-
-  if (formProps.password !== formProps.passwordConfirm) {
-    errors.password = 'Passwords must match';
-  }
-
-  return errors;
-}
-
-function mapStateToProps(state) {
-  return { errorMessage: state.error };
-}
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({signupUser: signupUser}, dispatch)
+  // return bindActionCreators(AuthActionCreators, dispatch)
+  return bindActionCreators({signupUser: signupUser, signinUser: signinUser}, dispatch)
 }
 
-// const ErrorsState = connect(mapStateToProps, null)(Signup)
+const Signup = connect(null, mapDispatchToProps)(SignupUser)
 
-export default reduxForm({
-  form: 'signup',
-  fields: ['email', 'password', 'passwordConfirm'],
-  validate
-}, mapStateToProps, mapDispatchToProps)(Signup);
+export default Signup
