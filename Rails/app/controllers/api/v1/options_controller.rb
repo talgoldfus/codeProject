@@ -2,6 +2,7 @@ module Api
   module V1
     class OptionsController < ApplicationController
 
+      
       def index
 
         if params[:grab_options_for]
