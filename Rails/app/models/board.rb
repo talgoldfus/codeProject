@@ -1,7 +1,7 @@
 class Board < ApplicationRecord
   has_many :games
   has_many :categories
-  has_many :question , through: :categories
+  has_many :questions, through: :categories
 
   #This returns an array for every instance of a board, which is redundant.
   #This might be useful elsewhere, but not in the serializer
