@@ -1,18 +1,41 @@
 import $ from 'jquery'
+import { browserHistory } from 'react-router'
 
-export default function authAction(user, password) {
-  $.ajax({
-    url: "http://localhost:3000/api/v1/authenticate",
-    method: "POST",
-    data: {"auth": {"email": `${user}`, "password": `${password}`}}
-    }).done(function (response) {
-    console.log(response);
-      return {
-        type: 'LOG_IN',
-        payload: response
-      }
-    
-  });
+export default function signupUser(formProps) {
+  return function(dispatch){
+    var user = formProps.email
+    var password = formProps.password
+    $.ajax({
+      url: "http://localhost:3000/knock/auth_token",
+      method: "POST",
+      data: {"auth": {"email": `${user}`, "password": `${password}`}}
+      }).done(function (response) {
+      console.log(response);
+        localStorage.setItem('token', response.jwt)
+        dispatch({type: 'LOG_IN', payload: true})
+        browserHistory.push('board')        
+    })
+  }
 }
 
+export function fetchMessage(){
+  const request = $.ajax({
+    url: 'http://localhost:3000/posts',
+    type:"GET",
+    headers: { authorization: localStorage.getItem('token')}
+  })
+  
+  return {
+    type: 'FETCH_POSTS',
+    payload: request,
+  };
+
+}
+
+function authError(msg){
+  return {
+    type: 'AUTH_ERROR',
+    payload: msg
+  };
+}
  
