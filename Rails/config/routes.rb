@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :questions, except: [:new, :edit]
       resources :options, except: [:new, :edit]
       get "/sessions" => "sessions#create"
+      post "/assesOpenOption" => "open_options#asses"
     end
   end
 end

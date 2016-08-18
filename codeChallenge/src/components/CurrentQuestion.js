@@ -21,8 +21,6 @@ class CurrentQuestion extends Component {
   }
 
   render(){
-    // $('.modal.question').show()
-    // $('.screen').show()
     const currentOptions = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
     let optionsComponents ;
