@@ -28,16 +28,9 @@ class GameOption < ApplicationRecord
       end 
   end
 
+  def self.user_average_score(user_id)
+    Game.where(user_id: user_id).average('final_score').to_i
+  end
 
-  # def self.user_percentage_correct(user_id)
-  #   byebug
-  #   user_options_total = Game.joins(:options).where(user_id: user_id)
-  #   user_options_count = user_options_total.length 
-  #     if board_options_count == 0 
-  #       return 'Not a User'
-  #     else 
-
-
-  # end
 
 end
