@@ -1,7 +1,8 @@
 module Api
   module V1
     class BoardsController < ApplicationController
-
+      # before_action :authenticate_request!
+      
       def index
         render json: Board.returnCategories
       end
