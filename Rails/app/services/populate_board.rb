@@ -4,7 +4,7 @@ class PopulateBoard
   DIFFICULTY_LEVELS = [200,400,600,800,1000]
 
   def self.initiate(board_id)
-      new_board = Board.find(board_id)
+      new_board = Board.find(board_id)      
       self.populate_categories(new_board)
       self.populate_questions(new_board)
       self.hash_me(new_board)

@@ -12,6 +12,7 @@ module Api
           GameOption.create(game_id: game.id, option_id: param[:optionId], correct: param[:correct])
         end
       end
+
       
     end
   end

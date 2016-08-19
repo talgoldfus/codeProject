@@ -1,7 +1,7 @@
 module Api
   module V1
     class BoardsController < ApplicationController
-      # before_action :authenticate_request!
+      include Knock::Authenticable
       
       def index
         render json: Board.returnCategories
@@ -10,8 +10,8 @@ module Api
 
       def show
         new_board =PopulateBoard.initiate(params[:id])
-        # new_board[:user] =  current_user
-        new_board[:user] = User.first
+        new_board[:user] = current_user
+        byebug
         render json: new_board
       end
 

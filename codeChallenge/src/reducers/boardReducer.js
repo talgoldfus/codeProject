@@ -1,15 +1,15 @@
 const boardReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_BOARD':
-    let gameData = action.payload.data.data
-    let userData = action.payload.data.user
+    let gameData = action.payload.data
+    let userData = action.payload.user
      return {
         name: gameData.topic,
         id: gameData.id,
         categories: gameData.categories,
         players: [{
           userId:   userData.id,
-          name: userData.first_name +' ' + userData.last_name,
+          name: userData.email,
           score: 0
         }]
     }
