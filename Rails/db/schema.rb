@@ -45,21 +45,15 @@ ActiveRecord::Schema.define(version: 20160818174702) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "open_options", force: :cascade do |t|
-    t.string   "correct_answer"
-    t.integer  "question_id"
-    t.boolean  "open",           default: true
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "language"
-  end
-
   create_table "options", force: :cascade do |t|
     t.integer  "question_id"
+    t.string   "language"
     t.boolean  "correct"
+    t.string   "correct_answer"
     t.string   "content"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "open",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "questions", force: :cascade do |t|

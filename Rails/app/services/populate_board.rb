@@ -35,7 +35,6 @@ class PopulateBoard
       questions_collection << questions[rand(0..questions.length-1)]
     end
     category.questions = questions_collection
-    # ruby way = questions = Question.all.select{ |q| q.category_id == category.id}
   end
 
 

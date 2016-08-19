@@ -3,7 +3,7 @@ const currentQuestionReducer = (state=[], action) => {
   case 'GET_CURRENT_QUESTION':
   let questionData = action.payload.data
     return {
-      options: questionData.open_options[0] || questionData.options,
+      options: questionData.options,
       content: questionData.content,
       difficulty: questionData.difficulty
     }

@@ -21,15 +21,15 @@ class CurrentQuestion extends Component {
     const difficulty = this.props.info.difficulty || []
     let optionsComponents ;
 
-    if(Array.isArray(currentOptions)){
+    if(currentOptions.length === 1){
+      optionsComponents = <OpenOptionContainer answer={currentOptions[0].correct_answer} language={currentOptions[0].language} key={currentOptions[0].id} questionId={currentOptions[0].question_id} difficulty={difficulty} boardId={this.props.params.id}/>
+    }else{
       optionsComponents = currentOptions.map(option=>{
         return <OptionContainer content={option.content} key={option.id} correct={option.correct}
         questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id} id={option.id} />
       },this)
     }
-    else{
-      optionsComponents = <OpenOptionContainer answer={currentOptions.correct_answer} language={currentOptions.language} key={currentOptions.id} questionId={currentOptions.question_id} difficulty={difficulty} boardId={this.props.params.id}/>
-    }
+
 
     return (
       <div className="screen">

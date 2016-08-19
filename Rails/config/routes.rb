@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :options, except: [:new, :edit]
       resources :game_options, except: [:new, :edit]
       get "/sessions" => "sessions#create"
-      post "/assesOpenOption" => "open_options#asses"
+      post "/assesOpenOption" => "options#asses"
 
     end
   end

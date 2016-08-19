@@ -1,4 +1,4 @@
 class QuestionSerializer < ActiveModel::Serializer
-  attributes :id, :difficulty , :content, :options ,:open_options ,:active
+  attributes :id, :difficulty , :content, :options ,:active
 
 end

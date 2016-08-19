@@ -7,12 +7,12 @@ module Api
         game = Game.create(board_id: params[:boardInfo][:boardId].to_i, user_id: user.id, final_score: params[:boardInfo][:score])
         user.games.push(game)
         user.save
-        
+
         params[:optionsInfo].each do |param|
-          GameOption.create(game_id: game.id, option_id: param[:optionId], correct: param[:correct])
+          GameOption.create(game_id: game.id, option_id: param[:optionId], correct: param[:correct] , error: param[:error] )
         end
       end
-      
+
     end
   end
 end

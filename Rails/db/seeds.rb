@@ -12,7 +12,6 @@ Question.destroy_all
 User.destroy_all
 Game.destroy_all
 Option.destroy_all
-OpenOption.destroy_all
 
 board = Board.create(topic: 'ruby')
 board2= Board.create(topic: 'sql')
@@ -557,4 +556,4 @@ option98 = Option.create(question_id: question30.id, correct: true, content: "er
 option99 = Option.create(question_id: question30.id, correct: false, content: "oink!")
 option100 = Option.create(question_id: question30.id, correct: false, content: "#Pig:0x007ff24ab73d58")
 
-open_option = OpenOption.create(question_id: question.id , correct_answer: "6" ,language:"RUBY")
+open_option = Option.create(question_id: question.id ,open: true, correct_answer: "6" ,language:"RUBY")

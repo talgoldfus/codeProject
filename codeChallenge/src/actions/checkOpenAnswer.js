@@ -5,6 +5,7 @@ export default function checkOpenAnswer(formInput,props){
   let correcAnswer = props.answer
   let userAnswer = formInput.content
   let calculatedAnswer;
+  
 
   switch (language) {
     case 'JS':
