@@ -1,4 +1,11 @@
 @import './fonts/fonts.css';
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @import './App.css';
 @import './Board.css';
+@import './User.css';
 

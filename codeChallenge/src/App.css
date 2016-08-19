@@ -18,31 +18,35 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+#root {
+  width: 1024px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, .55)
 }
 
 a, a:visited, a:active, a:focus {
   text-decoration: none;
 }
 
-h1 {
-  position: relative;
+h1.title {
   font-size: 200px;
   margin-top: 0;
   margin-bottom: 80px;
   font-family: "gyparodyregular", "Impact", sans-serif;
 }
 
-h1 a {
+h1.title a {
   text-decoration: none;
   color: #f9f9f9;
-  position: absolute;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
-}
-
-h1:after {
-  content : 'FizzBuzz 2.0';
-  color: #d6d6d6;
-  text-shadow: 0 3px 0 #666;
 }
 
 .grid {
