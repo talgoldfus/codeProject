@@ -23,25 +23,11 @@ def self.run(user)
   end
 
   def self.questions_right(user)
-    self.question_hash_creator(user.questions_got_right)
+    QuestionHashCreator.run(user.questions_got_right)
   end
 
   def self.questions_wrong(user)
-    self.question_hash_creator(user.questions_got_wrong)
+    QuestionHashCreator.run(user.questions_got_wrong)
   end
-
-
-  def self.question_hash_creator(collection)
-    return collection.each_with_object({}) do |question, hash|
-      question_hash = {}
-      question_hash["content"] = question.content
-      question_hash["difficulty"] = question.difficulty
-      question_hash["percentage_right"] = GameOption.question_percentage_correct(question.id)
-      question_hash["topic"] = question.category.board.topic 
-      question_hash["category"] = question.category.name 
-      hash[question.id] = question_hash
-    end
-  end
-
 
 end

@@ -1,6 +1,8 @@
 class BoardAnalytics
   def self.run(board)
-    return {topic: board.topic, average_score: board.average_score, categories: self.questions(board)} 
+    return {topic: board.topic, 
+      average_score: board.average_score, 
+      categories: self.questions(board)} 
   end 
 
   def self.questions(board)
@@ -13,20 +15,7 @@ class BoardAnalytics
   end
 
   def self.questions_for(category)
-    self.question_hash_creator(category.questions)
-  end
-
-
-  def self.question_hash_creator(collection)
-    return collection.each_with_object({}) do |question, hash|
-      question_hash = {}
-      question_hash["content"] = question.content
-      question_hash["difficulty"] = question.difficulty
-      question_hash["percentage_right"] = GameOption.question_percentage_correct(question.id)
-      question_hash["topic"] = question.category.board.topic 
-      question_hash["category"] = question.category.name 
-      hash[question.id] = question_hash
-    end
+    QuestionHashCreator.run(category.questions)
   end
 
 end

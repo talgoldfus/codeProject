@@ -21,4 +21,17 @@ class Board < ApplicationRecord
     Game.find_average_score('board', self.id)
   end
 
+  def percentage_correct
+    board_options_total = Game.joins(:options).where(board_id: self.id)
+    board_options_count = board_options_total.length 
+      if board_options_count == 0 
+        return 'Not Yet Played' 
+      else 
+        correct_board_options = Game.joins(:options).where(board_id: board_id).where('options.correct': true)
+        correct_board_options_count = correct_board_options.length 
+        return correct_board_options_count.to_f/board_options_count.to_f
+      end 
+  end
+
+
 end
