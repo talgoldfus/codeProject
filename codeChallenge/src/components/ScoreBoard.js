@@ -11,13 +11,14 @@ successRate(){
   let correctAnswers  = this.analizeAnalytics("correct")
   let rate = (correctAnswers / this.props.gameAnalytics.options.length).toFixed(2)
   if (rate !== "NaN"){
-   return rate}
+    debugger
+   return 100*rate }
    return 0
   }
 
   analizeAnalytics(type){
   let analytics =this.props.gameAnalytics.options.filter((option)=>{
-    if (type== "correct"){
+    if (type==="correct"){
       return option.correct
     }
     return !option.correct
@@ -41,7 +42,7 @@ successRate(){
             <div>
               <h4> Correct Answers: {this.analizeAnalytics("correct")} </h4>
               <h4> Wrong Answers: {this.analizeAnalytics("wrong")} </h4>
-              <h4> Success Rate: %{this.successRate()} </h4>
+              <h4> Success Rate: {this.successRate()}% </h4>
            </div>
         </div>
       </div>

@@ -3941,3 +3941,687 @@ Processing by Api::V1::QuestionsController#show as HTML
 Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 2.5ms)
 
 
+Started POST "/knock/auth_token" for 85.65.216.172 at 2016-08-19 12:40:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.1ms)
+Completed 201 Created in 105ms (Views: 3.5ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/boards" for 85.65.216.172 at 2016-08-19 12:40:45 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (2.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 34ms (Views: 1.9ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:40:47 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.36ms)
+Completed 200 OK in 84ms (Views: 8.9ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/api/v1/questions/9" for 85.65.216.172 at 2016-08-19 12:40:50 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (2.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 9]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (48.47ms)
+Completed 200 OK in 97ms (Views: 70.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:41:31 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.14ms)
+Completed 200 OK in 26ms (Views: 9.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/knock/auth_token" for 85.65.216.172 at 2016-08-19 12:42:02 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.14ms)
+Completed 201 Created in 75ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/boards" for 85.65.216.172 at 2016-08-19 12:42:02 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (3.0ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:42:03 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (1.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.68ms)
+Completed 200 OK in 43ms (Views: 20.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:42:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.23ms)
+Completed 200 OK in 153ms (Views: 12.5ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:42:53 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.59ms)
+Completed 200 OK in 27ms (Views: 10.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:43:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.85ms)
+Completed 200 OK in 114ms (Views: 10.7ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/v1/questions/12" for 85.65.216.172 at 2016-08-19 12:43:14 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.7ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 12]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (25.12ms)
+Completed 200 OK in 45ms (Views: 35.4ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/questions/1" for 85.65.216.172 at 2016-08-19 12:43:17 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 1]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (3.71ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/assesOpenOption" for 85.65.216.172 at 2016-08-19 12:43:25 -0400
+Processing by Api::V1::OptionsController#asses as HTML
+  Parameters: {"userAnswer"=>"6*4", "correcAnswer"=>"6", "option"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/questions/3" for 85.65.216.172 at 2016-08-19 12:43:34 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 3]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.7ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:43:35 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:43:37 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started GET "/api/v1/questions/7" for 85.65.216.172 at 2016-08-19 12:43:37 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.0ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 7]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (3.75ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/questions/9" for 85.65.216.172 at 2016-08-19 12:43:39 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.2ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 9]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.36ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/questions/13" for 85.65.216.172 at 2016-08-19 12:43:51 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (5.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 13]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (11.75ms)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/questions/2" for 85.65.216.172 at 2016-08-19 12:44:20 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 2]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.15ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/questions/2" for 85.65.216.172 at 2016-08-19 12:44:23 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (4.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (3.3ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 2]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (9.22ms)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/api/v1/questions/13" for 85.65.216.172 at 2016-08-19 12:44:24 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (2.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 13]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (7.99ms)
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/questions/9" for 85.65.216.172 at 2016-08-19 12:44:25 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (2.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 9]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (8.66ms)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:45:21 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.82ms)
+Completed 200 OK in 26ms (Views: 10.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:45:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.77ms)
+Completed 200 OK in 123ms (Views: 14.6ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/api/v1/questions/8" for 85.65.216.172 at 2016-08-19 12:45:33 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 8]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (28.64ms)
+Completed 200 OK in 49ms (Views: 39.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/questions/14" for 85.65.216.172 at 2016-08-19 12:45:34 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 14]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.37ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/questions/5" for 85.65.216.172 at 2016-08-19 12:45:38 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 5]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.58ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:45:38 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:45:40 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started GET "/api/v1/questions/7" for 85.65.216.172 at 2016-08-19 12:45:40 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (3.8ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 7]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (9.21ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:46:03 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.37ms)
+Completed 200 OK in 27ms (Views: 9.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:46:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (1.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.78ms)
+Completed 200 OK in 204ms (Views: 16.1ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/api/v1/questions/9" for 85.65.216.172 at 2016-08-19 12:46:21 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 9]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (23.79ms)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/api/v1/questions/13" for 85.65.216.172 at 2016-08-19 12:48:10 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 13]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.05ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/questions/21" for 85.65.216.172 at 2016-08-19 12:48:14 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.3ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 21]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (3.29ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:48:15 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:48:17 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started GET "/api/v1/questions/19" for 85.65.216.172 at 2016-08-19 12:48:17 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 19]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (3.43ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/questions/14" for 85.65.216.172 at 2016-08-19 12:48:20 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.7ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 14]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.56ms)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/questions/25" for 85.65.216.172 at 2016-08-19 12:48:24 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 25]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (4.97ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/questions/7" for 85.65.216.172 at 2016-08-19 12:48:28 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 7]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.51ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/questions/8" for 85.65.216.172 at 2016-08-19 12:48:32 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 8]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (4.65ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/questions/4" for 85.65.216.172 at 2016-08-19 12:48:36 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 4]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.51ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/questions/5" for 85.65.216.172 at 2016-08-19 12:48:40 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 5]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.65ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/questions/15" for 85.65.216.172 at 2016-08-19 12:48:43 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mQuestion Load (2.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.3ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 15]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.64ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/questions/11" for 85.65.216.172 at 2016-08-19 12:48:48 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.4ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 11]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.55ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/questions/17" for 85.65.216.172 at 2016-08-19 12:48:53 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (2.3ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 17]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (7.71ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/questions/24" for 85.65.216.172 at 2016-08-19 12:48:58 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.8ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 24]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (8.24ms)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/questions/16" for 85.65.216.172 at 2016-08-19 12:49:12 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.6ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 16]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.69ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/questions/20" for 85.65.216.172 at 2016-08-19 12:49:15 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 20]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.99ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/questions/22" for 85.65.216.172 at 2016-08-19 12:49:19 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.8ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 22]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.59ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/questions/1" for 85.65.216.172 at 2016-08-19 12:49:24 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.0ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 1]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.2ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/assesOpenOption" for 85.65.216.172 at 2016-08-19 12:49:27 -0400
+Processing by Api::V1::OptionsController#asses as HTML
+  Parameters: {"userAnswer"=>"6", "correcAnswer"=>"6", "option"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/knock/auth_token" for 85.65.216.172 at 2016-08-19 12:52:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.14ms)
+Completed 201 Created in 102ms (Views: 3.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/boards" for 85.65.216.172 at 2016-08-19 12:52:00 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (1.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 34ms (Views: 3.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/api/v1/boards/1" for 85.65.216.172 at 2016-08-19 12:52:01 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.03ms)
+Completed 200 OK in 109ms (Views: 8.6ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/api/v1/questions/9" for 85.65.216.172 at 2016-08-19 12:52:03 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 9]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (44.39ms)
+Completed 200 OK in 70ms (Views: 52.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/v1/questions/15" for 85.65.216.172 at 2016-08-19 12:52:05 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (1.1ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 15]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.62ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/questions/10" for 85.65.216.172 at 2016-08-19 12:52:07 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.5ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 10]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.5ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:52:08 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started POST "/api/v1/game_options/" for 85.65.216.172 at 2016-08-19 12:52:09 -0400
+  
+SyntaxError (/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
+  ^
+/Users/talgoldfus/Desktop/codeProject/Rails/app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+=======
+   ^):
+  
+app/controllers/api/v1/game_options_controller.rb:16: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/game_options_controller.rb:28: syntax error, unexpected ===, expecting keyword_end
+Started GET "/api/v1/questions/3" for 85.65.216.172 at 2016-08-19 12:52:09 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.9ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 3]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (6.11ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/questions/1" for 85.65.216.172 at 2016-08-19 12:52:11 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mOption Load (0.7ms)[0m  [1m[34mSELECT "options".* FROM "options" WHERE "options"."question_id" = $1[0m  [["question_id", 1]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (5.43ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/assesOpenOption" for 85.65.216.172 at 2016-08-19 12:52:14 -0400
+Processing by Api::V1::OptionsController#asses as HTML
+  Parameters: {"userAnswer"=>"6", "correcAnswer"=>"6", "option"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
