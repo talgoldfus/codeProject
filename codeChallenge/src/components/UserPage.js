@@ -10,6 +10,8 @@ class UserPage extends Component {
 
 render(){
 
+  debugger; 
+
 
   const userInfo = this.props.userInfo.user_info || {email: "", tagline: "", average_score: "", games: []}
 
