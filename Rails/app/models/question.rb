@@ -3,6 +3,7 @@ class Question < ApplicationRecord
   has_many :options
   has_many :open_options
   has_many :game_options, through: :options
+  has_many :games, through: :game_options
 
   def percentage_correct
     GameOption.question_percentage_correct(self.id)

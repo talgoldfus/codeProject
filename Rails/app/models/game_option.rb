@@ -37,4 +37,66 @@ class GameOption < ApplicationRecord
   # end 
 
 
+  def self.user_analytics(user)
+    return {average_score: user.average_score, 
+      games: self.games(user), 
+      questions_right: self.questions_right(user), 
+      questions_wrong: self.questions_wrong(user)}
+  end
+
+  def self.games(user)
+    games = Game.where(user_id: user.id)
+    return games.each_with_object({}) do |game, hash|
+      game_hash = {}
+      game_hash["topic"] = game.board.topic
+      game_hash["date"] = game.created_at
+      game_hash["score"] = game.final_score
+      hash[game.id] = game_hash
+    end
+  end
+
+  def self.questions_right(user)
+    self.question_hash_creator(user.questions_got_right)
+  end
+
+  def self.questions_wrong(user)
+    self.question_hash_creator(user.questions_got_wrong)
+  end
+
+
+  def self.topic_analytics(board)
+    return {topic: board.topic, average_score: board.average_score, categories: self.questions(board)} 
+  end 
+
+  def self.questions(board)
+    return board.categories.each_with_object({}) do |category, hash|
+      category_hash = {}
+      category_hash["name"] = category.name
+      category_hash["questions"] = self.questions_for(category)
+      hash[category.id] = category_hash
+    end
+  end
+
+  def self.questions_for(category)
+    return category.questions.each_with_object({}) do |question, hash|
+      question_hash = {}
+      question_hash["content"] = question.content
+      question_hash["difficulty"] = question.difficulty
+      question_hash["percentage_right"] = self.question_percentage_correct(question.id)
+      hash[question.id] = question_hash
+    end
+  end
+
+  def self.question_hash_creator(collection)
+    return collection.each_with_object({}) do |question, hash|
+      question_hash = {}
+      question_hash["content"] = question.content
+      question_hash["difficulty"] = question.difficulty
+      question_hash["percentage_right"] = self.question_percentage_correct(question.id)
+      hash[question.id] = question_hash
+    end
+  end
+
+
+
 end

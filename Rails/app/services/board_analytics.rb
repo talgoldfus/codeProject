@@ -20,3 +20,22 @@
 
 
 # end 
+
+class UserAnalytics
+
+  def run(user)
+    user_average_score = {average_score: user.average_score}
+  end
+
+  def games(user)
+    games = Game.where(user_id: user.id)
+    games.each_with_object({}) do |game, hash|
+      byebug
+      hash[topic] = game.board.topic
+      hash[date] = game.created_at
+      hash[score] = game.final_score
+    end
+  end
+
+
+end 

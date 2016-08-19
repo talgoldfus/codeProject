@@ -13,6 +13,13 @@ module Api
         end
       end
 
+
+      def user_analytics 
+        user = User.find(params[:id])
+        render json: GameOption.user_analytics(user)
+      end
+
+
     end
   end
 end

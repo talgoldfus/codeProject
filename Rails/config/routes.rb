@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :game_options, except: [:new, :edit]
       get "/sessions" => "sessions#create"
       post "/assesOpenOption" => "options#asses"
+      get "/game_options/user/:id" => "game_options#user_analytics"
 
     end
   end
