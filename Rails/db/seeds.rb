@@ -556,4 +556,4 @@ option98 = Option.create(question_id: question30.id, correct: true, content: "er
 option99 = Option.create(question_id: question30.id, correct: false, content: "oink!")
 option100 = Option.create(question_id: question30.id, correct: false, content: "#Pig:0x007ff24ab73d58")
 
-open_option = Option.create(question_id: question.id ,open: true, correct_answer: "6" ,language:"RUBY")
+open_option = Option.create(question_id: question.id ,open: true, correct_answer: "8" ,language:"JS")
