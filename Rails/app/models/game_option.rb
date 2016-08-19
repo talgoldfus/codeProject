@@ -38,7 +38,11 @@ class GameOption < ApplicationRecord
 
 
   def self.user_analytics(user)
-    return {average_score: user.average_score, 
+    return {
+      name: user.username, 
+      tagline: user.tagline,
+      email: user.email, 
+      average_score: user.average_score, 
       games: self.games(user), 
       questions_right: self.questions_right(user), 
       questions_wrong: self.questions_wrong(user)}
@@ -78,14 +82,9 @@ class GameOption < ApplicationRecord
   end
 
   def self.questions_for(category)
-    return category.questions.each_with_object({}) do |question, hash|
-      question_hash = {}
-      question_hash["content"] = question.content
-      question_hash["difficulty"] = question.difficulty
-      question_hash["percentage_right"] = self.question_percentage_correct(question.id)
-      hash[question.id] = question_hash
-    end
+    self.question_hash_creator(category.questions)
   end
+
 
   def self.question_hash_creator(collection)
     return collection.each_with_object({}) do |question, hash|
@@ -93,6 +92,8 @@ class GameOption < ApplicationRecord
       question_hash["content"] = question.content
       question_hash["difficulty"] = question.difficulty
       question_hash["percentage_right"] = self.question_percentage_correct(question.id)
+      question_hash["topic"] = question.category.board.topic 
+      question_hash["category"] = question.category.name 
       hash[question.id] = question_hash
     end
   end
