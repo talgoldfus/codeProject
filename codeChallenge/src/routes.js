@@ -5,8 +5,8 @@ import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
 import OpenOption from './components/OpenOption'
 import SmartTopicsContainer from './containers/TopicsContainer'
-import Signin from './components/signin'
-import Signup from './components/signup'
+import Signin from './components/Signin'
+import Signup from './components/Signup'
 
 
 export default (
