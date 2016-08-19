@@ -12661,3 +12661,2123 @@ Completed 500 Internal Server Error in 208095ms (ActiveRecord: 8.4ms)
 SystemExit (exit):
   
 app/controllers/api/v1/boards_controller.rb:15:in `show'
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:27:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kevin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kevin"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.17ms)
+Completed 201 Created in 146ms (Views: 6.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 09:27:06 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (2.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 34ms (Views: 2.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/api/v1/boards/1" for ::1 at 2016-08-19 09:27:10 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.97ms)
+Completed 200 OK in 6557ms (Views: 13.1ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:27:36 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"the", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "the"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:27:36 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"the", "password"=>"[FILTERED]", "user"=>{"email"=>"the"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$lQD.COL.08BGXUdzLyeAxOcQU21AxqaMkc2Ta5Her5qAAyIVJNHAK"], ["created_at", 2016-08-19 13:27:36 UTC], ["updated_at", 2016-08-19 13:27:36 UTC], ["email", "the"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 94ms (ActiveRecord: 6.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:28:36 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"the", "password"=>"[FILTERED]", "user"=>{"email"=>"the"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:28:36 -0400
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$/CG1amDNHxseOp.0IgX7SemGYbm2gZdwgTv2kWeCGf.a7i5YCBndG"], ["created_at", 2016-08-19 13:28:36 UTC], ["updated_at", 2016-08-19 13:28:36 UTC], ["email", "the"]]
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"the", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "the"], ["LIMIT", 1]]
+  [1m[35m (77.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.07ms)
+Completed 204 No Content in 162ms (ActiveRecord: 78.1ms)
+
+
+Completed 201 Created in 78ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 09:28:36 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:36:32 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:36:32 -0400
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:37:47 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:37:47 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:39:03 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:39:03 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:39:14 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:39:14 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:39:23 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:39:23 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:39:49 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:39:49 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:39:52 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:39:52 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:39:58 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"tal", "password"=>"[FILTERED]"}}
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:39:58 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tal"], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"tal", "password"=>"[FILTERED]", "user"=>{"email"=>"tal"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$9kD4f5AcDIxALi9aMtLF3ep/pdy10SEe7jxMxudY2XmRvsUVNo4ey"], ["created_at", 2016-08-19 13:39:58 UTC], ["updated_at", 2016-08-19 13:39:58 UTC], ["email", "tal"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 92ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:40:05 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (1.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:40:05 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:40:11 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:40:11 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:40:17 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"the", "password"=>"[FILTERED]", "user"=>{"email"=>"the"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$.FiYUSkutATT/o873K7Bp.ntZYBM0kmcbw//ySsNjgAsdyfUjiKSm"], ["created_at", 2016-08-19 13:40:17 UTC], ["updated_at", 2016-08-19 13:40:17 UTC], ["email", "the"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 86ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:40:49 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"hola", "password"=>"[FILTERED]", "user"=>{"email"=>"hola"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$GCyyv.aUMh.ReRb/3CLiS.U64yulN8n5T9SCLH2a3tt/6DEjft87y"], ["created_at", 2016-08-19 13:40:49 UTC], ["updated_at", 2016-08-19 13:40:49 UTC], ["email", "hola"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 82ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:41:21 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:41:21 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:41:29 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"ghe", "password"=>"[FILTERED]", "user"=>{"email"=>"ghe"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$gFMqZJHOsv59Qp0PeId9BeY7t40xr7Rv/wfu5ad/jnwT2lMbz6RBC"], ["created_at", 2016-08-19 13:41:30 UTC], ["updated_at", 2016-08-19 13:41:30 UTC], ["email", "ghe"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 90ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:42:06 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:42:06 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:42:14 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"store", "password"=>"[FILTERED]", "user"=>{"email"=>"store"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$TtE4eMrF3FnMLGf/jAjAfOleirOHe/AV5T5X3X3b2g1JEBTLH05am"], ["created_at", 2016-08-19 13:42:14 UTC], ["updated_at", 2016-08-19 13:42:14 UTC], ["email", "store"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 86ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:43:41 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"store", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "store"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.09ms)
+Completed 201 Created in 86ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:46:22 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:46:23 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:46:30 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"kej", "password"=>"[FILTERED]", "user"=>{"email"=>"kej"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$TN/CHERPsxmCDQlUDgYVoOjKnPMR98aRUNTWohjMTKtrMUtEhuQXy"], ["created_at", 2016-08-19 13:46:30 UTC], ["updated_at", 2016-08-19 13:46:30 UTC], ["email", "kej"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 86ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:46:44 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kej", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kej"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.07ms)
+Completed 201 Created in 87ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:47:27 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:47:28 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:47:54 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:47:54 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:48:00 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:48:00 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:48:18 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:48:18 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:48:27 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"fhfh", "password"=>"[FILTERED]", "user"=>{"email"=>"fhfh"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$dKRaJEKiaLtjDWWIv5IDreG.29j01ozxw.amRo6BLV3RwSHEDhjiq"], ["created_at", 2016-08-19 13:48:27 UTC], ["updated_at", 2016-08-19 13:48:27 UTC], ["email", "fhfh"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 83ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:49:13 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:49:13 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:49:20 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"asdf", "password"=>"[FILTERED]", "user"=>{"email"=>"asdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$N5SdDp0J3jqin3l5mrazweys5wRW/4slVTQWj6rkjH.W5oUAh4SLG"], ["created_at", 2016-08-19 13:49:20 UTC], ["updated_at", 2016-08-19 13:49:20 UTC], ["email", "asdf"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 85ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:51:07 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:51:07 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:51:10 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:51:10 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:51:11 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.2ms)
+Completed 201 Created in 117ms (Views: 2.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:51:19 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"rrr", "password"=>"[FILTERED]", "user"=>{"email"=>"rrr"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$4uYWyKaXCZ3Pl0Nqf8sC9eJzp7CCbx7xaj4oiqKmhfKhUG4A8kSVu"], ["created_at", 2016-08-19 13:51:19 UTC], ["updated_at", 2016-08-19 13:51:19 UTC], ["email", "rrr"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 87ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:52:42 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:52:42 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:52:44 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:52:44 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:53:59 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:53:59 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:54:01 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"ksdfkj", "password"=>"[FILTERED]", "user"=>{"email"=>"ksdfkj"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$QrBzPq.KTHYTFRtTKhBRqelK/Jv8Nld1.Jt7Dj9T429yIQbkVmBLm"], ["created_at", 2016-08-19 13:54:01 UTC], ["updated_at", 2016-08-19 13:54:01 UTC], ["email", "ksdfkj"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 107ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:54:09 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kevin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kevin"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.07ms)
+Completed 201 Created in 86ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 09:54:10 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (5.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:54:39 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:54:39 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:54:39 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"ejeej", "password"=>"[FILTERED]", "user"=>{"email"=>"ejeej"}}
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$aMBxRWJT.ZMKIr2bdJp6l.YvB0NkDoZF6fYT3znXudEN0Vqoh5IZ."], ["created_at", 2016-08-19 13:54:39 UTC], ["updated_at", 2016-08-19 13:54:39 UTC], ["email", "ejeej"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 139ms (ActiveRecord: 11.7ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:55:27 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"asdfasdf", "password"=>"[FILTERED]", "user"=>{"email"=>"asdfasdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$4KhnJhMC8nxFk8YPjYiCKOeoT201wHFgUpJu7gfBv5fa6N9l/zt1K"], ["created_at", 2016-08-19 13:55:27 UTC], ["updated_at", 2016-08-19 13:55:27 UTC], ["email", "asdfasdf"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 85ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:56:36 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:56:36 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:57:15 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:57:15 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:57:21 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:57:21 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 09:57:22 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"eheh", "password"=>"[FILTERED]", "user"=>{"email"=>"eheh"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$X26TqIdnnMpYZNEdmuALFeJOxpL2NHxt5gdf2ass2hsrKau2w0uJO"], ["created_at", 2016-08-19 13:57:22 UTC], ["updated_at", 2016-08-19 13:57:22 UTC], ["email", "eheh"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 99ms (ActiveRecord: 3.9ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 09:58:04 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"this", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "this"], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:58:15 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:58:15 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 09:59:40 -0400
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 09:59:40 -0400
+Processing by Api::V1::BoardsController#show as */*
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  Parameters: {"id"=>"51"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:00:54 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:00:54 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:01:57 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:01:57 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:02:09 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:02:09 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:02:10 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>{"email"=>"asdfsd", "password"=>"[FILTERED]"}, "user"=>{"email"=>{"email"=>"asdfsd", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 204 No Content in 28ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:02:20 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:02:20 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:02:29 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:02:29 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:02:40 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"aasdd", "password"=>"[FILTERED]", "user"=>{"email"=>"aasdd"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$kF.fg7kG0ugEm.qHtaAqGO7MoW99YCtU.Zk1dTOqKoBfvE4QC2e7G"], ["created_at", 2016-08-19 14:02:40 UTC], ["updated_at", 2016-08-19 14:02:40 UTC], ["email", "aasdd"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 83ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:02:59 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:02:59 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:03:12 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"aaaaa", "password"=>"[FILTERED]", "user"=>{"email"=>"aaaaa"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$S/s1XpRHj9kJ.26uwd9M2uFJ3xfHsoQKfwcApOp4GPFtCh6tiyUWi"], ["created_at", 2016-08-19 14:03:12 UTC], ["updated_at", 2016-08-19 14:03:12 UTC], ["email", "aaaaa"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 86ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:03:42 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:03:42 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:04:00 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"iiii", "password"=>"[FILTERED]", "user"=>{"email"=>"iiii"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$8erb/yq1GkdLA6CWFMZoVe8ZHRnNjGSlKN9kPAxIbdeAV.odKW6fC"], ["created_at", 2016-08-19 14:04:00 UTC], ["updated_at", 2016-08-19 14:04:00 UTC], ["email", "iiii"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 97ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:04:06 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:04:06 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:04:10 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:04:10 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:04:23 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"eeee", "password"=>"[FILTERED]", "user"=>{"email"=>"eeee"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$oLdK1AqjEkIu2eBN7GC1W.A4p9akMlBZLC2GUqeeGpYEZsaHuw1DG"], ["created_at", 2016-08-19 14:04:23 UTC], ["updated_at", 2016-08-19 14:04:23 UTC], ["email", "eeee"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 88ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:05:21 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:05:21 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:06:48 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:06:48 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:06:57 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"aasddf", "password"=>"[FILTERED]", "user"=>{"email"=>"aasddf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$ocP/rRiXLOJblt4rX1i3CeYgb5SNZERFQtmVYmthIFRxz1V1i6Ph6"], ["created_at", 2016-08-19 14:06:57 UTC], ["updated_at", 2016-08-19 14:06:57 UTC], ["email", "aasddf"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 88ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:07:25 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:07:25 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:07:33 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"www", "password"=>"[FILTERED]", "user"=>{"email"=>"www"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$shb2DqAnoi/mT7wiSOgKfOSn3.uC9PuDD.lxiecfltsKNNOsM/d.2"], ["created_at", 2016-08-19 14:07:33 UTC], ["updated_at", 2016-08-19 14:07:33 UTC], ["email", "www"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 97ms (ActiveRecord: 2.9ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:07:36 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"www", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "www"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.11ms)
+Completed 201 Created in 82ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:10:22 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:10:22 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:10:26 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"asdsf", "password"=>"[FILTERED]", "user"=>{"email"=>"asdsf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$/ID6SdkxIGhElbtpIw1.EOI9AN532Bhnxg7juGy.ltpFrVOl7m5D6"], ["created_at", 2016-08-19 14:10:26 UTC], ["updated_at", 2016-08-19 14:10:26 UTC], ["email", "asdsf"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 89ms (ActiveRecord: 6.1ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:10:31 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"asdsf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdsf"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.11ms)
+Completed 201 Created in 89ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:10:52 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:10:52 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:10:57 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"dfdsf", "password"=>"[FILTERED]", "user"=>{"email"=>"dfdsf"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$nO77MYxZNAn/KKaqu6MTJ.4vAJPvuFeTMQIx/pjH4IeFo35tpXBGG"], ["created_at", 2016-08-19 14:10:57 UTC], ["updated_at", 2016-08-19 14:10:57 UTC], ["email", "dfdsf"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 85ms (ActiveRecord: 2.7ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:11:04 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"dfdsf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dfdsf"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.06ms)
+Completed 201 Created in 81ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:11:05 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:11:15 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:11:15 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:11:15 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:11:23 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:11:23 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:11:23 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:12:27 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"tlkajsd", "password"=>"[FILTERED]", "user"=>{"email"=>"tlkajsd"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$4C2Qa8jTutgwxg4QLbf8Re6oQi8AAWKs4dwh5/4ptlLf.WrFyF4oa"], ["created_at", 2016-08-19 14:12:27 UTC], ["updated_at", 2016-08-19 14:12:27 UTC], ["email", "tlkajsd"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 99ms (ActiveRecord: 3.3ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:12:27 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"tlkajsd", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tlkajsd"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.16ms)
+Completed 201 Created in 94ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:12:27 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/boards/1" for ::1 at 2016-08-19 10:12:58 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."board_id" = $1[0m  [["board_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 3]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = $1[0m  [["category_id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.84ms)
+Completed 200 OK in 84ms (Views: 9.6ms | ActiveRecord: 3.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (148.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "codeChallenge_development"[0m
+  [1m[35m (144.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "codeChallenge_test"[0m
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4881866303549157300);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160812153226)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "hometown" character varying, "password_digest" character varying, "tagline" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812153226"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGames (20160812154940)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "games" ("id" serial primary key, "board_id" integer, "user_id" integer, "final_score" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812154940"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBoards (20160812155446)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "boards" ("id" serial primary key, "topic" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812155446"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20160812155534)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "board_id" integer, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812155534"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestions (20160812155559)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" serial primary key, "category_id" integer, "difficulty" integer, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812155559"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOptions (20160812155644)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "options" ("id" serial primary key, "question_id" integer, "correct" boolean, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160812155644"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddActiveToQuestions (20160816140611)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.2ms)[0m  [1m[35mALTER TABLE "questions" ADD "active" boolean DEFAULT 't'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160816140611"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumn (20160817151549)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817151549"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumn (20160817153321)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "users" DROP "first_name"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817153321"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveLastNameFromUsers (20160817153341)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DROP "last_name"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817153341"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUsernameToEmail (20160817154932)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817154932"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGameOptions (20160817202356)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "game_options" ("id" serial primary key, "game_id" integer, "option_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817202356"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOpenOptions (20160817214017)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "open_options" ("id" serial primary key, "correct_answer" character varying, "question_id" integer, "open" boolean DEFAULT 't', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817214017"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLanguageToOpenOptions (20160817225754)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "open_options" ADD "language" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160817225754"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCorrectToGameOptions (20160818174517)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "game_options" ADD "correct" boolean[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818174517"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddErrorToGameOptions (20160818174702)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "game_options" ADD "error" text[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818174702"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-19 14:13:31 UTC], ["updated_at", 2016-08-19 14:13:31 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4881866303549157300)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'boards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'game_options'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'games'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'open_options'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'options'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mBoard Load (2.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mQuestion Load (2.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGame Load (2.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mOption Load (2.6ms)[0m  [1m[34mSELECT "options".* FROM "options"[0m
+  [1m[36mOpenOption Load (3.0ms)[0m  [1m[34mSELECT "open_options".* FROM "open_options"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "ruby"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "sql"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "javascript"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "html"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "css"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "boards" ("topic", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["topic", "react"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("board_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["name", "Simple Expressions"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("board_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["name", "Loops & Conditionals"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("board_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["name", " Methods & Hashes"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("board_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["name", "Ruby Questions"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("board_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["name", "Object Oriented Programming"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["difficulty", 200], ["content", "What does the following expression evaluate to?\n                                                                                  2 ** 3"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["difficulty", 400], ["content", "What does the following code return?\n                                                                                  def add(x, y)\n                                                                                    return(x + y)\n                                                                                  end\n                                                                                  add(3, 5)"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["difficulty", 600], ["content", "What are the values of a, b, c and d?\n                                                                                  a, (b, *c), d = 1, [2, 3, 4], 5"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["difficulty", 800], ["content", "What does the following code print?\n\n                                                                                  def first_name()\n                                                                                    return(\"Otto\")\n                                                                                  end\n\n                                                                                  def last_name()\n                                                                                    return(\"Mation\")\n                                                                                  end\n\n                                                                                  def full_name()\n                                                                                    first_name() + \" \" + last_name()\n                                                                                  end\n\n                                                                                  puts full_name()"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["difficulty", 1000], ["content", "What does the following code print?\n                                                                                    class IceCream\n                                                                                      @temp = \"cold\"\n                                                                                    end\n                                                                                    print IceCream.instance_variables"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["difficulty", 200], ["content", "What does the following code print?\n                                                                                    puts \"unicorn\".reverse()"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["difficulty", 400], ["content", "arr = [\"onyx\", \"wu tang\", \"biggie\", \"tupac\"]\n                                                                                    Get the \"biggie\" string from arr."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["difficulty", 600], ["content", "colors = [\"red\", \"violet\", \"blue\"]\n                                                                                    Use the colors array to construct the following array:\n                                                                                    [[\"red\", 1], [\"violet\", 2], [\"blue\", 3]]"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["difficulty", 800], ["content", "days = [\"mon\", \"tues\", \"wed\", \"thur\", \"fri\"]\n                                                                                    Create an array of the elements with indexes 0 and 2. The return value should be [\"mon\", \"wed\"]."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["difficulty", 1000], ["content", "What  does the following print\n                                                                                    enum = (\"begin\"...\"finish\").to_enum\n                                                                                    print enum.next\n                                                                                    print enum.next\n                                                                                    print enum.next"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 3], ["difficulty", 200], ["content", "lebron = {:sport=>\"basketball\", :birthplace=>\"Akron\", :high_school=>\"St. Vincent-St. Mary High School\"}\n                                                                                    Return an array of all the keys in the lebron hash."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 3], ["difficulty", 400], ["content", "lebron = {:sport => \"basketball\", :birthplace => \"Akron\"}\n                                                                                      Add the :high_school key to the lebron hash with the value \"St. Vincent-St. Mary High School\"."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 3], ["difficulty", 600], ["content", "What does the following code return?\n                                                                                    browsers = {\n                                                                                      :favorite => :chrome,\n                                                                                      :favorite => :firefox,\n                                                                                      :worst => :internet_explorer\n                                                                                    }\n                                                                                    browsers[:favorite]"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 3], ["difficulty", 800], ["content", "dude = {\n                                                                                      age: 44,\n                                                                                      weight: 250,\n                                                                                      net_worth: 25\n                                                                                    }\n                                                                                    Return the product of all the values in the dude hash (the result should be 44 * 250 * 25 = 275_000)."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 3], ["difficulty", 1000], ["content", "What does the following code print? Explain.\n                                                                                    h = {}\n                                                                                    class Sublime\n                                                                                      @fav = \"caress me down\"\n                                                                                      def sing(obj)\n                                                                                        obj.instance_variable_set(:@greeting, \"mucho gusto\")\n                                                                                        obj.instance_variable_set(:@name, \"me llamo brad lee\")\n                                                                                      end\n                                                                                    end\n\n                                                                                    s = Sublime.new\n                                                                                    s.sing(h)\n                                                                                    p s.instance_variables\n                                                                                    p \"***\"\n                                                                                    p h.instance_variables"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["difficulty", 200], ["content", "What are the values of a, b, c and d?\n                                                                                    a, (b, *c), d = 1, [2, 3, 4], 5"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["difficulty", 400], ["content", "Variables that start with a capital letter are what kind of variables in Ruby?"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["difficulty", 600], ["content", "What does the following print? print 10.step(100, 20).to_a"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["difficulty", 800], ["content", "what does the following print\n                                                                                      thang = \"biscuits\"\n                                                                                      [1,2,3].each { |n; thang| thang = n }\n                                                                                      puts thang"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["difficulty", 1000], ["content", "What happens when the following is run?\n                                                                                      Proc.new { |i,j| }.call(1,2,3)"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 5], ["difficulty", 200], ["content", "Create a Celsius class that is initialized with temperature."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 5], ["difficulty", 400], ["content", "Define a Calculator class with an add() class method."], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 5], ["difficulty", 600], ["content", "Refactor the following class to remove the argument-order dependency.\n                                                                                     class Person\n                                                                                       def initialize(name, age)\n                                                                                         @name = name\n                                                                                         @age = age\n                                                                                       end\n                                                                                     end\n\n                                                                                     class Yankees\n                                                                                       def captain\n                                                                                         Person.new(\"Jeter\", 39)\n                                                                                       end\n                                                                                     end"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 5], ["difficulty", 800], ["content", "What does the following code print?\n                                                                                      x = 42\n                                                                                      y = \"cat\"\n                                                                                      b = binding\n                                                                                      def hi(b)\n                                                                                        b.local_variable_get(:y)\n                                                                                      end\n                                                                                      p hi(b)"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("category_id", "difficulty", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 5], ["difficulty", 1000], ["content", "What does the following code print? Explain.\n                                                                                      class Pig\n                                                                                        protected\n                                                                                        def sound\n                                                                                          \"oink!\"\n                                                                                        end\n                                                                                      end\n\n                                                                                      piggy = Pig.new\n                                                                                      p piggy.sound"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("hometown", "password_digest", "tagline", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["hometown", "philly"], ["password_digest", "flatiron"], ["tagline", "working"], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC], ["email", "flatiron"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "games" ("board_id", "user_id", "final_score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["board_id", 1], ["user_id", 1], ["final_score", 1000], ["created_at", 2016-08-19 14:13:47 UTC], ["updated_at", 2016-08-19 14:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 2], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 2], ["correct", true], ["content", "xy"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 2], ["correct", false], ["content", "[3, 5]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 2], ["correct", false], ["content", "8"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 3], ["correct", true], ["content", "a = 1\n                                                                            b = 2\n                                                                            c = nil\n                                                                            d = 3"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 3], ["correct", false], ["content", "a = 1\n                                                                            b = 2\n                                                                            c = 3\n                                                                            d = 4"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 3], ["correct", false], ["content", "a = 1\n                                                                            b = nil\n                                                                            c = 3\n                                                                            d = 4"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 3], ["correct", false], ["content", "a = 1\n                                                                            b = 2\n                                                                            c = nil\n                                                                            d = 4"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 4], ["correct", true], ["content", "Otto Mation"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 4], ["correct", false], ["content", "OttoMation"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 4], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 4], ["correct", false], ["content", "Otto + Mation"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 5], ["correct", false], ["content", "[\"temp\"]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 5], ["correct", false], ["content", "temp"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 5], ["correct", false], ["content", "@temp]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 5], ["correct", true], ["content", "[:@temp]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 6], ["correct", false], ["content", "unicorn"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 6], ["correct", true], ["content", "nrocinu"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 6], ["correct", false], ["content", "nrocinU"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 6], ["correct", false], ["content", "Nrocinu"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 7], ["correct", false], ["content", "arr[-1]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 7], ["correct", true], ["content", "arr[2]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 7], ["correct", false], ["content", "arr[3]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 7], ["correct", false], ["content", "arr[\"biggie\"]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 8], ["correct", false], ["content", "result = []\n                                                                              colors.each_with_index do |color, index|\n                                                                                result << [\"color\", \"index\"  + 1]\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 8], ["correct", false], ["content", "colors.map.with_index do |color, index|\n                                                                                [color, index] + 1\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 8], ["correct", false], ["content", "result = []\n                                                                              colors.each do |color, index|\n                                                                                result << [color, index  + 1]\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 8], ["correct", true], ["content", "colors.map.with_index do |color, index|\n                                                                                [color, index + 1]\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 9], ["correct", false], ["content", "days.values_at(0, 3)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 9], ["correct", true], ["content", "days.select.with_index do |_, index|\n                                                                                [0, 2].include? index\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 9], ["correct", false], ["content", "days.select.each_with_index do |_, index|\n                                                                                  [0, 2].include? index\n                                                                                end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 9], ["correct", false], ["content", "days.values(0, 2)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 10], ["correct", false], ["content", "begin\n                                                                              begin\n                                                                              begin"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 10], ["correct", false], ["content", "begio\n                                                                              begip\n                                                                              begiq"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 10], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 10], ["correct", true], ["content", "begin\n                                                                              begio\n                                                                              begip"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 11], ["correct", false], ["content", "lebron.keys"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 11], ["correct", false], ["content", "lebron.values()"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 11], ["correct", true], ["content", "lebron.keys()"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 11], ["correct", false], ["content", "lebron.keys.all"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 12], ["correct", false], ["content", "lebron.push({:high_school => \"St. Vincent-St. Mary High School\"})"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 12], ["correct", false], ["content", "lebron(\"high_school\", \"St. Vincent-St. Mary High School\")"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 12], ["correct", false], ["content", "lebron[:high_school].to_h(St. Vincent-St. Mary High School)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 12], ["correct", true], ["content", "lebron[:high_school] = \"St. Vincent-St. Mary High School\""], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 13], ["correct", true], ["content", ":firefox"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 13], ["correct", false], ["content", ":chrome"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 13], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 13], ["correct", false], ["content", "[:chrome, :favorite]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 14], ["correct", false], ["content", "dude.values.sum(1) do |product, number|\n                                                                              product *= number\n                                                                              product\n                                                                            end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 14], ["correct", true], ["content", "dude.values.inject(1) do |product, number|\n                                                                                product *= number\n                                                                                product\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 14], ["correct", false], ["content", "dude.values.include do |product, number|\n                                                                                product *= number\n                                                                                product\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 14], ["correct", false], ["content", "dude.values.inject(1) do |product, number|\n                                                                                product * number\n                                                                                product\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 15], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 15], ["correct", false], ["content", "[]\n                                                                              \"***\"\n                                                                              [@greeting, @name]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 15], ["correct", false], ["content", "[]\n                                                                              \"***\"\n                                                                              [\"@greeting\", \"@name\"]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 15], ["correct", true], ["content", "[]\n                                                                              \"***\"\n                                                                              [:@greeting, :@name]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 16], ["correct", false], ["content", "a = 1\n                                                                               b = 2\n                                                                               c = 3\n                                                                               d = 4"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 16], ["correct", true], ["content", "a = 1\n                                                                               b = 2\n                                                                               c = [3, 4]\n                                                                               d = 5"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 16], ["correct", false], ["content", "a = 1\n                                                                               b = 2\n                                                                               c = nil\n                                                                               d = 3"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 16], ["correct", false], ["content", "a = 1\n                                                                               b = 2\n                                                                               c = [3, 4]\n                                                                               d = nil"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 17], ["correct", false], ["content", "Instance variable"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 17], ["correct", false], ["content", "Global variable"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 17], ["correct", true], ["content", "Class variable"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 17], ["correct", false], ["content", "None of the above"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 18], ["correct", true], ["content", "[10, 30, 50, 70, 90]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 18], ["correct", false], ["content", "[20, 40, 60, 80, 100]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 18], ["correct", true], ["content", "10, 30, 50, 70, 90"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 18], ["correct", false], ["content", "[\"10\", \"30\", \"50\", \"70\", \"90\"]"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 20], ["correct", false], ["content", "TypeError: no implicit conversion of String into Integer"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 20], ["correct", false], ["content", "NameError: undefined local variable or method `lambda' for main:Object"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 20], ["correct", true], ["content", "ArgumentError: wrong number of arguments (3 for 2)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 20], ["correct", false], ["content", "ArgumentError: wrong number of arguments (2 for 1)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 19], ["correct", false], ["content", "biscuits biscuits biscuits"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 19], ["correct", false], ["content", "error"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 19], ["correct", false], ["content", "thang"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 19], ["correct", true], ["content", "biscuits"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 21], ["correct", false], ["content", "class Celsius\n                                                                                  def initialize(temperature)\n                                                                                    temperature\n                                                                                  end\n                                                                                end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 21], ["correct", false], ["content", "class Celsius\n                                                                                def init(temperature)\n                                                                                  @temperature = temperature\n                                                                                end\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 21], ["correct", true], ["content", "class Celsius\n                                                                                def initialize(temperature)\n                                                                                  @temperature = temperature\n                                                                                end\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 21], ["correct", false], ["content", "class Celsius\n                                                                                  def initialize(temperature)\n                                                                                    temperature = @temperature\n                                                                                  end\n                                                                                end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 22], ["correct", false], ["content", "class Calculator\n                                                                                  def self.add(x, y)\n                                                                                    return(x + y)\n                                                                                  end\n                                                                                end\n                                                                                puts Calculator(3, 4)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 22], ["correct", false], ["content", "class Calculator\n                                                                                def add(x, y)\n                                                                                  x + y\n                                                                                end\n                                                                              end\n\n                                                                              puts Calculator.add(3, 4)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 22], ["correct", false], ["content", "class Calculator\n                                                                                def add(x, y)\n                                                                                  return(x + y)\n                                                                                end\n                                                                              end\n\n                                                                              puts Calculator.add(3, 4)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 22], ["correct", true], ["content", "class Calculator\n                                                                                def self.add(x, y)\n                                                                                  return(x + y)\n                                                                                end\n                                                                              end\n\n                                                                              puts Calculator.add(3, 4)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 23], ["correct", true], ["content", "class Person\n                                                                                def initialize(args)\n                                                                                  @name = args.fetch(:name)\n                                                                                  @age = args.fetch(:age)\n                                                                                end\n                                                                              end\n\n                                                                              class Yankees\n                                                                                def captain\n                                                                                  Person.new({ name: \"Jeter\", age: 39 })\n                                                                                end\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 23], ["correct", false], ["content", "class Person\n                                                                                def initialize(args)\n                                                                                  @name = args(:name)\n                                                                                  @age = args(:age)\n                                                                                end\n                                                                              end\n\n                                                                              class Yankees\n                                                                                def captain\n                                                                                  Person.new({ name: \"Jeter\", age: 39 })\n                                                                                end\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 23], ["correct", false], ["content", "class Person\n                                                                                def initialize(args)\n                                                                                  @name = args.fetch(name)\n                                                                                  @age = args.fetch(age)\n                                                                                end\n                                                                              end\n\n                                                                              class Yankees\n                                                                                def captain\n                                                                                  Person.new({ name: \"Jeter\", age: 39 })\n                                                                                end\n                                                                              end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 23], ["correct", false], ["content", "class Person\n                                                                                  def initialize(args)\n                                                                                    @name = args.fetch(:name)\n                                                                                    @age = args.fetch(:age)\n                                                                                  end\n                                                                                end\n\n                                                                                class Yankees\n                                                                                  def captain\n                                                                                    Person.new(\"Jeter\", 39)\n                                                                                  end\n                                                                                end"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 24], ["correct", false], ["content", "hi cat"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 24], ["correct", false], ["content", "error)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 24], ["correct", true], ["content", "cat"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 24], ["correct", false], ["content", "nil"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 25], ["correct", false], ["content", "nil"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 25], ["correct", true], ["content", "error)"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 25], ["correct", false], ["content", "oink!"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "options" ("question_id", "correct", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["question_id", 25], ["correct", false], ["content", "#Pig:0x007ff24ab73d58"], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "open_options" ("correct_answer", "question_id", "created_at", "updated_at", "language") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["correct_answer", "6"], ["question_id", 1], ["created_at", 2016-08-19 14:13:48 UTC], ["updated_at", 2016-08-19 14:13:48 UTC], ["language", "JS"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:14:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kevin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kevin"], ["LIMIT", 1]]
+Completed 404 Not Found in 31ms (ActiveRecord: 3.0ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2016-08-19 10:14:11 -0400
+Processing by Api::V1::UsersController#create as HTML
+  Parameters: {"email"=>"kevin", "password"=>"[FILTERED]", "user"=>{"email"=>"kevin"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["password_digest", "$2a$10$Fw4mhIbG3WyqSXto/2scbueS7sRwHBTYf95SEKF2ZlPcoJ95dIGuq"], ["created_at", 2016-08-19 14:14:11 UTC], ["updated_at", 2016-08-19 14:14:11 UTC], ["email", "kevin"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 102ms (ActiveRecord: 8.9ms)
+
+
+Started POST "/knock/auth_token" for ::1 at 2016-08-19 10:14:11 -0400
+Processing by Knock::AuthTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kevin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kevin"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Knock::AuthToken (0.14ms)
+Completed 201 Created in 95ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:14:11 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 200 OK in 35ms (Views: 2.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:14:49 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:14:49 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 29ms (ActiveRecord: 6.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:14:49 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/boards/13" for ::1 at 2016-08-19 10:14:56 -0400
+Processing by Api::V1::BoardsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Board with 'id'=13):
+  
+app/services/populate_board.rb:7:in `initiate'
+app/controllers/api/v1/boards_controller.rb:12:in `show'
+Started GET "/api/v1/questions/51" for ::1 at 2016-08-19 10:14:57 -0400
+Processing by Api::V1::QuestionsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/api/v1/questions_controller.rb:6:in `show'
+Started GET "/api/v1/boards" for ::1 at 2016-08-19 10:14:57 -0400
+Processing by Api::V1::BoardsController#index as HTML
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+

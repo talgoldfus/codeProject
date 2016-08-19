@@ -64,7 +64,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default reduxForm({
-  form: 'signup',
+  form: 'signin',
   fields: ['email', 'password'],
   validate
 }, mapStateToProps, mapDispatchToProps)(Signin);

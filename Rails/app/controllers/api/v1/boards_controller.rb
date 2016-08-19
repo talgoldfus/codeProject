@@ -11,7 +11,7 @@ module Api
       def show
         new_board =PopulateBoard.initiate(params[:id])
         new_board[:user] = current_user
-        byebug
+        # byebug
         render json: new_board
       end
 

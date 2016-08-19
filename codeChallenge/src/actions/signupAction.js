@@ -1,12 +1,29 @@
 import $ from 'jquery'
+import { browserHistory } from 'react-router'
 
-export default function signupUser(user, password){
-    const URL = 'http://localhost:3000/api/v1/users'
-    return $.ajax({
-      url: URL,
+
+export default function signupUser(formProps) {
+  return function(dispatch) {
+    $.ajax({
+      url: 'http://localhost:3000/api/v1/users',
       type:"POST",
-      data: JSON.stringify({email: user, password: password}),
+      data: JSON.stringify({email: formProps.email, password: formProps.password}),
       contentType: "application/json; charset=utf-8",
       dataType: "json"
+    }).done(() => {
+      $.ajax({
+        url: "http://localhost:3000/knock/auth_token",
+        method: "POST",
+        data: {"auth": {"email": `${formProps.email}`, "password": `${formProps.password}`}}
+        }).done(function (response) {
+        console.log(response);
+          localStorage.setItem('token', response.jwt)
+          dispatch({type: 'LOG_IN', payload: true})
+          browserHistory.push('game')        
+        })
       })
-}
+    }
+  }
+    
+
+
