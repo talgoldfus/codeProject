@@ -5,8 +5,8 @@ import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
 import SmartTopicsContainer from './containers/TopicsContainer'
 import Signin from './components/Signin'
-import UserPageContainer from './containers/UserPageContainer'
 import Signup from './components/Signup'
+import UserPageContainer from './containers/UserPageContainer'
 import Admin from './components/Admin'
 
 

@@ -8,14 +8,16 @@ class SigninHeader extends Component {
 
   authButton(){        
     if(!this.props.authenticated){
-      return(<p>
-        <Link to="signin">
+      return(
+      <div>
+        <h1 className="title"><a>FizzBuzz 2.0</a></h1>
+        <Link to="signin" className="stylized-link">
             Sign in
         </Link><br/>
-        <br/><Link to="signup">
+        <Link to="signup" className="stylized-link">
           Sign up
         </Link>
-      </p>  )
+      </div>  )
     } 
   }
   render(){

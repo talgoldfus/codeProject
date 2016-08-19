@@ -67,8 +67,8 @@ class Board extends Component {
 
 
     return (
-        <div>        
-          <table>
+        <div>
+          <table className="gameboard">
             <thead>
               <tr>
                 {headers}
