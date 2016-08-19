@@ -1,10 +1,3 @@
-promises issues, 
-current user not always being recognized when new board is being created
-
-double click on sign up is a promises issue, creates user twice, model authAction
-
-
-
 Below you will find some information on how to perform common tasks.  
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md).
 
