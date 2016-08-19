@@ -20,7 +20,7 @@ checkQuestion(formInput){
         <div>
           <form onSubmit={handleSubmit(this.checkQuestion.bind(this))}>
           <div >
-            <label>Content</label>
+            <label>Enter your answer here:</label>
             <textarea className="form-control" {...content} />
           </div>
             <button type="submit" className="btn btn-primary">Submit</button>

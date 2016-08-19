@@ -3,10 +3,10 @@ import { Route } from 'react-router'
 import App from './components/App'
 import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
-import OpenOption from './components/OpenOption'
 import SmartTopicsContainer from './containers/TopicsContainer'
 import Signin from './components/Signin'
 import Signup from './components/signup'
+import Admin from './components/Admin'
 
 
 export default (
@@ -18,7 +18,7 @@ export default (
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>
-    <Route path="/test" component={OpenOption} />
+    // <Route path="/test" component={Admin} />
 </div>
 
 )
