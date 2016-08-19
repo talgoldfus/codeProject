@@ -19,6 +19,10 @@ module Api
         render json: GameOption.user_analytics(user)
       end
 
+      def board_analytics
+        board = Board.find(params[:id])
+        render json: GameOption.board_analytics(board)
+      end
 
     end
   end

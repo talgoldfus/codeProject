@@ -68,7 +68,7 @@ class GameOption < ApplicationRecord
   end
 
 
-  def self.topic_analytics(board)
+  def self.board_analytics(board)
     return {topic: board.topic, average_score: board.average_score, categories: self.questions(board)} 
   end 
 
