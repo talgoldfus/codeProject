@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Topic from './Topic'
+import { Link } from 'react-router'
 
 
 class TopicsList extends Component {
