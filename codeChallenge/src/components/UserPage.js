@@ -33,6 +33,8 @@ render(){
         <h2>{userInfo.email}</h2>
         <h6>Tagline: {userInfo.Tagline}</h6>
         <h2>Average Score: {userInfo.average_score}</h2>
+        
+        <br></br><h3>RECENT GAMES </h3><br></br>
           <table>
             <thead>
               <th>Date</th>
@@ -56,7 +58,7 @@ render(){
             </tbody>
           </table>
 
-         <h3>WRONG ANSWERS</h3>
+         <br></br><h3>WRONG ANSWERS</h3><br></br>
           <table>
             <thead>
               <th>Points</th>

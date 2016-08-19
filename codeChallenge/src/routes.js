@@ -6,7 +6,7 @@ import CurrentQuestionContainer from './containers/currentQuestionContainer'
 import OpenOption from './components/OpenOption'
 import SmartTopicsContainer from './containers/TopicsContainer'
 import UserPageContainer from './containers/UserPageContainer'
-import Signin from './components/signin'
+import Signin from './components/Signin'
 import Signup from './components/signup'
 
 
