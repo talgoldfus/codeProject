@@ -6,13 +6,13 @@ import CurrentQuestionContainer from './containers/currentQuestionContainer'
 import OpenOption from './components/OpenOption'
 import SmartTopicsContainer from './containers/TopicsContainer'
 import Signin from './components/signin'
-import Signup from './components/Signup'
+import Signup from './components/signup'
 
 
 export default (
   <div>
     <Route path="/" component={App} />
-    <Route path="signin" component={Signin} /> 
+    <Route path="signin" component={Signin} />
     <Route path="signup" component={Signup} />
     <Route path="game" component={SmartTopicsContainer} />
     <Route path="game/:id" component={BoardContainer} >

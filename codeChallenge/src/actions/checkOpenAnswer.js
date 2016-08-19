@@ -29,26 +29,30 @@ export default function checkOpenAnswer(formInput,props){
           } else{
              calculatedAnswer = ( correcAnswer  === (eval(userAnswer).toString()) )
           }
+          props.updateAnalytics(props.id,calculatedAnswer, props.userId , null)
           props.evaluateAnswer(calculatedAnswer , props.difficulty)
           return;
       }
       alert(e)
+      props.updateAnalytics(props.id, false, props.userId, e )
       props.evaluateAnswer(false , props.difficulty)
     })
 
   break;
 
-  // case 'RUBY':
-  //   let URL = `http://localhost:3000/api/v1/open_options/` + props.questionId
-  //     return $.ajax({
-  //         url:URL,
-  //         type:"PATCH",
-  //         data: JSON.stringify({userAnswer}),
-  //         contentType: "application/json; charset=utf-8",
-  //         dataType: "json"
-  //       }).then((answer)=>{
-  //         props.evaluateAnswer(answer,props.difficulty)
-  //       })
+  case 'RUBY':
+    let URL = `http://localhost:3000/api/v1/assesOpenOption`
+       $.ajax({
+          url:URL,
+          type:"POST",
+          data: JSON.stringify({userAnswer , correcAnswer}),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json"
+        }).then((answer)=>{
+          props.updateAnalytics(props.id, answer.correct, props.userId, answer.errorMessage )
+          props.evaluateAnswer(answer.correct,props.difficulty)
+          return;
+        })
 
     default:
     null
