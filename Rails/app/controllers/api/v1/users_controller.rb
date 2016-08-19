@@ -14,6 +14,10 @@ module Api
         user.save
       end
 
+      def analytics
+        render json: User.leader_board
+      end
+
       
     end
   end

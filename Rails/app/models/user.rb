@@ -7,7 +7,11 @@ class User < ApplicationRecord
   end
 
   def self.leader_board 
-    self.all.map{|user| user.average_score}.sort[0..10]
+    self.all.sort do |user| 
+      user.average_score      
+    end.reverse[0..10]
+
+    # self.all.map{|user| user.average_score}.sort[0..10]
   end
 
   def right_answers

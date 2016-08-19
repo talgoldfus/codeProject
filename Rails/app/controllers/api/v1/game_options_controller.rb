@@ -13,6 +13,7 @@ module Api
         end
       end
 
+<<<<<<< 77b1e5ee600a39da74773936b8ce2079d8226318
 
       def user_analytics 
         user = User.find(params[:id])
@@ -24,6 +25,9 @@ module Api
         render json: BoardAnalytics.run(board)
       end
 
+=======
+      
+>>>>>>> promises issues
     end
   end
 end

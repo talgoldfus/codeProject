@@ -18,19 +18,6 @@ export default function signinUser(formProps) {
   }
 }
 
-// export function fetchMessage(){
-//   const request = $.ajax({
-//     url: 'http://localhost:3000/posts',
-//     type:"GET",
-//     headers: { authorization: localStorage.getItem('token')}
-//   })
-  
-//   return {
-//     type: 'FETCH_POSTS',
-//     payload: request,
-//   };
-
-// }
 
 // function authError(msg){
 //   return {

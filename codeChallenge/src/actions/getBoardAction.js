@@ -1,11 +1,31 @@
-import axios from 'axios'
+// import axios from 'axios'
+import $ from 'jquery'
 
 export default function getBoard(id){
-    const url = 'http://localhost:3000/api/v1/boards/'+id
-    const request = axios.get(url)
-  return {
-    type:'GET_BOARD',
-    payload: request
+  return function(dispatch) {
+    $.ajax({
+    url: 'http://localhost:3000/api/v1/boards/'+id,
+    type: 'GET',
+    headers: { authorization: localStorage.getItem('token')}
+  }).done(function(response) {
+      console.log(response)
+        dispatch({type:'GET_BOARD', payload: response})
+      })
+    }        
   }
 
-}
+
+
+
+
+//   const request = $.ajax({
+//     url: 'http://localhost:3000/api/v1/boards/'+id,
+//     type: 'GET',
+//     headers: { authorization: localStorage.getItem('token')}
+//   })
+//   return {
+//     type:'GET_BOARD',
+//     payload: request
+//   }
+
+// }
