@@ -6,6 +6,7 @@ import openReducer from './openReducer.js'
 import {reducer as formReducer } from 'redux-form';
 import analytics from './analyticsReducer'
 import authReducer from './authReducer'
+import user from './userReducer'
 
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   currentQuestion: currentQuestion,
   openReducer: openReducer,
   analytics: analytics,
-  authReducer: authReducer
+  authReducer: authReducer, 
+  user: user
 })
 
 
