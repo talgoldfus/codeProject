@@ -18,6 +18,7 @@ componentWillMount(){
 
     return (
       <div>
+        <h2><Link to="user">Your Name</Link></h2>
         <h1><a>FizzBuzz 2.0</a></h1>
           {topicslist}
       </div>
