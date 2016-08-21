@@ -11,4 +11,12 @@ class Option < ApplicationRecord
     Option.joins(:games).where('games.user_id': user.id).where(correct: true)
   end
 
+  def self.game_wrong_answers(game)
+    Option.joins(:games).where('games.id': game.id).where(correct: false)
+  end
+
+  def self.game_right_answers(game)
+    Option.joins(:games).where('games.id': game.id).where(correct: true)
+  end
+
 end

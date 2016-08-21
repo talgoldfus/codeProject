@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :games
+    has_many :game_options, through: :games
 
   def average_score 
     Game.find_average_score('user', self.id)

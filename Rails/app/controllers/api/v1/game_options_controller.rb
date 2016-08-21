@@ -1,6 +1,7 @@
 module Api
   module V1
     class GameOptionsController < ApplicationController
+      include Knock::Authenticable
 
       def create
         user = User.find(params[:boardInfo][:userId])

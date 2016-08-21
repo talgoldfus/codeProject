@@ -11,6 +11,8 @@ class UserPage extends Component {
 
 render(){
 
+  debugger; 
+
   const userInfo = this.props.userInfo.user_info || {email: "", tagline: "", average_score: "", games: [], questions_right: [], questions_wrong: []}
 
   const games = []
@@ -43,30 +45,6 @@ render(){
             </thead>
             <tbody>
               {games}
-            </tbody>
-          </table>
-
-        <br></br><h3>RIGHT ANSWERS</h3><br></br>
-          <table>
-            <thead>
-              <th>Points</th>
-              <th>Content</th>
-              <th>Difficulty</th>
-            </thead>
-            <tbody>
-              {rightAnswers}
-            </tbody>
-          </table>
-
-         <br></br><h3>WRONG ANSWERS</h3><br></br>
-          <table>
-            <thead>
-              <th>Points</th>
-              <th>Content</th>
-              <th>Difficulty</th>
-            </thead>
-            <tbody>
-              {wrongAnswers}
             </tbody>
           </table>
       </div>
