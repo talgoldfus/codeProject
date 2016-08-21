@@ -10,4 +10,14 @@ class Game < ApplicationRecord
     Game.where(user_id: id).average('final_score').to_i if className == 'user' 
   end 
 
+  def questions_got_wrong
+    wrong_answers = Option.wrong_answers(self)
+    wrong_answers.map{|option| {option: option, question: option.question}}  
+  end
+
+  def questions_got_right
+    right_answers = Option.right_answers(self)
+    right_answers.map{|option| {option: option, question: option.question}}
+  end
+
 end

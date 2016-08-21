@@ -18,6 +18,8 @@ def self.run(user)
       game_hash["topic"] = game.board.topic
       game_hash["date"] = game.created_at
       game_hash["score"] = game.final_score
+      game_hash["questions_right"] = game.questions_got_right
+      game_hash["questions_wrong"] = game.questions_got_wrong
       hash[game.id] = game_hash
     end
   end

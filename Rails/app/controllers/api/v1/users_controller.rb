@@ -1,9 +1,15 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      include Knock::Authenticable 
       
       def create
         user = User.create(email: params[:email], password: params[:password])
+      end
+
+      def current_show 
+        byebug
+
       end
 
       
