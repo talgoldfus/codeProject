@@ -4,6 +4,7 @@ def self.run(user)
     return {
       name: user.username, 
       tagline: user.tagline,
+      id: user.id, 
       email: user.email, 
       average_score: user.average_score, 
       games: self.games(user), 

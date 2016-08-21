@@ -9,15 +9,15 @@ render(){
 
 
   const qs = []
+
     for(var question in this.props.questions){
-      debugger; 
       qs.push(<UserQuestionRecord questionInfo={this.props.questions[question]}/>)
     } 
  
   return (
     <div>
       <h1>{this.props.title}</h1>
-      <table>
+      <table className="questionTable">
        <thead>
           <th>Points</th>
           <th>Content</th>

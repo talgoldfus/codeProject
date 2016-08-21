@@ -1,0 +1,26 @@
+.questionTable{
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  width: 70%;
+  color: black;
+}
+
+.userTable{
+  width: 90%;
+  margin-left: 30px;
+}
+
+.gameRow{
+    border-radius: 10px;
+      margin-top: 30px;
+      padding: 20px;
+  background-color: #ADD8E6;
+  padding-left: 40px;
+  color: black;
+}
+
+.gameRowCells{
+  font-size: 26px;
+
+}

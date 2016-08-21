@@ -6,12 +6,11 @@ import UserQuestionRecord from './UserQuestionRecord'
 class UserPage extends Component {
 
   componentWillMount(){
-    this.props.getInfo()
+    // userId = this.props.userInfo.user_info.id
+    this.props.getInfo(3)
   }
 
 render(){
-
-  debugger; 
 
 
   const userInfo = this.props.userInfo.user_info || {email: "", tagline: "", average_score: "", games: [], questions_right: [], questions_wrong: []}
@@ -33,12 +32,11 @@ render(){
 
   return (
       <div> 
-        <h2>{userInfo.email}</h2>
-        <h6>Tagline: {userInfo.Tagline}</h6>
+        <h1>{userInfo.email}</h1>
         <h2>Average Score: {userInfo.average_score}</h2>
         
         <br></br><h3>RECENT GAMES </h3><br></br>
-          <table>
+          <table className='userTable'>
             <thead>
               <th>Date</th>
               <th>Topic</th>
