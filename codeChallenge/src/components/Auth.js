@@ -46,7 +46,6 @@ export default Auth
 //   }
 
 //   componentWillMount() {
-//     debugger
 //     if (!this.props.authenticated) {
 //       browserHistory.push('/')
 //     }

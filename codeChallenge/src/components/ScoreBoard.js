@@ -11,7 +11,6 @@ successRate(){
   let correctAnswers  = this.analizeAnalytics("correct")
   let rate = (correctAnswers / this.props.gameAnalytics.options.length).toFixed(2)
   if (rate !== "NaN"){
-    debugger
    return 100*rate }
    return 0
   }
