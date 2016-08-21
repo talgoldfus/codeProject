@@ -7,14 +7,16 @@ class UserQuestionTable extends Component {
   //should receive a collection of questions
 render(){
 
+
   const qs = []
     for(var question in this.props.questions){
-      qs.push(<UserQuestionRecord questionInfo={this.props.questions[question].question}/>)
+      debugger; 
+      qs.push(<UserQuestionRecord questionInfo={this.props.questions[question]}/>)
     } 
  
   return (
     <div>
-            <h1>{this.props.title}</h1>
+      <h1>{this.props.title}</h1>
       <table>
        <thead>
           <th>Points</th>

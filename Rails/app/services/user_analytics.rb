@@ -18,8 +18,10 @@ def self.run(user)
       game_hash["topic"] = game.board.topic
       game_hash["date"] = game.created_at
       game_hash["score"] = game.final_score
-      game_hash["questions_right"] = game.questions_got_right
-      game_hash["questions_wrong"] = game.questions_got_wrong
+      ques_values = game.questions_got_right.map{|object| object.values[1]}
+      ques_values_wrong = game.questions_got_wrong.map{|object| object.values[1]}
+      game_hash["questions_wrong"] = QuestionHashCreator.run(ques_values)
+      game_hash["questions_right"] = QuestionHashCreator.run(ques_values_wrong) 
       hash[game.id] = game_hash
     end
   end
