@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       post "/assesOpenOption" => "options#asses"
       get "/game_options/user/:id" => "game_options#user_analytics"
       get "/game_options/board/:id" => "game_options#board_analytics"
-      get "/userfind" => "users#current_show"
+      get "/users/analytics" => "users#analytics"
 
     end
   end
