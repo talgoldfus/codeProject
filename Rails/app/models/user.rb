@@ -8,9 +8,13 @@ class User < ApplicationRecord
   end
 
   def self.leader_board 
-    self.all.sort do |user| 
+    leaders = self.all.sort do |user| 
       user.average_score      
     end.reverse[0..10]
+
+    return leaders.map do |user|
+          {name: user.email, score: user.average_score}
+        end
 
     # self.all.map{|user| user.average_score}.sort[0..10]
   end
