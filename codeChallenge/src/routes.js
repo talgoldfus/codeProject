@@ -7,6 +7,7 @@ import SmartTopicsContainer from './containers/TopicsContainer'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import UserPageContainer from './containers/UserPageContainer'
+import LeaderBoardContainer from './containers/LeaderBoardContainer'
 import Admin from './components/Admin'
 
 
@@ -17,6 +18,7 @@ export default (
     <Route path="signup" component={Signup} />
     <Route path="game" component={SmartTopicsContainer} />
     <Route path="user" component={UserPageContainer} />
+    <Route path="leaderBoard" component={LeaderBoardContainer} />
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>

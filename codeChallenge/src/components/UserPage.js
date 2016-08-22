@@ -36,7 +36,7 @@ render(){
         <h2>Average Score: {userInfo.average_score}</h2>
         
         <br></br><h3>RECENT GAMES </h3><br></br>
-          <table className='userTable'>
+          <table className="userTable">
             <thead>
               <th>Date</th>
               <th>Topic</th>

@@ -25,6 +25,8 @@ componentWillMount(){
       <div>
         <div className="header group">
           <h2><Link to="user" className="user-link">{userName}</Link></h2>
+          <h2><Link to="leaderBoard" className="user-link">Leader Board</Link></h2>
+
         </div>
         <div className="group">
             <h1>Choose a Game Topic</h1>
