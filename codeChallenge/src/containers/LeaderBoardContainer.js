@@ -8,7 +8,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  debugger; 
     return {
       leaderBoard: state.user.leader_board
     }

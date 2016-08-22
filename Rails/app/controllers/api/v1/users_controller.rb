@@ -7,11 +7,6 @@ module Api
         user = User.create(email: params[:email], password: params[:password])
       end
 
-      def current_show 
-        byebug
-
-      end
-
       
       def update
         user = User.find(params[:id])
