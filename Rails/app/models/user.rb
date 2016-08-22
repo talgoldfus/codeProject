@@ -8,7 +8,7 @@ class User < ApplicationRecord
   end
 
   def self.leader_board 
-    leaders = self.all.sort do |user| 
+    leaders = self.all.sort_by do |user| 
       user.average_score      
     end.reverse[0..10]
 
