@@ -1,0 +1,17 @@
+.correct, .incorrect {
+  display: none;
+  font-size: 100px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 30%;
+  left: 0;
+}
+
+.correct {
+  color: #4CAF50;
+}
+
+.incorrect {
+  color: #7D2727;
+}
