@@ -7,7 +7,7 @@ import SigninHeader from '../components/SigninHeader'
 class App extends Component {
   render() {
     return (
-      <div className="center">
+      <div className="center login">
           <SigninHeader />
       </div>
     )

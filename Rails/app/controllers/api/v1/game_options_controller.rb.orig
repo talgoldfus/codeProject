@@ -13,7 +13,12 @@ module Api
         end
       end
 
+<<<<<<< HEAD
+
+      def user_analytics
+=======
       def user_analytics 
+>>>>>>> f9681d2376f74896771609cb839aa65070f94c89
         user = User.find(params[:id])
         render json: UserAnalytics.run(user)
       end
@@ -22,6 +27,10 @@ module Api
         board = Board.find(params[:id])
         render json: BoardAnalytics.run(board)
       end
+<<<<<<< HEAD
+
+=======
+>>>>>>> f9681d2376f74896771609cb839aa65070f94c89
     end
   end
 end

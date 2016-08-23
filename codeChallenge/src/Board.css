@@ -1,4 +1,4 @@
-table {
+table.gameboard {
   border-collapse: collapse;
   text-align: center;
   vertical-align: middle;
@@ -9,7 +9,7 @@ table {
   letter-spacing: 1px;
 }
 
-table a {
+table.gameboard a {
   color: #e8a35d;
   display: block;
   height: 100%;
@@ -17,7 +17,7 @@ table a {
   cursor: pointer;
 }
 
-table thead th {
+table.gameboard thead th {
   font-size: 18px;
   color: #a9d2fb;
   background: #071ac4; /* Old browsers */
@@ -28,11 +28,11 @@ table thead th {
   padding: 0 5px;
 }
 
-table td span {
+table.gameboard td span {
   cursor: not-allowed;
 }
 
-table th, table td {
+table.gameboard th, table.gameboard td {
   border: 5px solid #03090f;
   color: rgba(232, 163, 93, .5);
   background: #04129b; 

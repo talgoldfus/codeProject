@@ -5,7 +5,8 @@ import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
 import SmartTopicsContainer from './containers/TopicsContainer'
 import Signin from './components/Signin'
-import Signup from './components/signup'
+import Signup from './components/Signup'
+import UserPageContainer from './containers/UserPageContainer'
 import Admin from './components/Admin'
 
 
@@ -15,10 +16,12 @@ export default (
     <Route path="signin" component={Signin} />
     <Route path="signup" component={Signup} />
     <Route path="game" component={SmartTopicsContainer} />
+    <Route path="user" component={UserPageContainer} />
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>
-    <Route path="/test" component={Admin} />
 </div>
 
 )
+
+    // <Route path="/test" component={Admin} />

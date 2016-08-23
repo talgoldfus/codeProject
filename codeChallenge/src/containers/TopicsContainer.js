@@ -2,14 +2,19 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getTopicsAction from '../actions/getTopicsAction'
 import TopicsList from '../components/TopicsList'
+import getUserInfo from '../actions/getUserAction'
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getTopics: getTopicsAction}, dispatch)
+  return bindActionCreators({
+    getTopics: getTopicsAction, 
+    getInfo: getUserInfo
+  }, dispatch)
 }
 
 function mapStateToProps(state) {
     return {
-      topics: state.topics
+      topics: state.topics, 
+      userInfo: state.user
     }
 }
 

@@ -10,13 +10,13 @@ class Board extends Component {
 
   componentWillMount(){
     this.props.getBoard(this.props.params.id)
-    }
+  }
 
     
   componentWillReceiveProps(nextProps) {
-     if(nextProps.finished === 3 && this.props.gameBoard.players[0].userId) {
-        this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
-      }
+     if(nextProps.finished === 10 && this.props.gameBoard.players[0].userId) {
+            this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
+    } 
    }
 
   getQuestionsByIndex(idx, categories){
@@ -64,7 +64,7 @@ class Board extends Component {
 
     return (
         <div>
-          <table>
+          <table className="gameboard">
             <thead>
               <tr>
                 {headers}
@@ -86,4 +86,4 @@ class Board extends Component {
 
 export default Board
 
-// <button name="logout" onClick={localStorage.clear()}> Log out </button>
+// <button name="logout" onClick={localStorage.clear()}> Log out </button> 

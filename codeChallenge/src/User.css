@@ -1,0 +1,63 @@
+form * {
+  border-collapse: collapse;
+}
+
+.form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  background: #e6e6e6;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+label {
+  font-size:20px;
+  color: #fff;
+  margin-right: 20px;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  color: #071276;  
+  background: #e6e6e6;
+  border: none;
+  border-radius: 10px;
+}
+
+.form input {
+  width: 100%;
+}
+
+.form button {
+  float: right;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 16px;
+  margin-top: 10px;
+  clear: both;
+  font-style: italic;
+}
+
+.header {
+  padding: 0 20px 20px;
+} 
+.user-link {
+  float: right;
+  color: #00efff;
+
+}
+
