@@ -17,13 +17,11 @@ export default function signupUser(formProps) {
         data: {"auth": {"email": `${formProps.email}`, "password": `${formProps.password}`}}
         }).done(function (response) {
         console.log(response);
+        //
           localStorage.setItem('token', response.jwt)
           dispatch({type: 'LOG_IN', payload: true})
-          browserHistory.push('game')        
+          browserHistory.push('game')
         })
       })
     }
   }
-    
-
-

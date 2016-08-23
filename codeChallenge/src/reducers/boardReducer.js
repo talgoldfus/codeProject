@@ -4,6 +4,7 @@ const boardReducer = (state = [], action) => {
     let gameData = action.payload.data
     let userData = action.payload.user
      return {
+       token: JSON.parse(action.payload.token),
         name: gameData.topic,
         id: gameData.id,
         categories: gameData.categories,

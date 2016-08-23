@@ -8,10 +8,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({evaluateAnswer: correctAnswer, updateAnalytics: analyticsAction}, dispatch)
 }
 
-// function mapStateToProps(state) {
-//     return {state}
-// }
+function mapStateToProps(state) {
+  return {token: state.board.token}
+}
 
-const openOptionContainer = connect(null, mapDispatchToProps)(OpenOption)
+const openOptionContainer = connect(mapStateToProps, mapDispatchToProps)(OpenOption)
 
 export default openOptionContainer

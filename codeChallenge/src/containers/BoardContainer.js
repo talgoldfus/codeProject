@@ -9,11 +9,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state, ownProps) {
+  
    return {
      gameBoard: state.board,
      ownProps: ownProps,
      optionIds: state.analytics,
-     finished: state.analytics.options.length 
+     finished: state.analytics.options.length
    }
 }
 

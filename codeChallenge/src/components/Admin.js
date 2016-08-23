@@ -1,20 +1,18 @@
-// import React, { Component } from 'react'
-//
-//
-//
-// class Aadmin extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1> Create a game </h1>
-//         <div className="center">
-//             <AddCategory />
-//         </div>
-//       </div>
-//     )
-//   }
-//
-// }
-//
-//
-// export default App
+import React, { Component } from 'react'
+import AdminAddGame from './AdminAddGame'
+
+class Admin extends Component {
+  render() {
+    return (
+      <div>
+        <div className="center">
+            <AdminAddGame />
+        </div>
+      </div>
+    )
+  }
+
+}
+
+
+export default Admin

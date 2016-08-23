@@ -9,7 +9,8 @@ import Routes from './routes'
 import reduxThunk from 'redux-thunk';
 
 let createStoreWithMiddleware = applyMiddleware(reduxThunk, ReduxPromise)(createStore)
-let store = createStoreWithMiddleware(theReducer)
+let store = createStoreWithMiddleware(theReducer,window.devToolsExtension ? window.devToolsExtension() : f => f)
+
 
 ReactDOM.render(
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SmartTopicsContainer from '../containers/TopicsContainer'
 import '../index.css'
 import SigninHeader from '../components/SigninHeader'
 
