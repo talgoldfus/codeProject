@@ -166,9 +166,9 @@ question30 = Question.create(category_id: category5.id, difficulty: '1000', cont
 #   end
 #   add(3, 5)
 option5 = Option.create(question_id: question3.id, correct: false, content: "error")
-option6 = Option.create(question_id: question3.id, correct: true, content: "xy")
+option6 = Option.create(question_id: question3.id, correct: false, content: "xy")
 option7 = Option.create(question_id: question3.id, correct: false, content: "[3, 5]")
-option8 = Option.create(question_id: question3.id, correct: false, content: "8")
+option8 = Option.create(question_id: question3.id, correct: true, content: "8")
 
 #What are the values of a, b, c and d? a, (b, *c), d = 1, [2, 3, 4], 5
 option9 = Option.create(question_id: question4.id, correct: true, content: "a = 1
@@ -216,7 +216,7 @@ option20 = Option.create(question_id: question5.id, correct: false, content: "Ot
 # print IceCream.instance_variables
 option17 = Option.create(question_id: question6.id, correct: false, content: '["temp"]')
 option18 = Option.create(question_id: question6.id, correct: false, content: "temp")
-option19 = Option.create(question_id: question6.id, correct: false, content: "@temp]")
+option19 = Option.create(question_id: question6.id, correct: false, content: "@temp")
 option20 = Option.create(question_id: question6.id, correct: true, content: "[:@temp]")
 
 # What does the following code print?
