@@ -17,7 +17,7 @@ export default (
     <Route path="signin" component={Signin} />
     <Route path="signup" component={Signup} />
     <Route path="game" component={SmartTopicsContainer} />
-    <Route path="user" component={UserPageContainer} />
+    <Route path="users/:id" component={UserPageContainer} />
     <Route path="leaderBoard" component={LeaderBoardContainer} />
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />

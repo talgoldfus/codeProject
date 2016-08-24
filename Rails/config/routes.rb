@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :open_options
-      resources :users, except: [:new, :edit, :show]
+      resources :users, except: [:new, :edit]
       resources :players, except: [:new, :edit]
       resources :boards, except: [:new, :edit]
       resources :categories, except: [:new, :edit]
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
       post "/assesOpenOption" => "options#asses"
       get "/game_options/user/:id" => "game_options#user_analytics"
       get "/game_options/board/:id" => "game_options#board_analytics"
-      get "/users/analytics" => "users#analytics"
+      get "/analytics" => "users#analytics"
+      get "/populate" => "users#populate"
 
     end
   end
