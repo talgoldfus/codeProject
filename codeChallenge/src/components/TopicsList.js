@@ -6,11 +6,14 @@ import { Link } from 'react-router'
 class TopicsList extends Component {
 
 componentWillMount(){
+  debugger; 
   this.props.getTopics()
-  this.props.getInfo()
+  this.props.getUserInfo()
 }
 
   render() {
+
+    debugger; 
 
   var topics = this.props.topics.topic || []
 

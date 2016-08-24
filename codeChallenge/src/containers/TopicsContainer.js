@@ -7,7 +7,7 @@ import getUserInfo from '../actions/getUserAction'
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     getTopics: getTopicsAction, 
-    getInfo: getUserInfo
+    getUserInfo: getUserInfo
   }, dispatch)
 }
 
