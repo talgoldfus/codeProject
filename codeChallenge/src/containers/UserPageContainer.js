@@ -4,7 +4,7 @@ import getUserInfo from '../actions/getUserAction'
 import UserPage from '../components/UserPage'
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getInfo: getUserInfo}, dispatch)
+  return bindActionCreators({getUserInfo: getUserInfo}, dispatch)
 }
 
 function mapStateToProps(state) {

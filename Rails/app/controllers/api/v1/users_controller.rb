@@ -8,7 +8,8 @@ module Api
       end
 
       def show 
-        render json: UserAnalytics.run(current_user)
+        user = User.find(params[:id])
+        render json: UserAnalytics.run(user)
       end
 
       def populate

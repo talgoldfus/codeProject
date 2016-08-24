@@ -6,28 +6,27 @@ import { Link } from 'react-router'
 class TopicsList extends Component {
 
 componentWillMount(){
-  debugger; 
   this.props.getTopics()
-  this.props.getUserInfo()
+  this.props.getCurrUserInfo()
 }
 
   render() {
-
-    debugger; 
-
+    
   var topics = this.props.topics.topic || []
 
   let topicslist =   Object.keys(topics).map((key)=>{
       return <Topic key={key} id={key} name={topics[key]} />
     });
 
-  const userInfo = this.props.userInfo.user_info || {email: ""}
-  const userName = userInfo.email
+  const userInformation = this.props.userInfo.user_info || {email: "", id: 1}
+  const userCurrId = userInformation.id
+  const userName = userInformation.email
+  // debugger; 
 
     return (
       <div>
         <div className="header group">
-          <h2><Link to="user" className="user-link">{userName}</Link></h2>
+          <h2><Link to={`/user/${userCurrId}`} className="user-link">{userName}</Link></h2>
           <br></br>
           <h3><Link to="leaderBoard" className="user-link">Leader Board</Link></h3>
 
