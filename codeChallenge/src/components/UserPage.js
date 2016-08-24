@@ -6,8 +6,9 @@ import UserQuestionRecord from './UserQuestionRecord'
 class UserPage extends Component {
 
   componentWillMount(){
-    // userId = this.props.userInfo.user_info.id
-    this.props.getInfo(3)
+    // debugger    
+    var userId = this.props.params.id
+    this.props.getUserInfo(userId)
   }
 
 render(){

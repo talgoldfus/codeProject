@@ -13,7 +13,7 @@ class User < ApplicationRecord
     end.reverse[0..10]
 
     return leaders.map do |user|
-          {name: user.email, score: user.average_score}
+          {id: user.id, name: user.email, score: user.average_score}
         end
 
     # self.all.map{|user| user.average_score}.sort[0..10]
