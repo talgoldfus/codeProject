@@ -20,8 +20,7 @@ export default (
     <Route path="game/:id" component={BoardContainer} >
       <Route path=":questionId" component={CurrentQuestionContainer} />
     </Route>
+    <Route path="/test" component={Admin} />
 </div>
 
 )
-
-    // <Route path="/test" component={Admin} />

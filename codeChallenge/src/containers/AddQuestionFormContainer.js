@@ -1,34 +1,52 @@
 import React, { Component, PropTypes } from 'react'
-import AddQuestionForm, { labels } from '../components/AddQuestionForm'
+import AddQuestionForm, { labels } from '../components/adminForms/AddQuestionForm'
 
 class AddQuestionFormContainer extends Component {
   constructor(props) {
     super(props)
-    let num = this.props.page
     this.state = {
       selected: "",
       QuestionTypes: {
-        MultipleChoiceQuestion: ['multipleOptions[].option[].content' ,'multipleOptions[].correct' ,'multipleOptions[].language','multipleOptions[].mQuestionContent'],
-        OpenEndedQuestion:  ['openOptions[].correctAnswer','openOptions[].oQuestionContent', 'openOptions[].language']
+        MultipleChoiceQuestion: ['multipleOptions[].option[].content' ,'multipleOptions[].correct' ,'multipleOptions[].language','multipleOptions[].mQuestionContent','multipleOptions[].score'],
+        OpenEndedQuestion:  ['openOptions[].correctAnswer','openOptions[].oQuestionContent', 'openOptions[].language','openOptions[].score']
       }
-
     }
+    this.calculateScore.bind(this)
     this.toggleState.bind(this)
+  }
+
+  calculateScore(){
+    let score = 0
+    switch (this.props.page) {
+      case 3:
+        score = 400
+        break;
+      case 4:
+        score = 600
+        break;
+      case 5:
+        score = 800
+        break;
+      case 6:
+        score = 1000
+        break;
+      default:
+        score = 200
+    }
+    return score
   }
 
   toggleState(field){
     this.setState( Object.assign( {}, this.state , {selected: field} ))
-      // {[field]:{ selected: !this.state[field].selected , fields:this.state[field].fields }})
   }
 
   render() {
-
       let selectedFields = []
       if (this.state.QuestionTypes[this.state.selected]){selectedFields = this.state.QuestionTypes[this.state.selected]}
 
     return (
       <div>
-        <h2> Question {this.props.page} of 5 </h2>
+        <h2> Question {this.props.page - 1 } of 5 for {this.calculateScore()}  </h2>
         <div>
         <h3> Choose the type of your question : </h3>
           {Object.keys(this.state.QuestionTypes).map(field =>
@@ -42,15 +60,16 @@ class AddQuestionFormContainer extends Component {
           <br />
         <AddQuestionForm
           onSubmit={this.props.onSubmit}
+          previousPage={this.props.previousPage}
           fields={selectedFields}
+          page ={this.props.page}
+          score= {this.calculateScore()}
           />
       </div>
     )
   }
 }
-AddQuestionFormContainer.propTypes = {
-  onSubmit: PropTypes.func.isRequired // passed in by example engine to pop up modal
-}
+
 
 
 export default AddQuestionFormContainer

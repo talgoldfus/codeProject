@@ -22,7 +22,6 @@ class AddCategoryForm extends Component {
     return (
       <form onSubmit={handleSubmit}>
         <div>
-          <h2> Please add a minimum of 5 categories </h2>
           <label>Category Name</label>
           <div>
             <input type="text" placeholder="Category Name" {...CategoryName}/>
@@ -30,7 +29,6 @@ class AddCategoryForm extends Component {
           {CategoryName.touched && CategoryName.error && <div>{CategoryName.error}</div>}
         </div>
         <div>
-      
           <button type="submit">
             Next <i/>
           </button>
