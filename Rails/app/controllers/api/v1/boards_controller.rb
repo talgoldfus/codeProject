@@ -4,9 +4,21 @@ module Api
       include Knock::Authenticable
 
       def index
-        render json: Board.returnCategories
+        render json: Board.returnTopics
       end
 
+      def create
+        if params[:seedBoardInfo]
+            board =Board.create(topic: params[:seedBoardInfo][:boardName])
+             params[:seedBoardInfo][:categories].each do |c_id|
+               BoardCategory.create(board_id:board.id , category_id: c_id.to_i)
+             end
+             byebug
+         end
+         byebug
+        # render json:
+
+      end
 
       def show
         new_board =PopulateBoard.initiate(params[:id])
