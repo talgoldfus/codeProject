@@ -8,11 +8,13 @@ module Api
       end
 
       def show 
+        # byebug
         user = User.find(params[:id])
         render json: UserAnalytics.run(user)
       end
 
       def populate
+        # byebug
         render json: UserAnalytics.run(current_user)
       end
 

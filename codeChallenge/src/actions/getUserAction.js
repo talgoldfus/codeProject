@@ -7,7 +7,7 @@ export default function getUser(id){
     type: 'GET',
     headers: { authorization: localStorage.getItem('token')}
   }).done(function(response) {
-      console.log(response)
+      console.log(`user action = ${response}`)
         dispatch({type:'GET_USER', payload: response})
       })
     }        
