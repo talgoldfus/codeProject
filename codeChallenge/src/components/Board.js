@@ -49,11 +49,6 @@ class Board extends Component {
 
   render() {
 
-  // const all_scores = this.props.gameBoard.players || []
-  // const scores = all_scores.map(ob => {
-  //     return ob.score
-  // })
-
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
     return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
@@ -80,6 +75,9 @@ class Board extends Component {
             <div className="incorrect">
               <span>Incorrect!</span>
             </div>
+            <div className="time-up">
+              <span>Time Up!</span>
+            </div>
           </div>
             <ScoreBoardContainer />
       </div>
@@ -90,4 +88,3 @@ class Board extends Component {
 
 export default Board
 
-// <button name="logout" onClick={localStorage.clear()}> Log out </button> 

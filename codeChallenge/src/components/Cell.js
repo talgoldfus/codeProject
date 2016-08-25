@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 class Cell extends Component {
-
-  // componentWillMount(){
-  //
-  // }
-
   render(){
     return (
       <td id={this.props.id}>
@@ -20,4 +15,3 @@ class Cell extends Component {
 
 export default Cell
 
-// ?info=${this.props.content}
