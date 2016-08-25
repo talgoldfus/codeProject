@@ -8,9 +8,8 @@ module Api
       end
 
       def create
-        byebug
         Option.create(option_params['options'])
-        render json: Category.find(params[:options][0][:category_id])
+        render json: {message: "Successfully Added Category"}
       end
 
       private

@@ -13,11 +13,7 @@ module Api
              params[:seedBoardInfo][:categories].each do |c_id|
                BoardCategory.create(board_id:board.id , category_id: c_id.to_i)
              end
-             byebug
          end
-         byebug
-        # render json:
-
       end
 
       def show

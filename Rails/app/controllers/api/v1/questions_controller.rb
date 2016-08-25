@@ -25,7 +25,6 @@ module Api
                 {question_id: q.id ,correct: correct , language: question["language"] , content: option["content"] }
               end
         end
-
         render json: {options: (multiple_options.flatten + open_options )}
       end
 
