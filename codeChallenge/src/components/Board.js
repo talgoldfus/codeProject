@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
+import $ from 'jquery';
 import Header from './Header'
 import CellContainer from '../containers/CellContainer'
 import ScoreBoardContainer from '../containers/ScoreBoardContainer'
@@ -14,6 +16,14 @@ class Board extends Component {
   componentWillReceiveProps(nextProps) {
      if(nextProps.finished === 25 && this.props.gameBoard.players[0].userId) {
         this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
+        let finalScore = this.props.gameBoard.players[0].score
+        let boardId = this.props.params.id
+          $(".game-finish").fadeIn(750, ()=>{
+            browserHistory.push(`/game/${boardId}`)
+            $("game-finish").delay(10000);
+            $("game-finish").fadeOut(750);
+            browserHistory.push("/leaderboard") 
+          });
       }
    }
 
@@ -48,7 +58,7 @@ class Board extends Component {
   }
 
   render() {
-
+  let finalScore;
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
     return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
@@ -77,6 +87,10 @@ class Board extends Component {
             </div>
             <div className="time-up">
               <span>Time Up!</span>
+            </div>
+            <div className="game-finish">
+              <span>Game Finished!</span>
+              <span>{finalScore}</span>
             </div>
           </div>
             <ScoreBoardContainer />

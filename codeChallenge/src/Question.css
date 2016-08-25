@@ -5,7 +5,7 @@
   right: 0;
 }
 
-.correct, .incorrect, .time-up {
+.correct, .incorrect, .time-up, .game-finish {
   display: none;
   position: fixed;
   width: 100%;
@@ -14,7 +14,7 @@
   left: 0;
 }
 
-.correct span, .incorrect span, .time-up span {
+.correct span, .incorrect span, .time-up span, .game-finish span {
   font-size: 100px;
   font-weight: bold;
   text-transform: uppercase;
@@ -37,4 +37,9 @@
 .time-up {
   color: #ffeb3b;
   background-color: rgba(103, 94, 17, .5)
+}
+
+.game-finish {
+  color: #31a198;
+  background-color: rgba(255, 255, 255, .5)
 }
