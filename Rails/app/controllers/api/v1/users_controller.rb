@@ -13,7 +13,6 @@ module Api
       end
 
       def populate
-
         render json: UserAnalytics.run(current_user)
       end
 
