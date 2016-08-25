@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import {browserHistory} from 'react-router';
 
 function seedAdminAddCategoryForm(submittedInfo){
 
@@ -22,11 +23,10 @@ function seedAdminAddCategoryForm(submittedInfo){
       dataType: "json"
     }).then(
       (category)=>{
-      category = category.id
       return $.ajax({
         url:`http://localhost:3000/api/v1/questions`,
         type:"POST",
-        data: JSON.stringify({open: questions[2], multiple: questions[1],category_id:category.id}),
+        data: JSON.stringify({open:questions[2], multiple: questions[1],category_id: category.id}),
         contentType: "application/json; charset=utf-8",
         dataType: "json"
     })
@@ -39,9 +39,12 @@ function seedAdminAddCategoryForm(submittedInfo){
         contentType: "application/json; charset=utf-8",
         dataType: "json"
     })}
-  )
+  ).then(()=>{
+    alert("Category Added Successfully")
+    browserHistory.push(`/admin`)
+  })
 
-   
+
 }
 
 export default seedAdminAddCategoryForm

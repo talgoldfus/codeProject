@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import AddCategoryContainer from '../containers/addCategoryContainer'
-import AddBoardContainer from '../containers/AddBoardContainer'
+import { Link } from 'react-router'
+// import AddCategoryContainer from '../containers/addCategoryContainer'
+// import AddBoardContainer from '../containers/AddBoardContainer'
 
 
 class Admin extends Component {
@@ -8,7 +9,14 @@ class Admin extends Component {
     return (
       <div>
         <div className="center">
-            <AddBoardContainer />
+            <h2>Welcome to the admin pannel</h2>
+            <button>
+              <Link to={`/admin/addCategory`}>Add Category</Link>
+            </button>
+            <button>
+              <Link to={`/admin/addBoard`} >Add Board</Link>
+            </button>
+            {this.props.children}
         </div>
       </div>
     )

@@ -6,8 +6,8 @@ const validate = values => {
   const errors = {}
   if (!values.CategoryName) {
     errors.CategoryName = 'Required'
-  } else if (values.CategoryName.length > 15) {
-    errors.CategoryName = 'Must be 15 characters or less'
+  } else if (values.CategoryName.length > 25) {
+    errors.CategoryName = 'Must be 25 characters or less'
   }
   return errors
 }

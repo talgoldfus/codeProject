@@ -20,8 +20,7 @@ class AddBoardForm extends Component {
     this.props.getCategories().then(()=>{for (let cIndex = 0; cIndex < 5; cIndex++) {
     this.props.addCategories('AddBoard','categories')}
   })
-
-  }
+}
 
 
 
