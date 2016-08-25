@@ -9,6 +9,7 @@ export default function getCurrUser(){
   }).done(function(response) {
       console.log(`current_user = ${response}`)
       localStorage.setItem('userName', response.email)
+      localStorage.setItem('userId', response.id)
         dispatch({type:'GET_CURR_USER', payload: response})
       })
     }        

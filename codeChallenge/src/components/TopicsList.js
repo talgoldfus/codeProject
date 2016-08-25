@@ -23,9 +23,8 @@ componentWillMount(){
     });
 
   const userInformation = this.props.userInfo.current_user || {email: "", id: 1}
-  const userCurrId = userInformation.id
+  const userCurrId = localStorage.userId
   const userName = userInformation.email
-  // debugger; 
 
     return (
       <div>
