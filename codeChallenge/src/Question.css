@@ -1,4 +1,11 @@
-.correct, .incorrect {
+.question-timer {
+  font-size: 100px;
+  position: fixed;
+  bottom: -20%;
+  right: 0;
+}
+
+.correct, .incorrect, .time-up {
   display: none;
   position: fixed;
   width: 100%;
@@ -7,7 +14,7 @@
   left: 0;
 }
 
-.correct span, .incorrect span {
+.correct span, .incorrect span, .time-up span {
   font-size: 100px;
   font-weight: bold;
   text-transform: uppercase;
@@ -25,4 +32,9 @@
 .incorrect {
   color: #7D2727;
   background-color: rgba(85, 11, 11, .5)
+}
+
+.time-up {
+  color: #ffeb3b;
+  background-color: rgba(103, 94, 17, .5)
 }
