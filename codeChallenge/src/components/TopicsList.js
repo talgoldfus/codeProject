@@ -28,11 +28,14 @@ componentWillMount(){
 
     return (
       <div>
-        <div className="header group">
-          <h2><Link to={`/user/${userCurrId}`} className="user-link">{localStorage.userName}</Link></h2>
-          <br></br>
-          <h3><Link to="leaderBoard" className="user-link">Leader Board</Link></h3>
-
+        <div className="header">
+          <div className="group">
+            <span>FizzBuzz 2.0</span>
+            <span className="user-link">Welcome <Link to={`/user/${userCurrId}`} >{localStorage.userName}</Link></span>
+          </div>
+          <div className="group">
+            <Link to="leaderBoard" className="user-link">Leader Board</Link>
+          </div>
         </div>
         <div className="group">
             <h1>Choose a Game Topic</h1>

@@ -33,16 +33,13 @@ successRate(){
 
     return (
       <div>
-        <div>
-          <h2>Score:{Score}</h2>
+        <div className="score">
+          <h1>Score:{Score}</h1>
         </div>
-        <div>
-          <h2>Analytics:</h2>
-            <div>
-              <h4> Correct Answers: {this.analizeAnalytics("correct")} </h4>
-              <h4> Wrong Answers: {this.analizeAnalytics("wrong")} </h4>
-              <h4> Success Rate: {this.successRate()}% </h4>
-           </div>
+        <div className="scoreboard">
+          <h5> Correct Answers: {this.analizeAnalytics("correct")} </h5>
+          <h5> Wrong Answers: {this.analizeAnalytics("wrong")} </h5>
+          <h5> Success Rate: {this.successRate()}% </h5>
         </div>
       </div>
     )

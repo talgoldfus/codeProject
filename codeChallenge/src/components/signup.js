@@ -25,6 +25,7 @@ class Signup extends Component {
 
     return (
       <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <h1>Sign Up</h1>
         <fieldset className="form-group">
           <label>Email:</label>
           <input className="form-control" {...email} />
@@ -36,7 +37,7 @@ class Signup extends Component {
           {password.touched && password.error && <div className="error">{password.error}</div>}
         </fieldset>
         {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign in!</button>
+        <button action="submit" className="btn btn-primary">Sign up!</button>
       </form>
     );
   }
