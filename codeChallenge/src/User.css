@@ -16,7 +16,7 @@ fieldset {
 input, textarea {
   background: #e6e6e6;
   border: none;
-  padding: 20px;
+  padding: 10px;
   font-size: 20px;
   border-radius: 10px;
 }
@@ -28,12 +28,21 @@ label {
 }
 
 button {
-  padding: 20px;
   font-size: 20px;
-  color: #071276;  
-  background: #e6e6e6;
+  color: #729d1f;
+  background-color: #022b35;
+  padding: 10px;
   border: none;
+  display: inline-block;
   border-radius: 10px;
+  text-shadow: 1px 1px 0 #00011a;
+  box-shadow: 1px 1px 3px #00011a;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #0a3641;
+  color: #b4881c;
 }
 
 .form input {
@@ -54,7 +63,7 @@ button {
 
 .header {
   padding: 0 20px 20px;
-} 
+}
 .user-link {
   float: right;
   color: #00efff;
