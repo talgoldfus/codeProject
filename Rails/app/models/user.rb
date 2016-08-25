@@ -1,15 +1,20 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :games
+    has_many :game_options, through: :games
 
   def average_score 
     Game.find_average_score('user', self.id)
   end
 
   def self.leader_board 
-    self.all.sort do |user| 
+    leaders = self.all.sort_by do |user| 
       user.average_score      
     end.reverse[0..10]
+
+    return leaders.map do |user|
+          {id: user.id, name: user.email, score: user.average_score}
+        end
 
     # self.all.map{|user| user.average_score}.sort[0..10]
   end

@@ -6,10 +6,13 @@ import UserQuestionRecord from './UserQuestionRecord'
 class UserPage extends Component {
 
   componentWillMount(){
-    this.props.getInfo()
+    // debugger    
+    var userId = this.props.params.id
+    this.props.getUserInfo(userId)
   }
 
 render(){
+
 
   const userInfo = this.props.userInfo.user_info || {email: "", tagline: "", average_score: "", games: [], questions_right: [], questions_wrong: []}
 
@@ -30,12 +33,11 @@ render(){
 
   return (
       <div> 
-        <h2>{userInfo.email}</h2>
-        <h6>Tagline: {userInfo.Tagline}</h6>
+        <h1>{userInfo.email}</h1>
         <h2>Average Score: {userInfo.average_score}</h2>
         
         <br></br><h3>RECENT GAMES </h3><br></br>
-          <table>
+          <table className="userTable">
             <thead>
               <th>Date</th>
               <th>Topic</th>
@@ -43,30 +45,6 @@ render(){
             </thead>
             <tbody>
               {games}
-            </tbody>
-          </table>
-
-        <br></br><h3>RIGHT ANSWERS</h3><br></br>
-          <table>
-            <thead>
-              <th>Points</th>
-              <th>Content</th>
-              <th>Difficulty</th>
-            </thead>
-            <tbody>
-              {rightAnswers}
-            </tbody>
-          </table>
-
-         <br></br><h3>WRONG ANSWERS</h3><br></br>
-          <table>
-            <thead>
-              <th>Points</th>
-              <th>Content</th>
-              <th>Difficulty</th>
-            </thead>
-            <tbody>
-              {wrongAnswers}
             </tbody>
           </table>
       </div>

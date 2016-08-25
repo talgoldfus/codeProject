@@ -2,8 +2,9 @@ class UserAnalytics
 
 def self.run(user)
     return {
-      name: user.username, 
+      # name: user.username, 
       tagline: user.tagline,
+      id: user.id, 
       email: user.email, 
       average_score: user.average_score, 
       games: self.games(user), 
@@ -18,6 +19,10 @@ def self.run(user)
       game_hash["topic"] = game.board.topic
       game_hash["date"] = game.created_at
       game_hash["score"] = game.final_score
+      ques_values = game.questions_got_right.map{|object| object.values[1]}
+      ques_values_wrong = game.questions_got_wrong.map{|object| object.values[1]}
+      game_hash["questions_wrong"] = QuestionHashCreator.run(ques_values)
+      game_hash["questions_right"] = QuestionHashCreator.run(ques_values_wrong) 
       hash[game.id] = game_hash
     end
   end

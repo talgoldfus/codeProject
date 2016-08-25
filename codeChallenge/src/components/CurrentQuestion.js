@@ -3,7 +3,13 @@ import OptionContainer from '../containers/optionContainer'
 import OpenOptionContainer from '../containers/openOptionContainer'
 
 class CurrentQuestion extends Component {
+  // constructor(props) {
+    // super(props)
+    // this.state = {
+      // answer: false
+    // }
 
+  // }
   componentWillMount() {
     this.props.getOptions(this.props.params.questionId)
   }
@@ -29,7 +35,6 @@ class CurrentQuestion extends Component {
         questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id} id={option.id} />
       },this)
     }
-
 
     return (
       <div className="screen">

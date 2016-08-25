@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Header from './Header'
 import CellContainer from '../containers/CellContainer'
 import ScoreBoardContainer from '../containers/ScoreBoardContainer'
-
 import InactiveCell from './InactiveCell'
 import '../Board.css'
 
@@ -12,11 +11,10 @@ class Board extends Component {
     this.props.getBoard(this.props.params.id)
   }
 
-    
   componentWillReceiveProps(nextProps) {
-     if(nextProps.finished === 10 && this.props.gameBoard.players[0].userId) {
-            this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
-    } 
+     if(nextProps.finished === 25 && this.props.gameBoard.players[0].userId) {
+        this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
+      }
    }
 
   getQuestionsByIndex(idx, categories){
@@ -76,6 +74,12 @@ class Board extends Component {
           </table>
           <div>
             {this.props.children}
+            <div className="correct">
+              <span>Correct!</span>
+            </div>
+            <div className="incorrect">
+              <span>Incorrect!</span>
+            </div>
           </div>
             <ScoreBoardContainer />
       </div>

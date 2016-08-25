@@ -1,15 +1,14 @@
-import axios from 'axios'
+import $ from 'jquery'
 
-function getTopics(){
-  //current user id to be inserted into url 
-    const url = 'http://localhost:3000/api/v1/game_options/user/1'
-    const request = axios.get(url)
-    
-  return {
-    type:'GET_USER',
-    payload: request
+export default function getUser(id){
+  return function(dispatch) {
+    $.ajax({
+    url: 'http://localhost:3000/api/v1/users/' + id,
+    type: 'GET',
+    headers: { authorization: localStorage.getItem('token')}
+  }).done(function(response) {
+      console.log(`user action = ${response}`)
+        dispatch({type:'GET_USER', payload: response})
+      })
+    }        
   }
-
-}
-
-export default getTopics
