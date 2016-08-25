@@ -11,14 +11,14 @@ export default function signupUser(formProps) {
       contentType: "application/json; charset=utf-8",
       dataType: "json"
     }).done(() => {
+      debugger
       $.ajax({
-        url: "http://localhost:3000/knock/auth_token",
+        url: "http://localhost:3000/auth_user",
         method: "POST",
-        data: {"auth": {"email": `${formProps.email}`, "password": `${formProps.password}`}}
+        data: {"email": `${formProps.email}`, "password": `${formProps.password}`}
         }).done(function (response) {
         console.log(response);
-        //
-          localStorage.setItem('token', response.jwt)
+          localStorage.setItem('token', response.auth_token)
           dispatch({type: 'LOG_IN', payload: true})
           browserHistory.push('game')
         })

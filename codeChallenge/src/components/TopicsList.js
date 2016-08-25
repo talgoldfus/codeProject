@@ -7,11 +7,11 @@ class TopicsList extends Component {
 
 componentWillMount(){
   this.props.getTopics()
-  // debugger
-  // if (this.props.userInfo.current_user === 0) {
-    // debugger
-    this.props.getCurrUserInfo()
-  // }
+  this.props.getCurrUserInfo()
+}
+
+handleClick() {
+  this.props.logOut()
 }
 
   render() {
@@ -28,6 +28,7 @@ componentWillMount(){
 
     return (
       <div>
+      <button type="submit" onClick={this.handleClick.bind(this)}> Log out </button>
         <div className="header group">
           <h2><Link to={`/user/${userCurrId}`} className="user-link">{localStorage.userName}</Link></h2>
           <br></br>

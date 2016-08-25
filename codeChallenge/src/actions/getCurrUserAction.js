@@ -7,7 +7,7 @@ export default function getCurrUser(){
     type: 'GET',
     headers: { authorization: localStorage.getItem('token')}
   }).done(function(response) {
-      console.log(`current_user = ${response}`)
+      console.log(response)
       localStorage.setItem('userName', response.email)
       localStorage.setItem('userId', response.id)
         dispatch({type:'GET_CURR_USER', payload: response})

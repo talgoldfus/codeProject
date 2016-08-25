@@ -2,6 +2,7 @@
 import $ from 'jquery'
 
 export default function getBoard(id){
+  debugger
   return function(dispatch) {
     $.ajax({
     url: 'http://localhost:3000/api/v1/boards/'+id,

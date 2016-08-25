@@ -4,6 +4,7 @@ import $ from 'jquery';
 import CurrentQuestion from '../components/CurrentQuestion'
 
 const Option = class extends Component {
+
   handleClick(){
     //This is a quick fix, we should use state for this
     if (this.props.correct == true) {
@@ -20,6 +21,7 @@ const Option = class extends Component {
   }
 
   render(){
+    // debugger
     return (
       <div ref={this.props.correct}>
         <li>
