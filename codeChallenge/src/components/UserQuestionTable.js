@@ -13,6 +13,7 @@ render(){
     for(var question in this.props.questions){
       qs.push(<UserQuestionRecord questionInfo={this.props.questions[question]}/>)
     } 
+
  
   return (
     <div>
@@ -21,7 +22,7 @@ render(){
        <thead>
           <th>Points</th>
           <th>Content</th>
-          <th>Difficulty</th>
+          <th>Users Average</th>
         </thead>
         <tbody>
           {qs}

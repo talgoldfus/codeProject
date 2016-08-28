@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import UserRecentGame from './UserRecentGame'
 import UserQuestionRecord from './UserQuestionRecord'
+import Chart from 'chart.js'
 
 class UserPage extends Component {
 
@@ -31,6 +32,8 @@ render(){
     wrongAnswers.push(<UserQuestionRecord questionInfo={userInfo.questions_wrong[question]}/>)
   }
 
+
+
   return (
       <div> 
         <h1>{userInfo.email}</h1>
@@ -39,9 +42,9 @@ render(){
         <br></br><h3>RECENT GAMES </h3><br></br>
           <table className="userTable">
             <thead>
-              <th>Date</th>
-              <th>Topic</th>
-              <th>Score</th>
+              <th></th>
+              <th></th>
+              <th></th>
             </thead>
             <tbody>
               {games}

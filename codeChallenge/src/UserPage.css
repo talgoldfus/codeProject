@@ -24,3 +24,10 @@
   font-size: 26px;
 }
 
+.pie{
+  position: absolute; 
+}
+
+.gameRow td{
+  padding-right: 10%;
+}

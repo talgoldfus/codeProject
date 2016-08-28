@@ -27,8 +27,8 @@ render(){
     <div className="gameRow">
       <tr onClick={this.answerTables.bind(this)}>
         <td className="gameRowCells">{formattedDate}</td>
-        <td className="gameRowCells">{gameInfo.topic}</td>
-        <td className="gameRowCells">{gameInfo.score}</td>
+        <td className="gameRowCells">Topic: {gameInfo.topic}</td>
+        <td className="gameRowCells">Score: {gameInfo.score}</td>
       </tr>
       <div>
         {this.state.right_answers}
