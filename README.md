@@ -14,6 +14,22 @@ E) If the browser hasn't opened automatically open your browser in localhost 300
 * Server Side  - Rails 5 API
 * Front End - React , Redux , Redux Forms
 
+##Sneak Peeks
+###Overview :
+![Overview](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/gameFlow.gif)
+Statistics:
+![Statistics](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/leaderBoard.gif)
+### Admin Features:
+####Adding a category:
+![Adding Categories](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/adminPannelOpenQuestion.gif)
+![Adding Categories 2](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/adminPannelMultipleQuestion.gif)
+####Adding a board with exesting and new categories:
+![Adding Board](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/AdminAddBoard.gif)
+####Playing with the newly added board 
+![Playing Board That Was Just Added](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/UsingAdminQuestions.gif)
+
+
+
 ##Contributors:
 
 Avram Billig - https://github.com/abillig
