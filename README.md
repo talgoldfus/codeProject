@@ -21,9 +21,9 @@ E) If the browser hasn't opened automatically open your browser in localhost 300
 ####Displaying statists for every completed game and all time stats per each question individually. 
 ![Statistics](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/leaderBoard.gif)
 ### Admin Features:
-####Adding a new category with a open ended question that will require user to code the answer:
+####Adding a new category with an open ended question that will require user to code the answer:
 ![Adding Categories](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/adminPannelOpenQuestion.gif)
-####Adding a multiple choice question:
+####Adding a multiple choice question and an additional open eneded question to the category each with different difficulty:
 ![Adding Categories 2](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/adminPannelMultipleQuestion.gif)
 ####Adding a board with categories that are currently in the database along with the one we jsut created (Arrays) :
 ![Adding Board](https://github.com/talgoldfus/FizzBuzz-2.0/blob/master/Live%20Preview%20Gifs/AdminAddBoard.gif)
