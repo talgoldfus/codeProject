@@ -12,7 +12,8 @@ const Timer = class extends Component {
   }
 
   componentDidMount() {
-    var countdown = setInterval(()=>{
+
+    this.countdown = setInterval(()=>{
        let timeLeft = this.state.timeLeft
        let questionId = this.props.questionId
        let boardId = this.props.boardId
@@ -28,9 +29,13 @@ const Timer = class extends Component {
           clearInterval(countdown);
           browserHistory.push(`/game/${boardId}`)
         } else {
-          this.setState({ timeLeft: timeLeft })       
+          this.setState({ timeLeft: timeLeft })
         }
       }, 1000);
+    }
+
+    componentWillUnmount(){
+      clearInterval(this.countdown)
     }
 
 
