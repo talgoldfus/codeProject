@@ -11,9 +11,9 @@ render(){
   const questionInfo = this.props.questionInfo
   
   return (
-      <tr>
+      <tr className="chartRow">
         <td>{questionInfo.difficulty}</td>
-        <td>{questionInfo.content}</td>
+        <td className="questionContent">{questionInfo.content}</td>
         <td><PieGraph id = {questionInfo.id} perc={questionInfo.percentage_right} pieChart = {pieChart}/></td>
       </tr>
   )

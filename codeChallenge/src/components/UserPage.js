@@ -35,11 +35,11 @@ render(){
 
 
   return (
-      <div> 
+      <div className="userPage"> 
         <h1>{userInfo.email}</h1>
         <h2>Average Score: {userInfo.average_score}</h2>
         
-        <br></br><h3>RECENT GAMES </h3><br></br>
+        <br></br><h3>RECENT GAMES (click for questions and statistics)</h3><br></br>
           <table className="userTable">
             <thead>
               <th></th>

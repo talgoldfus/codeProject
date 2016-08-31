@@ -2,11 +2,12 @@
   background-color: #fafafa;
   padding: 15px;
   border-radius: 10px;
-  width: 70%;
+  width: 90%;
   color: black;
 }
 
 .userTable{
+  margin-top: -7%;
   width: 90%;
   margin-left: 30px;
 }
@@ -30,4 +31,16 @@
 
 .gameRow td{
   padding-right: 10%;
+}
+
+.chartRow {
+  padding-top: 5%;
+}
+
+.userPage {
+  text-align: center;
+}
+
+.questionContent {
+  text-align: left;
 }

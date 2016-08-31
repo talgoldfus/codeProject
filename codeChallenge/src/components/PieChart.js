@@ -11,7 +11,7 @@ const data = {
     ],
     datasets: [
         {
-            data: [perc_right, 100 - perc_right],
+            data: [Math.round(perc_right), Math.round(100 - perc_right)],
             backgroundColor: [
                 "#FF6384",
                 "#36A2EB"
@@ -30,6 +30,7 @@ const data = {
     type: 'pie',
     data: data, 
     options: {
+        legend: {display: false}, 
         responsive: true
     }
 });

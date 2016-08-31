@@ -12,7 +12,7 @@ export default class extends Component {
     render() {
       return (
         <div>
-          <canvas id={`pieChart${this.props.id}`} width="200" height="200"></canvas>
+          <canvas id={`pieChart${this.props.id}`} width="100" height="100"></canvas>
         </div>
       )
     }
