@@ -16,13 +16,13 @@ class Board extends Component {
   componentWillReceiveProps(nextProps) {
      if(nextProps.finished === 25 && this.props.gameBoard.players[0].userId) {
         this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
-        let finalScore = this.props.gameBoard.players[0].score
+        // let finalScore = this.props.gameBoard.players[0].score
         let boardId = this.props.params.id
           $(".game-finish").fadeIn(750, ()=>{
             browserHistory.push(`/game/${boardId}`)
             $("game-finish").delay(10000);
             $("game-finish").fadeOut(750);
-            browserHistory.push("/leaderboard") 
+            browserHistory.push("/leaderBoard") 
           });
       }
    }

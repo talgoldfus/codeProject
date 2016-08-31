@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import UserQuestionRecord from './UserQuestionRecord'
 
 class UserQuestionTable extends Component {

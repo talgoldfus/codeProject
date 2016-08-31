@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import signupUser from '../actions/signupAction'
 import { reduxForm } from 'redux-form';
 

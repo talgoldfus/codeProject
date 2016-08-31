@@ -3,6 +3,7 @@ class GameOption < ApplicationRecord
   belongs_to :option, optional: true
 
   def self.number_of_questions_correct_per_game(game_id)
+    # show % correct during game
     number_of_options_selected = GameOption.where(game_id: game_id).length 
     number_of_correct_answers = GameOption.where(game_id: game_id).where(correct: true).length
 

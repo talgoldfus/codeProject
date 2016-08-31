@@ -3,14 +3,17 @@ class User < ApplicationRecord
   has_many :games
     has_many :game_options, through: :games
 
-  def average_score 
+  def average_score
+   
     Game.find_average_score('user', self.id)
   end
 
   def self.leader_board 
     leaders = self.all.sort_by do |user| 
-      user.average_score      
-    end.reverse[0..10]
+      user.average_score
+      
+      # score if score != 0
+  end.reverse[0..10]
 
     return leaders.map do |user|
           {id: user.id, name: user.email, score: user.average_score}

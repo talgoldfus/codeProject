@@ -1,15 +1,16 @@
 module Api
   module V1
     class BoardsController < ApplicationController
-      include Knock::Authenticable
 
       def index
+        # shows the topics on the /game route
         render json: Board.returnTopics
       end
 
       def create
+        # admin creates new board
         if params[:seedBoardInfo]
-            board =Board.create(topic: params[:seedBoardInfo][:boardName])
+            board = Board.create(topic: params[:seedBoardInfo][:boardName])
              params[:seedBoardInfo][:categories].each do |c_id|
                BoardCategory.create(board_id:board.id , category_id: c_id.to_i)
              end
@@ -17,13 +18,11 @@ module Api
       end
 
       def show
-        new_board =PopulateBoard.initiate(params[:id])
+        # displays new board when it a topic is chosen
+        new_board = PopulateBoard.initiate(params[:id])
         new_board[:user] = current_user
-        new_board[:token]= TokenGenerator.gen_token().to_json
+        new_board[:token] = TokenGenerator.gen_token().to_json
         render json: new_board
-      end
-
-      def analytics
       end
 
     end

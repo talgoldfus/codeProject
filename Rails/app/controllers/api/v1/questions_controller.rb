@@ -3,13 +3,14 @@ module Api
     class QuestionsController < ApplicationController
 
       def show
-          questionObject = Question.find(params[:id])
-          render json: questionObject
+        # display question in the modal
+        questionObject = Question.find(params[:id])
+        render json: questionObject
       end
 
 
       def create
-
+        # admin can create new question
         category = Category.find(params[:category_id])
 
         open_options = params[:open].map do |question|

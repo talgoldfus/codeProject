@@ -8,21 +8,19 @@ class Board < ApplicationRecord
   #This might be useful elsewhere, but not in the serializer
 
   def self.returnTopics
+    # show all the topics immediately after login
     boards = Board.all.each_with_object({}) { |(k,v), h|
       h[k.id] = k.topic
      }
   end
 
-  def identifyCategory
-    # find the id that was clicked from the params
-
-  end
-
   def average_score
+    # for the leaderboard
     Game.find_average_score('board', self.id)
   end
 
   def percentage_correct
+    # updates after each question
     board_options_total = Game.joins(:options).where(board_id: self.id)
     board_options_count = board_options_total.length
       if board_options_count == 0

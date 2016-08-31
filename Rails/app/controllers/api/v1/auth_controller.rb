@@ -2,6 +2,7 @@ module Api
   module V1
     class AuthController < ApplicationController
 
+      # in testing
       def authenticate
         user = User.find_by(email: params[:auth][:email])
         if user.authenticate(params[:auth][:password])

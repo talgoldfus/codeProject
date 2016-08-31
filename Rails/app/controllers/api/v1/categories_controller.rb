@@ -3,11 +3,13 @@ module Api
     class CategoriesController < ApplicationController
 
       def index
+        # renders all the categories on the /game route after login
        render json: Category.returnCategories
       end
 
       def create
-        category =Category.create(name: params[:name])
+        # admin can create new category
+        category = Category.create(name: params[:name])
         render json: category
       end
 

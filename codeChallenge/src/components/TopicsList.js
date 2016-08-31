@@ -7,11 +7,7 @@ class TopicsList extends Component {
 
 componentWillMount(){
   this.props.getTopics()
-  // debugger
-  // if (this.props.userInfo.current_user === 0) {
-    // debugger
-    this.props.getCurrUserInfo()
-  // }
+  this.props.getCurrUserInfo()
 }
 
   render() {
@@ -22,9 +18,9 @@ componentWillMount(){
       return <Topic key={key} id={key} name={topics[key]} />
     });
 
-  const userInformation = this.props.userInfo.current_user || {email: "", id: 1}
+  // const userInformation = this.props.userInfo.current_user || {email: "", id: 1}
   const userCurrId = localStorage.userId
-  const userName = userInformation.email
+  // const userName = userInformation.email
 
     return (
       <div>

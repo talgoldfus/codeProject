@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
 import OpenOptionContainer from '../containers/openOptionContainer'
 import TimerContainer from '../containers/timerContainer'
-import Timer from '../components/Timer'
+
 
 class CurrentQuestion extends Component {
   componentWillMount() {
@@ -21,7 +21,7 @@ class CurrentQuestion extends Component {
     const currentOptions = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
     let optionsComponents;
-    let timerComponent;
+    // let timerComponent;
 
     if(currentOptions.length === 1){
       optionsComponents = <OpenOptionContainer answer={currentOptions[0].correct_answer} language={currentOptions[0].language} key={currentOptions[0].id} questionId={currentOptions[0].question_id} difficulty={difficulty} boardId={this.props.params.id}/>

@@ -4,6 +4,7 @@ class Option < ApplicationRecord
   has_many :games, through: :game_options 
 
   def self.wrong_answers(user)
+    # show by question
     Option.joins(:games).where('games.user_id': user.id).where(correct: false)
   end
 
@@ -12,6 +13,7 @@ class Option < ApplicationRecord
   end
 
   def self.game_wrong_answers(game)
+    # show by game type
     Option.joins(:games).where('games.id': game.id).where(correct: false)
   end
 
