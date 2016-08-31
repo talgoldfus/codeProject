@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 
 function seedAdminAddCategoryForm(submittedInfo){
 
-    const questions =Object.keys(submittedInfo).map((key)=>{
+    const questions= Object.keys(submittedInfo).map((key)=>{
       if(key==="multipleOptions"){
       return submittedInfo[key].map( mOptions => {
           return mOptions

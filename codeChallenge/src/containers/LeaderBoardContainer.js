@@ -3,9 +3,7 @@ import getLeaderBoard from '../actions/leaderBoard'
 import LeaderBoard from '../components/LeaderBoard'
 
 function mapStateToProps(state) {
-    return {
-      leaderBoard: state.user.leader_board
-    }
+    return { leaderBoard: state.user.leader_board }
 }
 
 const LeaderBoardContainer = connect(mapStateToProps, {getLeaderBoard: getLeaderBoard})(LeaderBoard)

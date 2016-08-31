@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import AddQuestionForm, { labels } from '../components/adminForms/AddQuestionForm'
 
 class AddQuestionFormContainer extends Component {
@@ -62,8 +62,8 @@ class AddQuestionFormContainer extends Component {
           onSubmit={this.props.onSubmit}
           previousPage={this.props.previousPage}
           fields={selectedFields}
-          page ={this.props.page}
-          score= {this.calculateScore()}
+          page={this.props.page}
+          score={this.calculateScore()}
           />
       </div>
     )

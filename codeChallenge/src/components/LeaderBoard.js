@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import Leader from './Leader'
 
 export default class UserPage extends Component {
@@ -16,7 +15,7 @@ export default class UserPage extends Component {
 
     return(
       <div>
-        <h1>FIZZBUZZ HEROES</h1> 
+        <h1>FIZZBUZZ HEROES</h1>
         {leaders}
       </div>
     )

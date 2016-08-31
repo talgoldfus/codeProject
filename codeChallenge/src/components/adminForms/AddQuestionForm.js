@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import MultipleChoiceQuestion from './MultipleChoiceQuestionForm'
 import OpenEndedQuestion from './OpenEndedQuestionForm'
-// import validate from '../helpers/validation'
 
 export const labels = {
   MultipleChoiceQuestion: 'Multiple Choice Question',
@@ -26,7 +25,7 @@ class AddQuestionForm extends Component {
   }
 
   render() {
-    const { fields, handleSubmit,previousPage,submitting} = this.props
+    const { fields, handleSubmit} = this.props
 
     return (
       <form onSubmit={handleSubmit}>
