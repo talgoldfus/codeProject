@@ -16,13 +16,12 @@ class Board extends Component {
   componentWillReceiveProps(nextProps) {
      if(nextProps.finished === 25 && this.props.gameBoard.players[0].userId) {
         this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
-        let finalScore = this.props.gameBoard.players[0].score
         let boardId = this.props.params.id
           $(".game-finish").fadeIn(750, ()=>{
             browserHistory.push(`/game/${boardId}`)
             $("game-finish").delay(10000);
             $("game-finish").fadeOut(750);
-            browserHistory.push("/leaderboard") 
+            browserHistory.push("/leaderboard")
           });
       }
    }
@@ -46,19 +45,14 @@ class Board extends Component {
 
   populateRows(categories){
     let rowCells=[]
-    let inactiveRows = 0
     for(let i=0; i<categories.length; i++){
       let row = this.getQuestionsByIndex(i, categories)
       rowCells.push(<tr>{row}</tr>)
-      if (row.filter((question)=>{return question.type.name !== "InactiveCell"}).length < 1)
-      { inactiveRows += 1}
     }
     return rowCells
-
   }
 
   render() {
-  let finalScore;
   const categories = this.props.gameBoard.categories || []
   const headers = categories.map(ob => {
     return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
@@ -90,7 +84,7 @@ class Board extends Component {
             </div>
             <div className="game-finish">
               <span>Game Finished!</span>
-              <span>{finalScore}</span>
+              <span>{this.props.gameBoard.players[0].score}</span>
             </div>
           </div>
             <ScoreBoardContainer />
@@ -101,4 +95,3 @@ class Board extends Component {
 }
 
 export default Board
-
