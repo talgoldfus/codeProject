@@ -84,7 +84,6 @@ class Board extends Component {
             </div>
             <div className="game-finish">
               <span>Game Finished!</span>
-              <span>{this.props.gameBoard.players[0].score}</span>
             </div>
           </div>
             <ScoreBoardContainer />
