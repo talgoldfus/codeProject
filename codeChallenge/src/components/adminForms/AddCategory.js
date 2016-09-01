@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import AddCategoryForm from './AddCategoryForm'
 import SubmitCategory from './SubmitCategory'
 import AddQuestionFormContainer from '../../containers/AddQuestionFormContainer'

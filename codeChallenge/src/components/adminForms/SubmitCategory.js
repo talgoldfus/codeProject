@@ -11,7 +11,7 @@ export const fields = [
 class SubmitCategory extends Component {
 
   render() {
-    const { handleSubmit,submitting,onSubmit} = this.props
+    const { handleSubmit,submitting} = this.props
     return (<form onSubmit={handleSubmit}>
         <div>
           <label>Submit Category</label>

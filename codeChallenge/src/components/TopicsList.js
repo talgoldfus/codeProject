@@ -7,18 +7,14 @@ class TopicsList extends Component {
 
 componentWillMount(){
   this.props.getTopics()
-  // debugger
-  // if (this.props.userInfo.current_user === 0) {
-    // debugger
-    this.props.getCurrUserInfo()
-  // }
+  this.props.getCurrUserInfo()
 }
 
   render() {
-    
+
   var topics = this.props.topics.topic || []
 
-  let topicslist =   Object.keys(topics).map((key)=>{
+  let topicslist = Object.keys(topics).map((key)=>{
       return <Topic key={key} id={key} name={topics[key]} />
     });
 

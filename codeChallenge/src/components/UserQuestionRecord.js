@@ -9,7 +9,7 @@ render(){
 
 
   const questionInfo = this.props.questionInfo
-  
+
   return (
       <tr className="chartRow">
         <td>{questionInfo.difficulty}</td>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
-import CurrentQuestion from '../components/CurrentQuestion'
 
 const Timer = class extends Component {
   constructor(props) {
@@ -15,18 +14,17 @@ const Timer = class extends Component {
 
     this.countdown = setInterval(()=>{
        let timeLeft = this.state.timeLeft
-       let questionId = this.props.questionId
        let boardId = this.props.boardId
        let difficulty = this.props.difficulty
        let props = this.props
         timeLeft--
-        if( timeLeft == 0) {
+        if( timeLeft === 0) {
           props.updateAnalytics(null, false, props.userId, null)
-          props.evaluateAnswer(false, props.difficulty)
+          props.evaluateAnswer(false, difficulty)
           $(".time-up").fadeIn(750, function(){
             $(".time-up").fadeOut(750);
           });
-          clearInterval(countdown);
+          clearInterval(this.countdown);
           browserHistory.push(`/game/${boardId}`)
         } else {
           this.setState({ timeLeft: timeLeft })

@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-// import AddCategoryContainer from '../containers/addCategoryContainer'
-// import AddBoardContainer from '../containers/AddBoardContainer'
-
 
 class Admin extends Component {
   render() {

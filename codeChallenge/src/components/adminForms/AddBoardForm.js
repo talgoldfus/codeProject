@@ -22,13 +22,8 @@ class AddBoardForm extends Component {
   })
 }
 
-
-
-
   render() {
-
     const { fields: { categories,boardName },handleSubmit} = this.props
-
     return (
       <form onSubmit={handleSubmit(seedBoard)}>
         <div>

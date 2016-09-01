@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-import UserQuestionRecord from './UserQuestionRecord'
 import UserQuestionTable from './UserQuestionTable'
 
 class UserRecentGame extends Component {
@@ -22,7 +20,7 @@ render(){
   const gameInfo = this.props.gameInfo
   const formattedDate = Date(gameInfo.date).split(" ").slice(0, 4).join(" ")
 
-  
+
   return (
     <div className="gameRow">
       <tr onClick={this.answerTables.bind(this)}>
