@@ -11,6 +11,7 @@ import LeaderBoardContainer from './containers/LeaderBoardContainer'
 import Admin from './components/Admin'
 import AddCategoryContainer from './containers/addCategoryContainer'
 import AddBoardContainer from './containers/AddBoardContainer'
+import Animations from './components/AnimationsTest'
 
 
 export default (
@@ -29,6 +30,8 @@ export default (
       <Route path="addCategory" component={AddCategoryContainer} />
       <Route path="addBoard" component={AddBoardContainer} />
     </Route>
+    <Route path="/test" component={Animations} />
+
 </div>
 
 )

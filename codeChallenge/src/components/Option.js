@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import $ from 'jquery';
 
 const Option = class extends Component {
+
   handleClick(){
     //This is a quick fix, we should use state for this
     if (this.props.correct === true) {
@@ -11,7 +12,7 @@ const Option = class extends Component {
       });
     } else {
       $(".incorrect").fadeIn(750, function(){
-        $(".incorrect").fadeOut(750);
+      $(".incorrect").fadeOut(750);
       });
     }
     this.props.updateAnalytics(this.props.id, this.props.correct, this.props.userId, null)

@@ -1,0 +1,8 @@
+.example-appear {
+   opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+   opacity: 0.2;
+   transition: opacity 500000ms ease-in;
+}

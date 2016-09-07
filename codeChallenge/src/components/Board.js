@@ -53,9 +53,9 @@ class Board extends Component {
   }
 
   render() {
-  const categories = this.props.gameBoard.categories || []
-  const headers = categories.map(ob => {
-    return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
+    const categories = this.props.gameBoard.categories || []
+    const headers = categories.map(ob => {
+      return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
   })
 
 
