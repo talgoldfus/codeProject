@@ -1,0 +1,48 @@
+#root .MainHeader{
+  text-align: center;
+  background-color: #022B35 ;
+  border-top-right-radius:  1em;
+  border-top-left-radius: 1em;
+  margin-bottom: 3em;
+  padding: 1em;
+}
+
+.MainHeader .headerText{
+  display: inline-block;
+}
+
+.headerText h1{
+  color: #2D8BCF;
+  font-size: 1.5em;
+  margin: auto;
+}
+
+#menuIcon{
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  margin-right: 1em;
+}
+#menuIcon img {
+  max-height: 2em;
+}
+
+.MainHeader .menu{
+  margin: 3em -2em;
+  float: right;
+  z-index: 9;
+}
+
+.menuBtn{
+  display: block;
+  padding: 0.8em;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  background-color: #022B35;
+  z-index: 9;
+}
+
+.menuBtn:hover{
+  background-color: white;
+}

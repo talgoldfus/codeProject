@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UserRecentGame from './UserRecentGame'
 import UserQuestionRecord from './UserQuestionRecord'
+import MainHeader from './MainHeader'
 
 class UserPage extends Component {
 
@@ -31,6 +32,7 @@ render(){
 
   return (
       <div>
+        <MainHeader/>
         <h1>{userInfo.email}</h1>
         <h2>Average Score: {userInfo.average_score}</h2>
 

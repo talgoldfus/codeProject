@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Topic from './Topic'
+import MainHeader from './MainHeader'
 import { Link } from 'react-router'
 
 
@@ -24,15 +25,7 @@ componentWillMount(){
 
     return (
       <div>
-        <div className="header">
-          <div className="group">
-            <span>FizzBuzz 2.0</span>
-            <span className="user-link">Welcome <Link to={`/user/${userCurrId}`} >{localStorage.userName}</Link></span>
-          </div>
-          <div className="group">
-            <Link to="leaderBoard" className="user-link">Leader Board</Link>
-          </div>
-        </div>
+        <MainHeader/>
         <div className="group">
             <h1>Choose a Game Topic</h1>
             {topicslist}

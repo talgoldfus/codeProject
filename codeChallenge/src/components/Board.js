@@ -5,6 +5,7 @@ import TableHeader from './TableHeader'
 import CellContainer from '../containers/CellContainer'
 import ScoreBoardContainer from '../containers/ScoreBoardContainer'
 import InactiveCell from './InactiveCell'
+import MainHeader from './MainHeader'
 import '../Board.css'
 
 class Board extends Component {
@@ -60,8 +61,10 @@ class Board extends Component {
 
 
     return (
-        <div>
-          <table className="gameboard">
+      <div>
+          <MainHeader/>
+          <div>
+            <table className="gameboard">
             <thead>
               <tr>
                 {headers}
@@ -88,7 +91,7 @@ class Board extends Component {
           </div>
             <ScoreBoardContainer />
       </div>
-
+    </div>
     )
   }
 }

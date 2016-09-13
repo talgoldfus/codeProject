@@ -3,7 +3,7 @@ import { Route } from 'react-router'
 import App from './components/App'
 import BoardContainer from './containers/BoardContainer'
 import CurrentQuestionContainer from './containers/currentQuestionContainer'
-import SmartTopicsContainer from './containers/TopicsContainer'
+import TopicsContainer from './containers/TopicsContainer'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import UserPageContainer from './containers/UserPageContainer'
@@ -19,7 +19,7 @@ export default (
     <Route path="/" component={App} />
     <Route path="signin" component={Signin} />
     <Route path="signup" component={Signup} />
-    <Route path="game" component={SmartTopicsContainer} />
+    <Route path="game" component={TopicsContainer} />
     <Route path="user" component={UserPageContainer} />
     <Route path="user/:id" component={UserPageContainer} />
     <Route path="leaderBoard" component={LeaderBoardContainer} />

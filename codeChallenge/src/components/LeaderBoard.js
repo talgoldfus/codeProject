@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Leader from './Leader'
-
+import MainHeader from './MainHeader'
 export default class UserPage extends Component {
 
   componentWillMount(){
@@ -15,6 +15,7 @@ export default class UserPage extends Component {
 
     return(
       <div>
+       <MainHeader />
         <h1>FIZZBUZZ HEROES</h1>
         {leaders}
       </div>

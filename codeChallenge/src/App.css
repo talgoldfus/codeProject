@@ -27,13 +27,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 20px;
   font-family: 'Monaco', 'Courier', sans-serif;
-  
+
 }
 
 #root {
   max-width: 1024px;
   margin: 20px auto;
-  padding: 20px;
   border-radius: 20px;
   background: rgba(2, 43, 43, .85)
 }
