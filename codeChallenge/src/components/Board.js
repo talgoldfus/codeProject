@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
-import Header from './Header'
+import TableHeader from './TableHeader'
 import CellContainer from '../containers/CellContainer'
 import ScoreBoardContainer from '../containers/ScoreBoardContainer'
 import InactiveCell from './InactiveCell'
@@ -55,7 +55,7 @@ class Board extends Component {
   render() {
     const categories = this.props.gameBoard.categories || []
     const headers = categories.map(ob => {
-      return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
+      return <TableHeader key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
   })
 
 
