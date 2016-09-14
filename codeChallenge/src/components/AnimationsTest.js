@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+// var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 
 class Animations extends Component {

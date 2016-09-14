@@ -7,9 +7,12 @@ import ReduxPromise from 'redux-promise'
 import { Router,browserHistory } from 'react-router'
 import Routes from './routes'
 import reduxThunk from 'redux-thunk';
+import configureStore from './store/configureStore.js'
 
-let createStoreWithMiddleware = applyMiddleware(reduxThunk, ReduxPromise)(createStore)
-let store = createStoreWithMiddleware(theReducer,window.devToolsExtension ? window.devToolsExtension() : f => f)
+const store = configureStore();
+
+// let createStoreWithMiddleware = applyMiddleware(reduxThunk, ReduxPromise)(createStore)
+// let store = createStoreWithMiddleware(theReducer,window.devToolsExtension ? window.devToolsExtension() : f => f)
 
 
 ReactDOM.render(
