@@ -1,5 +1,6 @@
 Knock.setup do |config|
 
+
   # [DEPRECATED]
   # This is deprecated in favor of `User.from_token_request`.
   #

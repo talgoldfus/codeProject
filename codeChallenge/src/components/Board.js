@@ -15,7 +15,7 @@ class Board extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-     if(nextProps.finished === 25 && this.props.gameBoard.players[0].userId) {
+     if(nextProps.finished === 3 && this.props.gameBoard.players[0].userId) {
         this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
         let boardId = this.props.params.id
           $(".game-finish").fadeIn(750, ()=>{

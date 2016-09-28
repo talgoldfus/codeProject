@@ -5,6 +5,7 @@ function postFinalAnalytics(boardInfo, optionsInfo){
     return $.ajax({
       url:URL,
       type:"POST",
+      headers: { Authorization: localStorage.getItem('token')},
       data: JSON.stringify({boardInfo, optionsInfo}),
       contentType: "application/json; charset=utf-8",
       dataType: "json"

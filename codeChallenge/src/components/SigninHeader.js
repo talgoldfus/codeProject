@@ -17,7 +17,7 @@ class SigninHeader extends Component {
               Sign in
           </Link><br/>
           <Link to="signup" className="stylized-link">
-            Sign up
+              Sign up
           </Link>
         </div>
       </div>  )

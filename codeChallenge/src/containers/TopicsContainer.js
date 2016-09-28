@@ -5,6 +5,8 @@ import getUserInfo from '../actions/getUserAction'
 import getCurrUserInfo from '../actions/getCurrUserAction'
 
 
+
+
 function mapStateToProps(state) {
     return {
       topics: state.topics,

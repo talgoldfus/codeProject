@@ -5,6 +5,7 @@
   border-top-left-radius: 1em;
   margin-bottom: 3em;
   padding: 1em;
+  position: relative;
 }
 
 .MainHeader .headerText{
@@ -31,6 +32,8 @@
   float: right;
   z-index: 2;
   clear: both;
+  position: absolute;
+  right: 0;
 }
 
 .menuBtn{
