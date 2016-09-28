@@ -11,6 +11,7 @@ render(){
       {path:`/user/${userCurrId}`,text:'User Page'},
       {path:'/leaderBoard',text:'Leader Board'},
       {path:'/game', text:'Home'},
+      {path:'/logout', text:'Logout'},
     ]
 
     const links= menueLinks.map((link)=>{

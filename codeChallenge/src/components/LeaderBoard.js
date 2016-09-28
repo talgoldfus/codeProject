@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Leader from './Leader'
 import MainHeader from './MainHeader'
+
 export default class UserPage extends Component {
 
   componentWillMount(){

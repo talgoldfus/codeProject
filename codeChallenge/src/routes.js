@@ -12,6 +12,7 @@ import Admin from './components/Admin'
 import AddCategoryContainer from './containers/addCategoryContainer'
 import AddBoardContainer from './containers/AddBoardContainer'
 import Animations from './components/AnimationsTest'
+import Logout from './components/Logout'
 
 
 export default (
@@ -31,6 +32,7 @@ export default (
       <Route path="addBoard" component={AddBoardContainer} />
     </Route>
     <Route path="/test" component={Animations} />
+    <Route path="/logout" component={Logout} />
 
 </div>
 
