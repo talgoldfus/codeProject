@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import Header from './Header'
+import { browserHistory } from 'react-router'
+import $ from 'jquery';
+import TableHeader from './TableHeader'
 import CellContainer from '../containers/CellContainer'
 import ScoreBoardContainer from '../containers/ScoreBoardContainer'
 import InactiveCell from './InactiveCell'
+import MainHeader from './MainHeader'
 import '../Board.css'
 
 class Board extends Component {
@@ -14,6 +17,13 @@ class Board extends Component {
   componentWillReceiveProps(nextProps) {
      if(nextProps.finished === 3 && this.props.gameBoard.players[0].userId) {
         this.props.finalAnalytics({userId: this.props.gameBoard.players[0].userId, boardId: this.props.params.id, score: this.props.gameBoard.players[0].score}, this.props.optionIds.options)
+        let boardId = this.props.params.id
+          $(".game-finish").fadeIn(750, ()=>{
+            browserHistory.push(`/game/${boardId}`)
+            $("game-finish").delay(10000);
+            $("game-finish").fadeOut(750);
+            browserHistory.push("/leaderboard")
+          });
       }
    }
 
@@ -36,33 +46,25 @@ class Board extends Component {
 
   populateRows(categories){
     let rowCells=[]
-    let inactiveRows = 0
     for(let i=0; i<categories.length; i++){
       let row = this.getQuestionsByIndex(i, categories)
       rowCells.push(<tr>{row}</tr>)
-      if (row.filter((question)=>{return question.type.name !== "InactiveCell"}).length < 1)
-      { inactiveRows += 1}
     }
     return rowCells
-
   }
 
   render() {
-
-  // const all_scores = this.props.gameBoard.players || []
-  // const scores = all_scores.map(ob => {
-  //     return ob.score
-  // })
-
-  const categories = this.props.gameBoard.categories || []
-  const headers = categories.map(ob => {
-    return <Header key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
+    const categories = this.props.gameBoard.categories || []
+    const headers = categories.map(ob => {
+      return <TableHeader key={Object.keys(ob)[0]} header={Object.keys(ob)[0]} />
   })
 
 
     return (
-        <div>
-          <table className="gameboard">
+      <div>
+          <MainHeader/>
+          <div>
+            <table className="gameboard">
             <thead>
               <tr>
                 {headers}
@@ -80,14 +82,18 @@ class Board extends Component {
             <div className="incorrect">
               <span>Incorrect!</span>
             </div>
+            <div className="time-up">
+              <span>Time Up!</span>
+            </div>
+            <div className="game-finish">
+              <span>Game Finished!</span>
+            </div>
           </div>
             <ScoreBoardContainer />
       </div>
-
+    </div>
     )
   }
 }
 
 export default Board
-
-// <button name="logout" onClick={localStorage.clear()}> Log out </button> 

@@ -13,19 +13,3 @@ export default function getBoard(id){
       })
     }        
   }
-
-
-
-
-
-//   const request = $.ajax({
-//     url: 'http://localhost:3000/api/v1/boards/'+id,
-//     type: 'GET',
-//     headers: { authorization: localStorage.getItem('token')}
-//   })
-//   return {
-//     type:'GET_BOARD',
-//     payload: request
-//   }
-
-// }

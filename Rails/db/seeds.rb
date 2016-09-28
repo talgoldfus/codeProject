@@ -12,6 +12,7 @@ Question.destroy_all
 User.destroy_all
 Game.destroy_all
 Option.destroy_all
+BoardCategory.destroy_all
 
 board = Board.create(topic: 'ruby')
 board2= Board.create(topic: 'sql')
@@ -20,11 +21,19 @@ board4 = Board.create(topic: 'html')
 board5 = Board.create(topic: 'css')
 board6 = Board.create(topic: 'react')
 
-category = Category.create(board_id: board.id, name: 'Simple Expressions')
-category2= Category.create(board_id: board.id, name: 'Loops & Conditionals')
-category3 = Category.create(board_id: board.id, name: ' Methods & Hashes')
-category4 = Category.create(board_id: board.id, name: 'Ruby Questions')
-category5 = Category.create(board_id: board.id, name: 'Object Oriented Programming')
+
+category = Category.create(name: 'Simple Expressions')
+category2= Category.create(name: 'Loops & Conditionals')
+category3 = Category.create(name: ' Methods & Hashes')
+category4 = Category.create(name: 'Ruby Questions')
+category5 = Category.create(name: 'Object Oriented Programming')
+
+
+boardCategory1 = BoardCategory.create(board_id: board.id,category_id: category.id)
+boardCategory2=  BoardCategory.create(board_id: board.id,category_id: category2.id)
+boardCategory3 = BoardCategory.create(board_id: board.id,category_id: category3.id)
+boardCategory4 = BoardCategory.create(board_id: board.id,category_id: category4.id)
+boardCategory5 = BoardCategory.create(board_id: board.id,category_id: category5.id )
 
 question = Question.create(category_id: category.id, difficulty: '200', content: 'What does the following expression evaluate to?
                                                                                   2 ** 3')
@@ -556,4 +565,4 @@ option98 = Option.create(question_id: question30.id, correct: true, content: "er
 option99 = Option.create(question_id: question30.id, correct: false, content: "oink!")
 option100 = Option.create(question_id: question30.id, correct: false, content: "#Pig:0x007ff24ab73d58")
 
-open_option = Option.create(question_id: question.id ,open: true, correct_answer: "8" ,language:"JS")
+open_option = Option.create(question_id: question.id ,open: true, correct_answer: "8" ,language:"RUBY")

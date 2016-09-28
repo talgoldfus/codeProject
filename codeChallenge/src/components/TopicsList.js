@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Topic from './Topic'
+import MainHeader from './MainHeader'
 import { Link } from 'react-router'
 
 
@@ -10,15 +11,11 @@ componentWillMount(){
   this.props.getCurrUserInfo()
 }
 
-handleClick() {
-  this.props.logOut()
-}
-
   render() {
-    
+
   var topics = this.props.topics.topic || []
 
-  let topicslist =   Object.keys(topics).map((key)=>{
+  let topicslist = Object.keys(topics).map((key)=>{
       return <Topic key={key} id={key} name={topics[key]} />
     });
 
@@ -28,13 +25,7 @@ handleClick() {
 
     return (
       <div>
-      <button type="submit" onClick={this.handleClick.bind(this)}> Log out </button>
-        <div className="header group">
-          <h2><Link to={`/user/${userCurrId}`} className="user-link">{localStorage.userName}</Link></h2>
-          <br></br>
-          <h3><Link to="leaderBoard" className="user-link">Leader Board</Link></h3>
-
-        </div>
+        <MainHeader/>
         <div className="group">
             <h1>Choose a Game Topic</h1>
             {topicslist}

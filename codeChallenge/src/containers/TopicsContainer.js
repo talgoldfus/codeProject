@@ -1,27 +1,23 @@
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import getTopicsAction from '../actions/getTopicsAction'
 import TopicsList from '../components/TopicsList'
 import getUserInfo from '../actions/getUserAction'
 import getCurrUserInfo from '../actions/getCurrUserAction'
 import logout from '../actions/logoutAction'
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getTopics: getTopicsAction, 
-    getUserInfo: getUserInfo,
-    getCurrUserInfo: getCurrUserInfo,
-    logOut: logout
-  }, dispatch)
-}
+
 
 function mapStateToProps(state) {
     return {
-      topics: state.topics, 
+      topics: state.topics,
       userInfo: state.user
     }
 }
 
-const SmartTopicsContainer = connect(mapStateToProps, mapDispatchToProps)(TopicsList)
+const SmartTopicsContainer = connect(mapStateToProps, {
+  getTopics: getTopicsAction,
+  getUserInfo: getUserInfo,
+  getCurrUserInfo: getCurrUserInfo
+})(TopicsList)
 
 export default SmartTopicsContainer

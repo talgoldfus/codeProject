@@ -10,13 +10,16 @@ class SigninHeader extends Component {
     if(!this.props.authenticated){
       return(
       <div>
-        <h1 className="title"><a>FizzBuzz 2.0</a></h1>
-        <Link to="signin" className="stylized-link">
-            Sign in
-        </Link><br/>
-        <Link to="signup" className="stylized-link">
-          Sign up
-        </Link>
+        <h1 className="title">FizzBuzz 2.0</h1>
+        <h2>The Jeopardy Game for Programmers</h2>
+        <div className="border-container">
+          <Link to="signin" className="stylized-link">
+              Sign in
+          </Link><br/>
+          <Link to="signup" className="stylized-link">
+            Sign up
+          </Link>
+        </div>
       </div>  )
     } 
   }

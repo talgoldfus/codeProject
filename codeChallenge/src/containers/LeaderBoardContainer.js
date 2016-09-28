@@ -1,18 +1,11 @@
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import getLeaderBoard from '../actions/leaderBoard'
 import LeaderBoard from '../components/LeaderBoard'
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getLeaderBoard: getLeaderBoard}, dispatch)
-}
-
 function mapStateToProps(state) {
-    return {
-      leaderBoard: state.user.leader_board
-    }
+    return { leaderBoard: state.user.leader_board }
 }
 
-const LeaderBoardContainer = connect(mapStateToProps, mapDispatchToProps)(LeaderBoard)
+const LeaderBoardContainer = connect(mapStateToProps, {getLeaderBoard: getLeaderBoard})(LeaderBoard)
 
 export default LeaderBoardContainer

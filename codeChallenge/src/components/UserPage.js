@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import UserRecentGame from './UserRecentGame'
 import UserQuestionRecord from './UserQuestionRecord'
+import MainHeader from './MainHeader'
 
 class UserPage extends Component {
 
   componentWillMount(){
-    // debugger    
     var userId = this.props.params.id
     this.props.getUserInfo(userId)
   }
@@ -22,20 +21,21 @@ render(){
   }
 
   const rightAnswers = []
-  for(var question in userInfo.questions_right){
+  for(let question in userInfo.questions_right){
     rightAnswers.push(<UserQuestionRecord questionInfo={userInfo.questions_right[question]}/>)
   }
 
   const wrongAnswers = []
-  for(var question in userInfo.questions_wrong){
+  for(let question in userInfo.questions_wrong){
     wrongAnswers.push(<UserQuestionRecord questionInfo={userInfo.questions_wrong[question]}/>)
   }
 
   return (
-      <div> 
+      <div>
+        <MainHeader/>
         <h1>{userInfo.email}</h1>
         <h2>Average Score: {userInfo.average_score}</h2>
-        
+
         <br></br><h3>RECENT GAMES </h3><br></br>
           <table className="userTable">
             <thead>

@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 
 class UserQuestionRecord extends Component {
 
 render(){
 
   const questionInfo = this.props.questionInfo
-  
+
   return (
       <tr>
         <td>{questionInfo.difficulty}</td>

@@ -1,6 +1,6 @@
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name ,:board_categories
   has_many :questions
-  belongs_to :board
+  has_many :board_categories
 
 end

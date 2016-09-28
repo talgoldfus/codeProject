@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import OptionContainer from '../containers/optionContainer'
 import OpenOptionContainer from '../containers/openOptionContainer'
+import TimerContainer from '../containers/timerContainer'
 
 class CurrentQuestion extends Component {
-
   componentWillMount() {
     this.props.getOptions(this.props.params.questionId)
   }
@@ -19,7 +19,7 @@ class CurrentQuestion extends Component {
   render(){
     const currentOptions = this.props.info.options || []
     const difficulty = this.props.info.difficulty || []
-    let optionsComponents ;
+    let optionsComponents;
 
     if(currentOptions.length === 1){
       optionsComponents = <OpenOptionContainer answer={currentOptions[0].correct_answer} language={currentOptions[0].language} key={currentOptions[0].id} questionId={currentOptions[0].question_id} difficulty={difficulty} boardId={this.props.params.id}/>
@@ -29,10 +29,10 @@ class CurrentQuestion extends Component {
         questionId={option.question_id} difficulty={difficulty} boardId={this.props.params.id} id={option.id} />
       },this)
     }
-
     return (
       <div className="screen">
         <div className="modal question">
+          <TimerContainer questionId={this.props.params.questionId} difficulty={this.props.info.difficulty} boardId={this.props.params.id}/>
           <h2>{this.props.info.content}</h2>
           <ul>
             {optionsComponents}

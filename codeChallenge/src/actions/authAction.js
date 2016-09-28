@@ -17,15 +17,3 @@ export default function signinUser(formProps) {
     })
   }
 }
-
-
-// function authError(msg){
-//   return {
-//     type: 'AUTH_ERROR',
-//     payload: msg
-//   };
-// }
-
-
-
-

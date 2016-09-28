@@ -11,7 +11,7 @@ module Api
         render json: {'logged_in' => true}
       end
 
-      def show 
+      def show
         user = User.find(params[:id])
         render json: UserAnalytics.run(user)
       end
@@ -29,7 +29,6 @@ module Api
         @current_user = nil
       end
 
-      
     end
   end
 end

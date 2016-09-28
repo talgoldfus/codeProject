@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import UserQuestionRecord from './UserQuestionRecord'
 
 class UserQuestionTable extends Component {
@@ -10,10 +9,10 @@ render(){
 
   const qs = []
 
-    for(var question in this.props.questions){
+    for(var question in this.props.questions) {
       qs.push(<UserQuestionRecord questionInfo={this.props.questions[question]}/>)
-    } 
- 
+    }
+
   return (
     <div>
       <h1>{this.props.title}</h1>

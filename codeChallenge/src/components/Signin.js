@@ -10,6 +10,7 @@ class Signin extends Component {
   }
 
   renderAlert() {
+    debugger
     if (this.props.errorMessage) {
       return (
         <div className="alert alert-danger">
@@ -24,6 +25,7 @@ class Signin extends Component {
 
     return (
       <form className="form group" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <h1>Sign In</h1>
         <fieldset className="form-group">
           <label>Email:</label>
           <input className="form-control" {...email} />

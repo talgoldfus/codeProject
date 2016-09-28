@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import Leader from './Leader'
-
+import MainHeader from './MainHeader'
 export default class UserPage extends Component {
 
   componentWillMount(){
@@ -16,7 +15,8 @@ export default class UserPage extends Component {
 
     return(
       <div>
-        <h1>FIZZBUZZ HEROES</h1> 
+       <MainHeader />
+        <h1>FIZZBUZZ HEROES</h1>
         {leaders}
       </div>
     )
