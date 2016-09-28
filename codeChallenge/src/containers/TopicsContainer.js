@@ -3,6 +3,8 @@ import getTopicsAction from '../actions/getTopicsAction'
 import TopicsList from '../components/TopicsList'
 import getUserInfo from '../actions/getUserAction'
 import getCurrUserInfo from '../actions/getCurrUserAction'
+import logout from '../actions/logoutAction'
+
 
 
 function mapStateToProps(state) {

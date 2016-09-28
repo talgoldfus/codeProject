@@ -20,6 +20,7 @@ const Option = class extends Component {
   }
 
   render(){
+    // debugger
     return (
       <div ref={this.props.correct}>
         <li>
