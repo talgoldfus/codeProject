@@ -19,8 +19,8 @@ module Api
       def show
         new_board = PopulateBoard.initiate(params[:id])
         new_board[:user] = current_user
-        new_board[:token] = http_token.to_json
-        # new_board[:token] = TokenGenerator.gen_token().to_json
+        # new_board[:token] = http_token.to_json
+        new_board[:token] = TokenGenerator.gen_token().to_json
         render json: new_board
       end
 

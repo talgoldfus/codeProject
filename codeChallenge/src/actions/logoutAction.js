@@ -9,5 +9,6 @@ export default function logOut(){
   }).done(() => {
         localStorage.clear()
         browserHistory.push('/')
+        location.reload();
     })
 }        
