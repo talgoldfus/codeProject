@@ -5,7 +5,7 @@ export default function logOut(){
   return $.ajax({
       url: 'http://localhost:3000/api/v1/delete_token',
       type: 'GET',
-      headers: { authorization: localStorage.getItem('token')}
+      headers: { Authorization: localStorage.getItem('token')}
   }).done(() => {
         localStorage.clear()
         browserHistory.push('/')

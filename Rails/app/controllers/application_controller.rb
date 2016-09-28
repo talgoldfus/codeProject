@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
 
   protected
   def authenticate_request!
-    debugger
     unless user_id_in_token?
       render json: { errors: ['Not Authenticated'] }, status: :unauthorized
       return

@@ -1,8 +1,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      # include Knock::Authenticable 
-       before_action :authenticate_request!
+       before_action :authenticate_request!, :except => [:create, :analytics]
 
       def create
         user = User.create(email: params[:email], password: params[:password])
@@ -13,13 +12,11 @@ module Api
       end
 
       def show 
-        # byebug
         user = User.find(params[:id])
         render json: UserAnalytics.run(user)
       end
 
       def populate
-        # byebug
         render json: UserAnalytics.run(current_user)
       end
 
@@ -29,7 +26,7 @@ module Api
       end
 
       def delete_token
-        current_user = nil
+        @current_user = nil
       end
 
       

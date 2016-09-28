@@ -12,7 +12,6 @@ class PopulateBoard
 
 
   def self.populate_categories(new_board)
-
     category_collection = []
     while category_collection.length < 5 do
       random_category = new_board.categories[rand(0..(new_board.categories.length-1))]

@@ -11,7 +11,6 @@ export default function signupUser(formProps) {
       contentType: "application/json; charset=utf-8",
       dataType: "json"
     }).done(() => {
-      debugger
       $.ajax({
         url: "http://localhost:3000/auth_user",
         method: "POST",
