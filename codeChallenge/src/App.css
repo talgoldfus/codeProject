@@ -55,7 +55,7 @@ h1 {
 }
 
 .grid {
-  width: 23%;
+  width: 30%;
   float: left;
   margin: 1%;
 }
@@ -63,18 +63,26 @@ h1 {
   text-align: center;
 }
 
+.group{
+  text-align: center;
+  padding: 0 0 1em 0;
+
+}
+
 .stylized-link, .stylized-link:visited, .stylized-link:active, .stylized-link:focus {
   font-family: 'Monaco', 'Courier', sans-serif;
   font-size: 20px;
   color: #729d1f;
   background-color: #022b35;
-  padding: 10px;
+  padding: 3em;
   display: inline-block;
   border-radius: 10px;
   text-shadow: 1px 1px 0 #00011a;
   box-shadow: 1px 1px 3px #00011a;
-  margin-bottom: 20px;
-}
+  min-width: 12em;
+  min-height: 4em;
+  text-transform: uppercase;
+  text-align: center;}
 
 .stylized-link:hover {
   background-color: #0a3641;
